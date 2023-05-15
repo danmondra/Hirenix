@@ -27,7 +27,7 @@ export function JobsGrid({ length }) {
       icon: <Designer />
     },
     {
-      name: 'Ingenieríe',
+      name: 'Ingeniería',
       icon: <Engineer />
     },
     {

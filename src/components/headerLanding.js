@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Menu } from './icons'
 
 export function HeaderLanding() {
   return (
@@ -20,6 +21,9 @@ export function HeaderLanding() {
           <button className='login'>Ingresar</button>
           <button className='register'>Registrarse</button>
         </div>
+        <button className='btnMenu'>
+          <Menu />
+        </button>
       </div>
     </header>
   )

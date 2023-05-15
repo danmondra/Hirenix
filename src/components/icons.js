@@ -62,9 +62,24 @@ function Experience({ size = 'normal' }) {
   )
 }
 
+function Menu() {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='48'
+      height='48'
+      viewBox='0 96 960 960'
+      fill='currentColor'
+    >
+      <path d='M120 816v-60h720v60H120zm0-210v-60h720v60H120zm0-210v-60h720v60H120z' />
+    </svg>
+  )
+}
+
 export {
   ArrowRight,
   Location,
   Salary,
-  Experience
+  Experience,
+  Menu
 }

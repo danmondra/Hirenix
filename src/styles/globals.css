@@ -379,7 +379,13 @@ body {
   font-size: 1.6rem;
   background-color: var(--color-black);
   background-image: linear-gradient(112.23deg, rgba(var(--color-greenBackgroundRGB), 0.22) 0%, transparent 34.63%);;
-  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: linear-gradient(112.23deg, rgba(var(--color-greenBackgroundRGB), 0.22) 0%, transparent 34.63%);;
+    background-repeat: no-repeat;
+  }
 }
 
 a {
@@ -387,17 +393,35 @@ a {
 }
 
 .container {
-  max-width: 160rem;
-  width: 95%;
+  width: 85%;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 95%;
+    max-width: 180rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container {
+    width: 90%
+  }
 }
 
 /* Header & Navigation----------- */
 
 .headerLandingPage {
-  position: absolute;
+  display: block;
   width: 100%;
   z-index: 50;
+}
+
+@media (min-width: 768px) {
+  .headerLandingPage {
+    position: absolute;
+  }
 }
 
 .containerHeader {
@@ -407,8 +431,11 @@ a {
   justify-content: space-between;
 }
 
-.containerHeader > * {
-  flex: 1;
+
+@media (min-width: 768px) {
+  .containerHeader > * {
+    flex: 1;
+  }
 }
 
 .logoLink {
@@ -430,7 +457,7 @@ a {
 
 .navigation {
   min-width: 60rem;
-  display: flex;
+  display: none;
   justify-content: space-between;
 
   border: var(--border-gray);
@@ -448,6 +475,12 @@ a {
   backdrop-filter: blur(10px);
 }
 
+@media (min-width: 768px) {
+  .navigation {
+    display: flex;
+  }
+}
+
 .navigation a {
   color: var(--color-textGray);
   font-size: 1.6rem;
@@ -461,9 +494,15 @@ a {
 }
 
 .loginContainer {
-  display: flex;
+  display: none;
   justify-content: flex-end;
   gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .loginContainer {
+    display: flex;
+  }
 }
 
 .loginContainer > * {
@@ -496,3 +535,16 @@ a {
   background-color: rgba(var(--color-greenBackgroundRGB), .15);
 }
 
+.btnMenu {
+  background-color: unset;
+  border: unset;
+  padding: 0;
+  color: var(--color-white);
+  width: fit-content;
+}
+
+@media (min-width: 768px) {
+  .btnMenu {
+    display: none;
+  }
+}

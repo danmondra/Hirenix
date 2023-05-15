@@ -357,6 +357,7 @@ template {
 
   --color-textGray: rgb(255 255 255 / .7);
   --color-primaryGray: #B8B8B8;
+  --color-landingTextGreen: #88D28E;
 
   --color-greenBackground: #0CAE1A;
   --color-greenBackgroundRGB: 12, 174, 26;
@@ -372,8 +373,6 @@ template {
 html {
   box-sizing: border-box;
   font-size: 62.5%; /* 1rem = 10px */
-
-  height: 100%;
 }
 
 body {
@@ -388,7 +387,7 @@ a {
 }
 
 .container {
-  max-width: 170rem;
+  max-width: 160rem;
   width: 95%;
   margin: 0 auto;
 }

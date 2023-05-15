@@ -1,7 +1,6 @@
-import Link from 'next/link'
-import './globals.css'
-import styles from './layout.module.css'
+import '@/styles/globals.css'
 import { Be_Vietnam_Pro } from 'next/font/google'
+import { HeaderLanding } from '@/components/headerLanding'
 
 export const metadata = {
   title: 'Create Next App',
@@ -18,26 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='es' className={vietnamPro.className}>
       <body>
-        <header className={styles.header}>
-          <div className={`container ${styles.container}`}>
-            <div>
-              <Link href='/' className={styles.logoLink}>
-                <img src='/icon.png' alt='Logo of Hirenix' />
-                <h2>Hirenix</h2>
-              </Link>
-            </div>
-            <nav className={styles.navigation}>
-              <Link href='/'>Inicio</Link>
-              <Link href='/explorar'>Explorar</Link>
-              <Link href='/lab'>Laboratorio</Link>
-              <Link href='/explorar'>Reclutar</Link>
-            </nav>
-            <div className={styles.loginContainer}>
-              <button className={styles.login}>Ingresar</button>
-              <button className={styles.register}>Registrarse</button>
-            </div>
-          </div>
-        </header>
+        <HeaderLanding />
         {children}
       </body>
     </html>

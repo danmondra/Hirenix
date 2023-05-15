@@ -1,10 +1,11 @@
 .header {
   position: fixed;
   width: 100%;
+  z-index: 50;
 }
 
 .container {
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,25 +61,30 @@
 
 .loginContainer > * {
   color: var(--color-white);
-  font-weight: bold;
   cursor: pointer;
-  transition: color .3s ease;
-}
-
-.loginContainer > *:hover {
-  color: var(--color-textGray);
 }
 
 .login {
   font-weight: 500;
   background-color: unset;
   border: unset;
+  transition: color .3s ease;
+}
+
+.login:hover {
+  color: var(--color-textGray);
 }
 
 .register {
+  font-weight: 700;
   background-color: #071408;
-  border: 1px #fff solid;
+  border: 1px rgb(255 255 255 / .5) solid;
   border-radius: 4px;
   padding: 1.2rem 3rem;
   backdrop-filter: blur(30px);
+  transition: background-color .3s ease;
+}
+
+.register:hover {
+  background-color: rgba(var(--color-greenBackgroundRGB), .15);
 }

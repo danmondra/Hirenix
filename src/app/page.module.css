@@ -1,0 +1,123 @@
+.main {
+  max-width: 130rem;
+  min-height: 60rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+}
+
+.content > * {
+  flex: 1;
+}
+
+.info {
+  margin-top: -10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.title {
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: 5rem;
+  margin: 0;
+}
+
+.title span {
+  font-weight: 700;
+  color: var(--color-landingTextGreen);
+}
+
+.text {
+  color: var(--color-white);
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.btnsContainer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.btnEmpleos {
+  font-weight: 500;
+  color: var(--color-white);
+  background-color: #071408;
+  border: 1px rgb(255 255 255 / .5) solid;
+  border-radius: 4px;
+  padding: .8rem 3rem;
+  backdrop-filter: blur(30px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  transition: background-color .3s ease;
+}
+
+.btnEmpleos:hover {
+  background-color: rgba(var(--color-greenBackgroundRGB), .15);
+}
+
+.btnTalento {
+  background-color: unset;
+  border: unset;
+  color: var(--color-white);
+  cursor: pointer;
+
+  transition: color .3s ease;
+}
+
+.btnTalento:hover {
+  color: var(--color-textGray);
+}
+
+/* --------- Jobs Examples*/
+
+.jobExamples {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jobExample {
+  border-radius: 4px;
+  min-width: 30rem;
+  border: 1px rgb(255 255 255 / .5) solid;
+  background-color: rgb(0 0 0 / .8);
+  backdrop-filter: blur(10px);
+}
+
+.jobTitle {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--color-white);
+  padding: .8rem;
+}
+
+.jobLine {
+  display: block;
+  height: 1px;
+  background-color: rgb(255 255 255 / .2);
+}
+
+.jobInfo {
+  display: flex;
+  gap: 1rem;
+  color: var(--color-primaryGray);
+  padding: .5rem .8rem;
+}
+
+.jobInfo p {
+  margin: 0;
+}

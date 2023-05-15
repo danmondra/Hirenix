@@ -1,7 +1,7 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
-   ========================================================================== */
+========================================================================== */
 
 /**
  * 1. Correct the line height in all browsers.
@@ -14,7 +14,7 @@ html {
 }
 
 /* Sections
-   ========================================================================== */
+========================================================================== */
 
 /**
  * Remove the margin in all browsers.
@@ -43,7 +43,7 @@ h1 {
 }
 
 /* Grouping content
-   ========================================================================== */
+========================================================================== */
 
 /**
  * 1. Add the correct box sizing in Firefox.
@@ -67,7 +67,7 @@ pre {
 }
 
 /* Text-level semantics
-   ========================================================================== */
+========================================================================== */
 
 /**
  * Remove the gray background on active links in IE 10.
@@ -139,7 +139,7 @@ sup {
 }
 
 /* Embedded content
-   ========================================================================== */
+========================================================================== */
 
 /**
  * Remove the border on images inside links in IE 10.
@@ -150,7 +150,7 @@ img {
 }
 
 /* Forms
-   ========================================================================== */
+========================================================================== */
 
 /**
  * 1. Change the font styles in all browsers.
@@ -311,7 +311,7 @@ textarea {
 }
 
 /* Interactive
-   ========================================================================== */
+========================================================================== */
 
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
@@ -330,7 +330,7 @@ summary {
 }
 
 /* Misc
-   ========================================================================== */
+========================================================================== */
 
 /**
  * Add the correct display in IE 10+.
@@ -391,3 +391,108 @@ a {
   width: 95%;
   margin: 0 auto;
 }
+
+/* Header & Navigation----------- */
+
+.headerLandingPage {
+  position: absolute;
+  width: 100%;
+  z-index: 50;
+}
+
+.containerHeader {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.containerHeader > * {
+  flex: 1;
+}
+
+.logoLink {
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logoLink img {
+  max-width: 5rem;
+}
+
+.logoLink h2 {
+  color: var(--color-white);
+  font-weight: normal;
+  font-size: 2rem;
+}
+
+.navigation {
+  min-width: 60rem;
+  display: flex;
+  justify-content: space-between;
+
+  border: var(--border-gray);
+  border-radius: 5rem;
+
+  margin-top: 2rem;
+  padding-inline: 3rem;
+
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+
+  background-color: rgb(0 0 0 / .6);
+  backdrop-filter: blur(10px);
+}
+
+.navigation a {
+  color: var(--color-textGray);
+  font-size: 1.6rem;
+  padding: 1.5rem 1rem;
+  transition: color .3s ease;
+}
+
+.navigation a:hover,
+.navigation a:first-child {
+  color: var(--color-white);
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.loginContainer > * {
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.login {
+  font-weight: 500;
+  background-color: unset;
+  border: unset;
+  transition: color .3s ease;
+}
+
+.login:hover {
+  color: var(--color-textGray);
+}
+
+.register {
+  font-weight: 700;
+  background-color: #071408;
+  border: 1px rgb(255 255 255 / .5) solid;
+  border-radius: 4px;
+  padding: 1.2rem 3rem;
+  backdrop-filter: blur(30px);
+  transition: background-color .3s ease;
+}
+
+.register:hover {
+  background-color: rgba(var(--color-greenBackgroundRGB), .15);
+}
+

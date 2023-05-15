@@ -1,11 +1,7 @@
+import styles from '@/styles/landingPage.module.css'
 import { JobsGrid } from '@/components/jobsGrid'
-import {
-  ArrowRight,
-  Location,
-  Salary,
-  Experience
-} from '@/components/icons'
-import styles from './page.module.css'
+import { ArrowRight } from '@/components/icons'
+import { JobExampleLanding } from '@/components/jobExampleLanding'
 
 export default function Home() {
   return (
@@ -27,22 +23,8 @@ export default function Home() {
             />
           </div>
           <section className={styles.jobExamples}>
-            <article className={styles.jobExample}>
-              <h2 className={styles.jobTitle}>Diseñador UX/UI</h2>
-              <span className={styles.jobLine} />
-              <div className={styles.jobInfo}>
-                <Location size='xs' />
-                <p className={styles.location}>Madrid, España</p>
-              </div>
-              <div className={styles.jobInfo}>
-                <Salary size='xs' />
-                <p className={styles.salary}>30k - 40k</p>
-              </div>
-              <div className={styles.jobInfo}>
-                <Experience size='xs' />
-                <p className={styles.experience}>2 Años de experiencia</p>
-              </div>
-            </article>
+            <JobExampleLanding />
+            <JobExampleLanding />
           </section>
         </div>
       </main>

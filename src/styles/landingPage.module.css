@@ -10,6 +10,9 @@
 .content {
   height: 100%;
   display: flex;
+  background-image: url('/spiderWeb.png');
+  background-position: right;
+  background-repeat: no-repeat;
 }
 
 .content > * {
@@ -92,10 +95,21 @@
 
 .jobExample {
   border-radius: 4px;
-  min-width: 30rem;
+  min-width: 32rem;
   border: 1px rgb(255 255 255 / .5) solid;
-  background-color: rgb(0 0 0 / .8);
+  background-color: rgb(0 0 0 / .5);
   backdrop-filter: blur(10px);
+}
+
+.jobExample:first-of-type {
+  position: relative;
+  top: -12%;
+}
+
+.jobExample:nth-of-type(2) {
+  position: relative;
+  top: 12%;
+  right: 12%;
 }
 
 .jobTitle {

@@ -1,6 +1,9 @@
 import '@/styles/globals.css'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import { HeaderLanding } from '@/components/headerLanding'
+import { Logo } from '@/components/logo'
+import Link from 'next/link'
+import { NavigationLinks } from '@/components/navigationLinks'
 
 export const metadata = {
   title: 'Create Next App',
@@ -19,6 +22,26 @@ export default function RootLayout({ children }) {
       <body>
         <HeaderLanding />
         {children}
+        <footer className='footer'>
+          <div className='container footerContainer'>
+            <div className='footerGroup'>
+              <Logo />
+              <p className='footerAcknowledgment'>Gracias a infojobs y a midudev por la iniciativa.</p>
+            </div>
+            <div className='footerGroup'>
+              <h3>Menú</h3>
+              <NavigationLinks />
+            </div>
+            <div className='footerGroup'>
+              <h3>Productos</h3>
+              <p>Análisis y mejora de CV</p>
+              <p>Obtener compatibilidad con un puesto</p>
+              <p>Simulación de entrevistas</p>
+              <p>Reclutamiento</p>
+              <p>Pruebas Técnicas</p>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   )

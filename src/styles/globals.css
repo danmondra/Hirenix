@@ -360,7 +360,7 @@ template {
   --color-landingTextGreen: #88D28E;
 
   --color-greenBackground: #0CAE1A;
-  --color-greenBackgroundRGB: 12, 174, 26;
+  --color-greenBackgroundRGB: rgb(12 174 26 / .22);
 
   --border-gray: 1px solid rgb(255 255 255 / .2);
 
@@ -382,12 +382,12 @@ html {
 body {
   font-size: 1.6rem;
   background-color: var(--color-black);
-  background-image: linear-gradient(112.23deg, rgba(var(--color-greenBackgroundRGB), 0.22) 0%, transparent 34.63%);;
+  background-image: linear-gradient(112.23deg, var(--color-greenBackgroundRGB) 0%, transparent 34.63%);
 }
 
 @media (min-width: 768px) {
   body {
-    background-image: linear-gradient(112.23deg, rgba(var(--color-greenBackgroundRGB), 0.22) 0%, transparent 14.63%);;
+    background-image: linear-gradient(112.23deg, var(--color-greenBackgroundRGB) 0%, transparent 14.63%);
     background-repeat: no-repeat;
   }
 }
@@ -551,4 +551,55 @@ a {
   .btnMenu {
     display: none;
   }
+}
+
+
+/* Footer------------- */
+
+.footer {
+  background-image: linear-gradient(to top, var(--color-greenBackgroundRGB) 0%, var(--color-black) 50%);
+  padding: 4rem 0;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (min-width: 998px) {
+  .footerContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.footerAcknowledgment {
+  margin: 2rem 0;
+}
+
+.footerGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footerContainer h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.footerGroup p,
+.footerGroup a {
+  margin: .5rem 0;
+  color: var(--color-textGray);
+}
+
+.footerGroup a {
+  transition: color .3s ease;
+}
+
+.footerGroup a:hover {
+  color: var(--color-white);
 }

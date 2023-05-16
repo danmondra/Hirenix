@@ -604,6 +604,10 @@ a {
   transition: color .3s ease;
 }
 
+.footerGroup > a {
+  display: block;
+}
+
 .footerGroup a:hover {
   color: var(--color-white);
 }

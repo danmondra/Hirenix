@@ -449,14 +449,17 @@ a {
   gap: 1rem;
 }
 
-.logoLink img {
+.logoLink svg {
+  display: block;
   max-width: 5rem;
+  aspect-ratio: 1/1;
 }
 
 .logoLink h2 {
   color: var(--color-white);
   font-weight: normal;
   font-size: 2rem;
+  margin: 0;
 }
 
 .navigation {

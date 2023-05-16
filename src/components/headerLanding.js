@@ -16,7 +16,7 @@ export function HeaderLanding() {
           <button className='login'>Ingresar</button>
           <button className='register'>Registrarse</button>
         </div>
-        <button className='btnMenu'>
+        <button className='btnMenu' aria-label='Menú'>
           <Menu />
         </button>
       </div>

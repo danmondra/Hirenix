@@ -22,7 +22,7 @@
 @media (min-width: 768px) {
   .content {
     flex-direction: row;
-    background-image: url('/spiderWeb.png');
+    background-image: url('/spiderWeb.webp');
     background-repeat: no-repeat;
     background-position: right;
     gap: 10rem;
@@ -237,7 +237,7 @@
   aspect-ratio: 1;
   opacity: .7;
 
-  background-image: linear-gradient(to bottom, rgb(0 0 0 / .3) 0%, rgb(0 0 0 / 1) 80%), url('/fluffyTexture.png');
+  background-image: linear-gradient(to bottom, rgb(0 0 0 / .3) 0%, rgb(0 0 0 / 1) 80%), url('/fluffyTexture.webp');
   background-repeat: no-repeat;
   background-position: cover;
 }
@@ -436,7 +436,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/maze.png');
+  background-image: url('/maze.webp');
   background-repeat: no-repeat;
   background-position: right;
   background-size: cover;

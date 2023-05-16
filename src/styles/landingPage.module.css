@@ -487,6 +487,7 @@
 .poweredByGrid img {
   filter: contrast(0);
   opacity: .7;
+  object-fit: contain;
 
   transition: filter .3s ease, opacity .3s ease;
 }

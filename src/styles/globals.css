@@ -451,7 +451,7 @@ a {
 
 .logoLink svg {
   display: block;
-  max-width: 5rem;
+  width: 5rem;
   aspect-ratio: 1/1;
 }
 

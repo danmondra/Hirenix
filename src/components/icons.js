@@ -185,9 +185,9 @@ function InfoIcon({ size = 'normal' }) {
   )
 }
 
-function ToggleOnIcon({ size = 'normal', status }) {
-  const offCx = '280'
-  const onCx = '680'
+function ToggleOnIcon({ size = 'normal' }) {
+  // offCx = '280'
+  // onCx = '680'
 
   return (
     <svg

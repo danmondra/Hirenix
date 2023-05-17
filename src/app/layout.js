@@ -1,7 +1,5 @@
 import '@/styles/globals.css'
 import { Be_Vietnam_Pro } from 'next/font/google'
-import { HeaderLanding } from '@/components/headerLanding'
-import { Footer } from '@/components/footer'
 
 export const metadata = {
   title: 'Hirenix',
@@ -18,9 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='es' className={vietnamPro.className}>
       <body>
-        <HeaderLanding />
         {children}
-        <Footer />
       </body>
     </html>
   )

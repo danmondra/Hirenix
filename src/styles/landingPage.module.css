@@ -1,12 +1,14 @@
 .main {
   min-height: min-content;
   display: flex;
-  margin: 5rem auto;
+  background-image: linear-gradient(to bottom, var(--color-greenBackgroundRGB) 0%, transparent 64.63%);
+  height: 100vh;
 }
 
 @media (min-width: 768px) {
   .main {
-    height: 100vh;
+    background-image: linear-gradient(132.23deg, var(--color-greenBackgroundRGB) 0%, transparent 24.63%);
+    background-repeat: no-repeat;
     margin: 0 auto;
   }
 }
@@ -83,35 +85,8 @@
 
 @media (min-width: 768px) {
   .btnsContainer {
+    align-items: center;
     flex-direction: row;
-  }
-}
-
-.btnEmpleos {
-  font-weight: 500;
-  color: var(--color-white);
-  background-color: #071408;
-  border: 1px rgb(255 255 255 / .5) solid;
-  border-radius: 4px;
-  padding: .8rem 3rem;
-  backdrop-filter: blur(30px);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-
-  transition: background-color .3s ease;
-}
-
-.btnEmpleos:hover {
-  background-color: rgb(255 255 255 / .20);
-}
-
-@media (min-width: 768px) {
-  .btnEmpleos {
-    max-width: max-content;
-    justify-content: center;
   }
 }
 

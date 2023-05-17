@@ -1,6 +1,6 @@
 import styles from '@/styles/landingPage.module.css'
-import { ArrowRight } from '@/components/icons'
 import { PoweredLogos } from '@/components/poweredLogos'
+import { MainLink } from './mainLink'
 
 export function PoweredSection() {
   return (
@@ -9,10 +9,7 @@ export function PoweredSection() {
       <div className={`container ${styles.poweredContainer}`}>
         <div className={styles.poweredTopContainer}>
           <h3 className={styles.productsTitle}>Comienza a <span>explorar</span></h3>
-          <button className={styles.btnEmpleos}>
-            Explorar empleos
-            <ArrowRight size='medium' />
-          </button>
+          <MainLink />
         </div>
         <div className={styles.poweredBottomContainer}>
           <p className={styles.poweredByText}>Potenciado por:</p>

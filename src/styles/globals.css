@@ -360,7 +360,9 @@ template {
   --color-landingTextGreen: #88D28E;
 
   --color-greenBackground: #0CAE1A;
+  --color-greenBackgroundRGBExplore: 12 174 26;
   --color-greenBackgroundRGB: rgb(12 174 26 / .22);
+  --color-exploreBackground: #F5F5F5;
 
   --border-gray: 1px solid rgb(255 255 255 / .2);
 
@@ -382,14 +384,6 @@ html {
 body {
   font-size: 1.6rem;
   background-color: var(--color-black);
-  background-image: linear-gradient(112.23deg, var(--color-greenBackgroundRGB) 0%, transparent 34.63%);
-}
-
-@media (min-width: 768px) {
-  body {
-    background-image: linear-gradient(112.23deg, var(--color-greenBackgroundRGB) 0%, transparent 14.63%);
-    background-repeat: no-repeat;
-  }
 }
 
 a {
@@ -417,15 +411,10 @@ a {
 /* Header & Navigation----------- */
 
 .headerLandingPage {
+  position: absolute;
   display: block;
   width: 100%;
   z-index: 50;
-}
-
-@media (min-width: 768px) {
-  .headerLandingPage {
-    position: absolute;
-  }
 }
 
 .containerHeader {
@@ -509,12 +498,14 @@ a {
 @media (min-width: 768px) {
   .loginContainer {
     display: flex;
+    align-items: center;
   }
 }
 
 .loginContainer > * {
   color: var(--color-white);
   cursor: pointer;
+  text-align: center;
 }
 
 .login {
@@ -526,6 +517,12 @@ a {
 
 .login:hover {
   color: var(--color-textGray);
+}
+
+@media (min-width: 998px) {
+  .footerAside .loginContainer {
+    flex-direction: column;
+  }
 }
 
 .register {
@@ -614,3 +611,34 @@ a {
 .footerGroup a:hover {
   color: var(--color-white);
 }
+
+/* Buttons ------ */
+
+.linkExplore {
+  font-weight: 500;
+  color: var(--color-white);
+  background-color: #071408;
+  border: 1px rgb(255 255 255 / .5) solid;
+  border-radius: 4px;
+  padding: .8rem 3rem;
+  backdrop-filter: blur(30px);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  transition: background-color .3s ease;
+}
+
+.linkExplore:hover {
+  background-color: rgb(255 255 255 / .20);
+}
+
+@media (min-width: 768px) {
+  .linkExplore {
+    max-width: max-content;
+    justify-content: center;
+  }
+}
+

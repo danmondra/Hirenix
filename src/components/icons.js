@@ -143,6 +143,62 @@ function Management({ size = 'normal' }) {
   )
 }
 
+function UserAccountIcon({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 96 960 960'
+      fill='currentColor'
+    >
+      <path d='M480 575q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42zM160 896v-94q0-38 19-65t49-41q67-30 128.5-45T480 636q62 0 123 15.5t127.921 44.694q31.301 14.126 50.19 40.966Q800 764 800 802v94H160zm60-60h520v-34q0-16-9.5-30.5T707 750q-64-31-117-42.5T480 696q-57 0-111 11.5T252 750q-14 7-23 21.5t-9 30.5v34zm260-321q39 0 64.5-25.5T570 425q0-39-25.5-64.5T480 335q-39 0-64.5 25.5T390 425q0 39 25.5 64.5T480 515zm0-90zm0 411z' />
+    </svg>
+  )
+}
+
+function SearchIcon({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 96 960 960'
+      fill='currentColor'
+    >
+      <path d='M796 935L533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44zM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667z' />
+    </svg>
+  )
+}
+
+function InfoIcon({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 96 960 960'
+      fill='currentColor'
+    >
+      <path d='M453 776h60V536h-60v240zm26.982-314q14.018 0 23.518-9.2T513 430q0-14.45-9.482-24.225-9.483-9.775-23.5-9.775-14.018 0-23.518 9.775T447 430q0 13.6 9.482 22.8 9.483 9.2 23.5 9.2zm.284 514q-82.734 0-155.5-31.5t-127.266-86q-54.5-54.5-86-127.341Q80 658.319 80 575.5q0-82.819 31.5-155.659Q143 347 197.5 293t127.341-85.5Q397.681 176 480.5 176q82.819 0 155.659 31.5Q709 239 763 293t85.5 127Q880 493 880 575.734q0 82.734-31.5 155.5T763 858.316q-54 54.316-127 86Q563 976 480.266 976zm.234-60Q622 916 721 816.5t99-241Q820 434 721.188 335 622.375 236 480 236q-141 0-240.5 98.812Q140 433.625 140 576q0 141 99.5 240.5t241 99.5zm-.5-340z' />
+    </svg>
+  )
+}
+
+function ToggleOnIcon({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 96 960 960'
+      fill='currentColor'
+    >
+      <path d='M280 816q-100 0-170-70T40 576q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280zm0-60h400q75 0 127.5-52.5T860 576q0-75-52.5-127.5T680 396H280q-75 0-127.5 52.5T100 576q0 75 52.5 127.5T280 756zm400.941-79Q723 677 752.5 647.559t29.5-71.5Q782 534 752.559 504.5t-71.5-29.5Q639 475 609.5 504.441t-29.5 71.5Q580 618 609.441 647.5t71.5 29.5zM480 576z' />
+    </svg>
+  )
+}
+
 export {
   ArrowRight,
   Location,
@@ -152,5 +208,9 @@ export {
   Scan,
   MagicSearch,
   Labs,
-  Management
+  Management,
+  UserAccountIcon,
+  SearchIcon,
+  InfoIcon,
+  ToggleOnIcon
 }

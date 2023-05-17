@@ -1,6 +1,7 @@
 import { Logo } from './logo'
 import { NavigationLinks } from './navigationLinks'
 import { Menu } from './icons'
+import { Login } from './login'
 
 export function HeaderLanding() {
   return (
@@ -12,10 +13,7 @@ export function HeaderLanding() {
         <nav className='navigation'>
           <NavigationLinks />
         </nav>
-        <div className='loginContainer'>
-          <button className='login'>Ingresar</button>
-          <button className='register'>Registrarse</button>
-        </div>
+        <Login />
         <button className='btnMenu' aria-label='Menú'>
           <Menu />
         </button>

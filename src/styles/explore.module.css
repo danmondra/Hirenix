@@ -207,12 +207,21 @@
   gap: 1rem;
 }
 
+.searchGroupAi input {
+  display: none;
+}
+
 .searchGroupAi > svg {
   cursor: pointer;
 }
 
-.searchGroupAi input {
-  display: none;
+.searchGroupAi input + svg circle {
+  transition: transform .3s ease, fill .3s ease;
+}
+
+.searchGroupAi input:checked + svg circle {
+  transform: translateX(42%);
+  fill: #56825A;
 }
 
 /* ----- User Offers ----- */

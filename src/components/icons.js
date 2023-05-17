@@ -185,7 +185,10 @@ function InfoIcon({ size = 'normal' }) {
   )
 }
 
-function ToggleOnIcon({ size = 'normal' }) {
+function ToggleOnIcon({ size = 'normal', status }) {
+  const offCx = '280'
+  const onCx = '680'
+
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -194,7 +197,8 @@ function ToggleOnIcon({ size = 'normal' }) {
       viewBox='0 96 960 960'
       fill='currentColor'
     >
-      <path d='M280 816q-100 0-170-70T40 576q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280zm0-60h400q75 0 127.5-52.5T860 576q0-75-52.5-127.5T680 396H280q-75 0-127.5 52.5T100 576q0 75 52.5 127.5T280 756zm400.941-79Q723 677 752.5 647.559t29.5-71.5Q782 534 752.559 504.5t-71.5-29.5Q639 475 609.5 504.441t-29.5 71.5Q580 618 609.441 647.5t71.5 29.5zM480 576z' />
+      <path d='M280 816q-100 0-170-70T40 576q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280zm0-60h400q75 0 127.5-52.5T860 576q0-75-52.5-127.5T680 396H280q-75 0-127.5 52.5T100 576q0 75 52.5 127.5T280 756z' />
+      <circle cx='280' cy='576' r='100' />
     </svg>
   )
 }

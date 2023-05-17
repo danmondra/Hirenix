@@ -19,8 +19,8 @@ export function SearchAside() {
           Busqueda con AI
           <InfoIcon size='small' />
         </span>
-        <ToggleOnIcon />
         <input type='checkbox' name='searchAi' />
+        <ToggleOnIcon />
       </label>
     </form>
   )

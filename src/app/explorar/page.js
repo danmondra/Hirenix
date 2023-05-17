@@ -2,7 +2,6 @@ import styles from '@/styles/explore.module.css'
 import { ExploreBG } from '@/components/exploreBg'
 import { Logo } from '@/components/logo'
 import { ArrowRight, InfoIcon, SearchIcon, ToggleOnIcon, UserAccountIcon } from '@/components/icons'
-import Link from 'next/link'
 import { Login } from '@/components/login'
 
 export default function Explore() {

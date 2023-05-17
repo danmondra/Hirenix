@@ -369,6 +369,14 @@ template {
 
   --transition-bezierPrimary: cubic-bezier(0.45,0.05,0.55,0.95);
 
+  /* ----ScrollBar */
+  --sb-track-color: rgb(0 0 0 / .2);
+  --sb-thumb-color: rgb(255 255 255 / .5);
+  --sb-size: 7px;
+
+  scrollbar-color: var(--sb-thumb-color) 
+  var(--sb-track-color);
+
   color-scheme: dark;
 }
 
@@ -484,6 +492,7 @@ a {
     max-width: 40rem;
     margin: 2rem auto 0 auto;
     border: 1px rgb(var(--color-secondaryGray), .2) solid;
+    gap: 1rem;
   }
 }
 
@@ -495,6 +504,8 @@ a {
 }
 
 .exploreHeader .navigation a {
+  text-align: center;
+  flex: 1;
   color: rgb(var(--color-secondaryGray), 1);
   position: relative;
 }
@@ -507,9 +518,9 @@ a {
   background-color: #56825A;
   left: 0;
   width: 100%;
-  height: 30px;
+  height: 35px;
   z-index: -1;
-  border-radius: 5px;
+  border-radius: 9px;
   top: 50%;
   transform: translateY(-50%);
 

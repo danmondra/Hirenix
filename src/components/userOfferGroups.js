@@ -8,8 +8,6 @@ export function UsersOfferGroups() {
       <div>
         <Link href='/'>Offer</Link>
         <Link href='/'>Offer</Link>
-        <Link href='/'>Offer</Link>
-        <Link href='/'>Offer</Link>
       </div>
     </div>
   )

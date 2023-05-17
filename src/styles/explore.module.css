@@ -82,12 +82,16 @@
 
 .aside {
   height: 100%;
+  margin: .5rem;
   padding: 1.5rem;
   display: flex;
+  gap: 4rem;
   overflow-y: auto;
   flex-direction: column;
   justify-content: space-between;
 }
+
+
 
 .main {
   border-radius: 15px;
@@ -100,6 +104,9 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  max-height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .asideHeader {
@@ -214,8 +221,22 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-height: ;
   overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.userOffers::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.userOffers::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 5px;
+}
+
+.userOffers::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 5px;
 }
 
 .offerList {
@@ -226,6 +247,8 @@
 
 .offerTitle  {
   margin: .5rem 0;
+  font-weight: 500;
+  font-size: 1.6rem;
 }
 
 .offerList h4 {
@@ -252,11 +275,17 @@
   gap: 1rem;
 }
 
+.offerList > div * {
+  margin-left: 2rem;
+}
+
 .offerList a {
   color: var(--color-primaryGray);
   padding: .5rem 0;
+
+  transition: color .3s ease;
 }
 
-.offerList > div * {
-  margin-left: 2rem;
+.offerList a:hover {
+  color: var(--color-white);
 }

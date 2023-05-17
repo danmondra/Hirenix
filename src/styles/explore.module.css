@@ -4,16 +4,15 @@
   right: 0;
   bottom: 0;
   position: fixed;
-  filter: blur(120px);
+  filter: blur(180px);
   z-index: -1;
 }
 
 .pageBg div {
   aspect-ratio: 1/1;
   position: absolute;
-  background-color: rgb(var(--color-greenBackgroundRGBExplore) / .6);
+  background-image: radial-gradient(var(--color-greenBackground), transparent 100%);
   border-radius: 50%;
-  opacity: .5;
 }
 
 .pageBg div:first-child {
@@ -84,8 +83,8 @@
 .aside {
   height: 100%;
   padding: 1.5rem;
-  overflow-y: auto;
   display: flex;
+  overflow-y: auto;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -95,6 +94,12 @@
   height: 100%;
   background-color: var(--color-exploreBackground);
   overflow-y: auto;
+}
+
+.headerContainerAside {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .asideHeader {
@@ -201,4 +206,57 @@
 
 .searchGroupAi input {
   display: none;
+}
+
+/* ----- User Offers ----- */
+
+.userOffers {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-height: ;
+  overflow-y: auto;
+}
+
+.offerList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.offerTitle  {
+  margin: .5rem 0;
+}
+
+.offerList h4 {
+  margin: .5rem 0;
+  font-weight: 400;
+}
+
+.offerList > div::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 100%;
+  border-left: 1px rgb(255 255 255 / .15) solid;
+}
+
+.offerList > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.offerList > div {
+  gap: 1rem;
+}
+
+.offerList a {
+  color: var(--color-primaryGray);
+  padding: .5rem 0;
+}
+
+.offerList > div * {
+  margin-left: 2rem;
 }

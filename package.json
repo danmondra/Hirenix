@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "standard": "^17.0.0",
     "eslint-config-next": "13.4.2",
+    "filepond": "^4.30.4",
     "next": "13.4.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-filepond": "^7.1.2",
+    "standard": "^17.0.0"
   }
 }

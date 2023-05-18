@@ -10,7 +10,7 @@ export function MainSectionLanding() {
       <div className={`container ${styles.content}`}>
         <div className={styles.info}>
           <h1 className={styles.title}>Una <span>nueva era</span> en la busqueda de <span>empleo y talento</span></h1>
-          <p className={styles.text}>Impulsada por Inteligencia Artificial</p>
+          <p className={styles.text}>Impulsada por <Link href='https://infojobs.net'>Infojobs</Link> y potenciada por Inteligencia Artificial</p>
           <div className={styles.btnsContainer}>
             <MainLink />
             <Link href='/reclutar' className={styles.btnTalento}>Buscar talento</Link>

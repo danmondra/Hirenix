@@ -4,7 +4,7 @@ import { Aside } from '@/components/aside'
 import { NavigationLinks } from '@/components/navigationLinks'
 import { Footer } from '@/components/footer'
 
-export default function Explore() {
+export default function OffersLayout({ children }) {
   return (
     <>
       <ExploreBG />
@@ -16,6 +16,7 @@ export default function Explore() {
               <NavigationLinks />
             </nav>
           </header>
+          {children}
           <Footer />
         </main>
       </div>

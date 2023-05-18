@@ -7,6 +7,7 @@ export function Footer() {
       <div className='container footerContainer'>
         <div className='footerGroup'>
           <Logo />
+          <p className='footerAcknowledgment'>Enfocamos nuestros esfuerzos en hacer que, como candidato, tengas una mejor experiencia.</p>
           <p className='footerAcknowledgment'>Gracias a <a href='https://infojobs.net'>infojobs</a> y a <a href='https://midu.dev'>midudev</a> por la iniciativa.</p>
         </div>
         <div className='footerGroup'>

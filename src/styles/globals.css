@@ -360,10 +360,19 @@ template {
   --color-secondaryGray: 87 87 87;
   --color-landingTextGreen: #88D28E;
 
+  --color-blackExplore: #323232;
+
   --color-greenBackground: #0CAE1A;
   --color-greenBackgroundRGBExplore: 12 174 26;
   --color-greenBackgroundRGB: rgb(12 174 26 / .22);
   --color-exploreBackground: #F5F5F5;
+  --color-greenPrimary: #56825A;
+  --color-greenPrimaryRGB: 86 130 90;
+
+  --color-blue: #2F78A0;
+  --color-blueRGB: 47 120 160;
+  --color-purpura: #7c3379;
+  --color-purpuraRGB: 124 51 121;
 
   --border-gray: 1px solid rgb(255 255 255 / .2);
 
@@ -391,7 +400,7 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   background-color: var(--color-black);
 }
 
@@ -724,3 +733,36 @@ a {
   }
 }
 
+.divisorLine {
+  width: 100%;
+  border-bottom: 1px rgb(0 0 0 / .1) solid;
+}
+
+.filepond--wrapper {
+  width: 100%;
+  font-size: 1.6rem !important;
+}
+
+.filepond--drop-label {
+  color: rgb(var(--color-secondaryGray) / 1);
+}
+
+.filepond--drop-label {
+  font-size: 1.6rem !important;
+}
+
+.filepond--file {
+  font-size: 1.6rem !important;
+  color: var(--color-white) !important;
+}
+
+.filepond--panel-root {
+  border: unset !important;
+  background-color: #e6e6e6 !important;
+}
+
+.filepond--item-panel {
+  background: unset !important;
+  border: unset !important;
+  outline: none !important;
+}

@@ -64,16 +64,17 @@
   .title {
     font-size: 5rem;
   }
-
-  .title span {
-
-  }
 }
 
 .text {
   color: var(--color-white);
   margin: 0;
   margin-top: 1rem;
+}
+
+.text a {
+  color: var(--color-white);
+  text-decoration: underline;
 }
 
 .btnsContainer {
@@ -175,6 +176,7 @@
 
 .jobInfo {
   display: flex;
+  align-items: center;
   gap: 1rem;
   color: var(--color-primaryGray);
   padding: .5rem .8rem;

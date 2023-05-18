@@ -298,3 +298,173 @@
 .offerList a:hover {
   color: var(--color-white);
 }
+
+
+/* -----Search Section----- */
+
+.searchSection {
+  display: flex;
+  margin: 10rem 0;
+}
+
+.searchSectionForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.searchTitle {
+  color: rgb(var(--color-secondaryGray) / 1);
+  max-width: 80rem;
+  text-align: center;
+  font-size: 4rem;
+  margin: 0 auto 10rem auto;
+}
+
+.searchTextareaContainer {
+  width: 90%;
+  max-width: 80rem;
+  margin: -3rem auto 0 auto;
+}
+
+.searchTextarea {
+  background-color: var(--color-white);
+  width: 100%;
+  border: unset;
+  border-radius: 10px;
+  resize: none;
+  padding: 2.5rem 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  outline: unset;
+  color: rgb(var(--color-secondaryGray) / 1);
+  border: 1px rgb(var(--color-secondaryGray) / .2) solid;
+}
+
+.searchTextarea::placeholder {
+  color: rgb(var(--color-secondaryGray) / .4);
+}
+
+.btnArrow {
+  background-color: unset;
+  width: max-content;
+  color: rgb(var(--color-secondaryGray) / 1);
+  border: unset;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: .5rem 3rem;
+  border: 1px transparent solid;
+
+  transition: background-color .3s ease, border-color .3s ease, color .3s ease;
+}
+
+.btnArrow:hover {
+  background-color: rgb(var(--color-secondaryGray) / .15);
+}
+
+.searchTextareaContainer .btnArrow {
+  margin: 1rem 0 0 auto;
+  padding: .3rem .8rem;
+}
+
+.searchTextareaContainer .btnArrow svg {
+  color: var(--color-greenPrimary);
+}
+
+.btnArrow.green {
+  border: 1px var(--color-greenPrimary) solid;
+}
+
+.btnArrow.green svg {
+  color: var(--color-greenPrimary);
+}
+
+.btnArrow.green:hover {
+  background-color: rgb(var(--color-greenPrimaryRGB) / .3);
+  color: var(--color-blackExplore);
+}
+
+.btnArrow.blue {
+  border: 1px var(--color-blue) solid;
+}
+
+.btnArrow.blue:hover {
+  background-color: rgb(var(--color-blueRGB) / .3);
+  color: var(--color-blackExplore);
+}
+
+.btnArrow.blue svg {
+  color: var(--color-blue);
+}
+
+.btnArrow.purpura {
+  border: 1px var(--color-purpura) solid;
+}
+
+.btnArrow.purpura:hover {
+  background-color: rgb(var(--color-purpuraRGB) / .3);
+  color: var(--color-blackExplore);
+}
+
+.btnArrow.purpura svg {
+  color: var(--color-purpura);
+}
+/* -----Cards Products----- */
+
+.cardsProductsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 998px) {
+  .cardsProductsGrid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+.cardProduct {
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px rgb(var(--color-secondaryGray) / .2) solid;
+  border-radius: 10px;
+  gap: 2rem;
+}
+
+.cardProduct header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgb(var(--color-secondaryGray) / 1);
+}
+
+.cardProduct header svg {
+  display: block;
+  aspect-ratio: 1/1;
+}
+
+.cardProduct.blue header svg {
+  color: var(--color-blue);
+}
+
+.cardProduct.green header svg {
+  color: var(--color-greenPrimary);
+}
+
+.cardProduct.purpura header svg {
+  color: var(--color-purpura);
+}
+
+.cardProduct h3 {
+  margin: 0;
+  font-size: 2rem;
+}

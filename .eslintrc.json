@@ -3,6 +3,7 @@
   "rules": {
     "space-before-function-paren": "off",
     "camelcase": "off",
-    "keyword-spacing": "off"
+    "keyword-spacing": "off",
+    "no-img-element": "off"
   }
 }

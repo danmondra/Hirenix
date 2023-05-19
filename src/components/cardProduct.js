@@ -8,19 +8,19 @@ export function CardProduct({ product }) {
       title: 'Practica en el laboratorio',
       textBtn: 'Practicar',
       color: 'blue',
-      icon: <Labs size='large' />
+      icon: <Labs size='normal' />
     },
     search: {
       title: 'Busca acorde a tu perfil',
       textBtn: 'Buscar',
       color: 'purpura',
-      icon: <MagicSearch size='large' />
+      icon: <MagicSearch size='normal' />
     },
     cv: {
       title: 'Sube y mejora tu CV',
       textBtn: 'Subir',
       color: 'green',
-      icon: <Scan size='large' />
+      icon: <Scan size='normal' />
     }
   }
 

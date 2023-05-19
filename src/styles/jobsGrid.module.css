@@ -1,54 +1,113 @@
 .searchByJobs {
-  display: none;
   bottom: 4rem;
   left: 0;
+}
+
+.searchByJobs.landing {
+  display: none;
 }
 
 @media (min-width: 768px) {
   .searchByJobs {
     display: block;
     margin: 0;
+  }
+
+  .searchByJobs.landing {
+    display: block;
     position: absolute;
   }
 }
 
 .title {
-  color: var(--color-primaryGray);
-  font-weight: 400;
-  font-size: 1.6rem;
+  color: var(--color-blackExplore);
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin: 0;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 998px) {
+  .title {
+    font-size: 3rem;
+    margin-bottom: 8rem;
+  }
+
+  .landing .title {
+    color: var(--color-primaryGray);
+    font-weight: 400;
+    margin: 1.6rem 0;
+    font-size: 1.6rem;
+  }
 }
 
 .jobsGrid {
   display: grid;
-  color: var(--color-primaryGray);
+  color: rgb(var(--color-secondaryGray) / 1);
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 3rem 2rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 998px) {
   .jobsGrid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8rem 4rem;
+  }
+
+  .landing .jobsGrid {
+    color: var(--color-primaryGray);
+    gap: 2rem;
     grid-template-columns: repeat(6, max-content);
   }
 }
 
-.jobsGrid svg {
-  fill: currentColor;
-}
-
 .job {
-  color: var(--color-primaryGray);
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-size: 1.2rem;
   gap: .5rem;
   padding: 0 .5rem;
+  color: inherit;
+  font-size: 1.2rem;
 
   transition: transform .3s ease, color .3s ease;
 }
 
+.job:nth-of-type(n+7) {
+  display: flex;
+}
+
 .job:hover {
   transform: translateY(-.5rem);
-  color: var(--color-white)
+}
+
+.landing .job:hover {
+  color: var(--color-white);
+}
+
+@media (min-width: 998px) {
+  .job {
+    font-size: 1.6rem;
+    display: flex;
+    font-weight: 500;
+  }
+}
+
+.job svg {
+  width: 32px;
+  height: 32px;
+  aspect-ratio: 1/1;
+}
+
+@media (min-width: 998px) {
+  .job svg {
+    width: 62px;
+    height: 62px;
+    aspect-ratio: 1/1;
+  }
+}
+.landing .job svg {
+  width: unset;
+  height: unset;
 }

@@ -92,6 +92,11 @@
     display: flex;
     font-weight: 500;
   }
+
+  .landing .job {
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
 }
 
 .job svg {

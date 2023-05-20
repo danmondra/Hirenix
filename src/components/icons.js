@@ -229,6 +229,79 @@ function Question({ size = 'normal' }) {
   )
 }
 
+function Modality({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 96 960 960'
+      fill='currentColor'
+    >
+      <title>Modalidad</title>
+      <path d='M480 758q103.95-83.86 156.975-161.43Q690 519 690 452q0-59-21.5-100t-53.009-66.88q-31.51-25.881-68.271-37.5Q510.459 236 480 236q-30.459 0-67.22 11.62-36.761 11.619-68.271 37.5Q313 311 291.5 352T270 452q0 67 53.025 144.57T480 758zm0 76Q343 731 276.5 636.801q-66.5-94.2-66.5-184.554Q210 384 234.5 332.5T298 246q39-35 86.98-52.5 47.98-17.5 95-17.5T575 193.5q48 17.5 87 52.5t63.5 86.533Q750 384.066 750 452.456 750 543 683.5 637 617 731 480 834zm.089-318Q509 516 529.5 495.411q20.5-20.588 20.5-49.5Q550 417 529.411 396.5q-20.588-20.5-49.5-20.5Q451 376 430.5 396.589q-20.5 20.588-20.5 49.5Q410 475 430.589 495.5q20.588 20.5 49.5 20.5zM210 976v-60h540v60H210zm270-524z' />
+    </svg>
+  )
+}
+
+function Workday({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 96 960 960'
+      fill='currentColor'
+    >
+      <title>Contrato</title>
+      <path d='M140 876V383v493zm0 60q-24 0-42-18t-18-42V383q0-24 18-42t42-18h190v-87q0-23 18-41.5t42-18.5h180q24 0 42 18.5t18 41.5v87h190q24 0 42 18t18 42v238q-14-11-28.5-20T820 584V383H140v493.5-.5h334.455Q478 892 484 907t14 29H140zm250-613h180v-87H390v87zm330 686q-79 0-136-57t-57-136q0-79 57-136t136-57q79 0 136 57t57 136q0 79-57 136t-136 57zm74-92l27-27-84-76V690h-42v135.776L794 917z' />
+    </svg>
+  )
+}
+
+function Time({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 96 960 960'
+      fill='currentColor'
+    >
+      <title>Publicación</title>
+      <path d='M627 769l45-45-159-160V363h-60v225l174 181zM480 976q-82 0-155-31.5t-127.5-86Q143 804 111.5 731T80 576q0-82 31.5-155t86-127.5Q252 239 325 207.5T480 176q82 0 155 31.5t127.5 86Q817 348 848.5 421T880 576q0 82-31.5 155t-86 127.5Q708 913 635 944.5T480 976zm0-400zm0 340q140 0 240-100t100-240q0-140-100-240T480 236q-140 0-240 100T140 576q0 140 100 240t240 100z' />
+    </svg>
+  )
+}
+
+function Science({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 96 960 960'
+      fill='currentColor'
+    >
+      <path d='M172 936q-41.777 0-59.388-39Q95 858 124 826l248-280V276h-52q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T320 216h320q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T640 276h-52v270l248 280q29 32 11.388 71-17.611 39-59.388 39H172zm-12-60h640L528 568V276h-96v292L160 876zm318-300z' />
+    </svg>
+  )
+}
+
+function Interview({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 96 960 960'
+      fill='currentColor'
+    >
+      <path d='M180 936q-24.75 0-42.375-17.625T120 876V276q0-24.75 17.625-42.375T180 216h205q5-35 32-57.5t63-22.5q36 0 63 22.5t32 57.5h205q24.75 0 42.375 17.625T840 276v600q0 24.75-17.625 42.375T780 936H180zm0-60h600V276H180v600zm100-100h273v-60H280v60zm0-170h400v-60H280v60zm0-170h400v-60H280v60zm200-177q14 0 24.5-10.5T515 224q0-14-10.5-24.5T480 189q-14 0-24.5 10.5T445 224q0 14 10.5 24.5T480 259zM180 876V276v600z' />
+    </svg>
+  )
+}
+
 export {
   ArrowRight,
   Location,
@@ -244,5 +317,10 @@ export {
   InfoIcon,
   ToggleOnIcon,
   Save,
-  Question
+  Question,
+  Modality,
+  Workday,
+  Time,
+  Science,
+  Interview
 }

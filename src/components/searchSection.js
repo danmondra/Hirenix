@@ -27,7 +27,7 @@ export function SearchSection() {
           </BtnArrow>
         </figure>
 
-        <section className={`container ${styles.cardsProductsGrid}`}>
+        <section className={`containerExplore ${styles.cardsProductsGrid}`}>
 
           <CardProduct product='labs' />
           <CardProduct product='search' />

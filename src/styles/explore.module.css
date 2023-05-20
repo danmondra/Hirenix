@@ -85,12 +85,18 @@
   margin: .5rem;
   padding: 1.5rem;
   display: flex;
+  display: none;
   gap: 4rem;
   overflow-y: auto;
   flex-direction: column;
   justify-content: space-between;
 }
 
+@media (min-width: 998px) {
+  .aside {
+    display: flex;
+  }
+}
 
 
 .main {

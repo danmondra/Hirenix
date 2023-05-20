@@ -413,16 +413,29 @@ a {
   margin: 0 auto;
 }
 
+.containerExplore {
+  width: 85%;
+  margin: 0 auto;
+}
+
 @media (min-width: 768px) {
   .container {
     width: 95%;
     max-width: 180rem;
+  }
+
+  .containerExplore {
+    width: 90%;
   }
 }
 
 @media (min-width: 1500px) {
   .container {
     width: 90%
+  }
+
+  .containerExplore {
+    width: 85%;
   }
 }
 

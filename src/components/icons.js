@@ -302,6 +302,37 @@ function Interview({ size = 'normal' }) {
   )
 }
 
+function Filter({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 96 960 960'
+      fill='currentColor'
+    >
+      <path d='M400 816v-60h160v60H400zM240 606v-60h480v60H240zM120 396v-60h720v60H120z' />
+    </svg>
+  )
+}
+
+function Expand({ size = 'normal', rotate }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 96 960 960'
+      fill='currentColor'
+      style={{
+        transform: rotate ? 'rotate(180deg)' : 'unset'
+      }}
+    >
+      <path d='M480 711L240 471l43-43 197 198 197-197 43 43-240 239z' />
+    </svg>
+  )
+}
+
 export {
   ArrowRight,
   Location,
@@ -322,5 +353,7 @@ export {
   Workday,
   Time,
   Science,
-  Interview
+  Interview,
+  Filter,
+  Expand
 }

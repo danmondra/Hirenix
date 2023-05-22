@@ -150,6 +150,11 @@
   gap: 3rem;
 }
 
+.interview .searchForm {
+  gap: 2rem;
+  flex: 1;
+}
+
 .bgAnimationStrokes {
   max-width: 1200px;
   min-width: 700px;
@@ -185,6 +190,12 @@
   border-bottom: 1px var(--color-white) solid;
 }
 
+.interview .searchGroupInput:focus-within,
+.interview .searchGroupInput:hover {
+  color: rgb(var(--color-secondaryGray) / 1);
+  border-bottom: 1px rgb(var(--color-secondaryGray) / 1) solid;
+}
+
 .searchInput {
   flex: 1;
   background: unset;
@@ -194,6 +205,10 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.interview .searchInput {
+  color: rgb(var(--color-secondaryGray) / 1)
 }
 
 .searchGroupInput:hover .searchSubmit,
@@ -222,6 +237,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 30rem;
+}
+
+.technicalTest .searchGroupAi {
+  display: none;
 }
 
 .searchGroupAi span {

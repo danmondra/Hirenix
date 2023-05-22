@@ -1,0 +1,141 @@
+.laboratory {
+  margin: 10rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-blackExplore);
+}
+
+.title {
+  font-size: 4rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header svg {
+  color: var(--color-blue);
+}
+
+.subtitleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--color-blackExplore);
+}
+
+.subtitle {
+  color: var(--color-blackExplore);
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin: 0;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 998px) {
+  .subtitle {
+    font-size: 3rem;
+  }
+}
+
+.subtitleContainer .subtitle {
+  margin: 0;
+}
+
+.cardProductOption {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px rgb(0 0 0 / .1) solid;
+  color: rgb(var(--color-secondaryGray) / 1);
+  padding: 4rem 3rem;
+  transition: background-color .3s ease;
+}
+
+.cardProductOption:hover:not(:last-child) {
+  background-color: rgb(0 0 0 / .05);
+}
+
+.cardProductTitle {
+  margin: 0;
+}
+
+.rolesGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 998px) {
+  .rolesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 2rem;
+  }
+}
+
+.role {
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  border: 3px rgb(var(--color-secondaryGray) / .2) solid;
+  border-radius: 10px;
+  gap: 2rem;
+  color: rgb(var(--color-secondaryGray) / 1);
+  transition: background-color .3s ease;
+}
+
+.role:hover {
+  background-color: rgb(0 0 0 / .05);
+}
+
+@media (min-width: 998px) {
+  .role:last-child {
+    grid-row: 3/4;
+    grid-column: 2/4;
+  }
+}
+
+.role svg {
+  width: 48px;
+  display: block;
+  aspect-ratio: 1/1;
+}
+
+.role > div {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.role:last-of-type > div {
+  width: 100%;
+}
+
+.roleName {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: rgb(var(--color-secondaryGray) / 1);
+}
+
+.discover {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: rgb(var(--color-secondaryGray) / 1);
+}
+
+.discover h3 {
+  margin: 0;
+}
+
+.discover p {
+  margin: 0;
+}

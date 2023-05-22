@@ -544,6 +544,7 @@ a {
   position: relative;
 }
 
+.exploreMain .navigation .active::before,
 .exploreMain .navigation a::before {
   opacity: 0;
   display: block;
@@ -572,8 +573,8 @@ a {
 
 .exploreMain .navigation a:hover,
 .exploreMain .navigation a:hover::before,
-.exploreMain .navigation a:nth-of-type(2),
-.exploreMain .navigation a:nth-of-type(2)::before {
+.exploreMain .navigation .active,
+.exploreMain .navigation .active::before {
   opacity: 1;
   color: var(--color-white);
 }
@@ -786,6 +787,11 @@ a {
 
 .divisorLineGreen {
   border: 3px var(--color-greenPrimary) solid;
+}
+
+.divisorLineBlue {
+  width: 100%;
+  border: 3px var(--color-blue) solid;
 }
 
 

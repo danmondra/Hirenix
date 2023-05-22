@@ -1,0 +1,53 @@
+.section {
+  margin: 10rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.steps {
+  width: 100%;
+  display: flex;
+  position: relative;
+  border-top: 1px rgb(0 0 0 / .1) solid;
+}
+
+.stepContainer {
+  flex: 1;
+  position: relative;
+  border: 3px transparent solid;
+
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.stepContainer.completed {
+  border: 3px var(--color-greenPrimary) solid;
+}
+
+.stepContainer .step {
+  position: relative;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  aspect-ratio: 1/1;
+  border: unset;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  position: absolute;
+  background-color: var(--color-greenPrimary);
+  color: var(--color-white);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepContainer:last-of-type {
+  position: absolute;
+  top: unset;
+  right: 0;
+}

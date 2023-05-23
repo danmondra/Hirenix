@@ -2,10 +2,27 @@
   margin: 10rem auto;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 8rem;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.time {
+  color: rgb(var(--color-secondaryGray) / 1);
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.time span {
+  font-size: 4rem;
+  font-weight: 700;
 }
 
 .steps {
+  margin-top: 2rem;
   width: 100%;
   display: flex;
   position: relative;
@@ -50,4 +67,56 @@
   position: absolute;
   top: unset;
   right: 0;
+}
+
+
+/* ------Form Question------ */
+
+.formAnswer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  color-scheme: auto;
+}
+
+.question {
+  color: rgb(var(--color-secondaryGray) / 1);
+  max-width: 65ch;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.answersGroup {
+  border: unset;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: rgb(var(--color-secondaryGray) / 1);
+  margin: 0;
+  padding: 0;
+}
+
+.answersGroup textarea {
+  border-radius: 5px;
+  max-width: 65ch;
+  background-color: unset;
+  border: 1px rgb(var(--color-secondaryGray) / .2) solid;
+  padding: .5rem;
+  outline: unset;
+}
+
+.answersGroup textarea:hover,
+.answersGroup textarea:focus-within {
+  border: 1px rgb(var(--color-secondaryGray) / .8) solid;
+}
+
+.radioContainer {
+  border: unset;
+  background-color: unset;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.6rem;
 }

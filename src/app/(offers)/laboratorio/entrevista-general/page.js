@@ -1,26 +1,32 @@
 'use client'
 
-import { Interview as InterviewIcon } from '@/components/icons'
+import { useState } from 'react'
 import styles from '@/styles/laboratorySegments.module.css'
 import labStyles from '@/styles/laboratory.module.css'
-import { useState } from 'react'
+import { Interview as InterviewIcon } from '@/components/icons'
+import { StepsBar } from '@/components/setpsBar'
+import { generalInterview } from '@/consts/generalInterview'
+import { AnswersForm } from '@/components/answersForm'
 
 export default function Interview() {
-  const [completed, setCompleted] = useState(0)
+  const [fullInterview, setFullInterview] = useState(generalInterview)
+  const [actualQuestion, setActualQuestion] = useState(fullInterview[0])
 
   return (
     <section className={`containerExplore ${styles.section}`}>
-      <h1 className={labStyles.title}>
-        Entrevista General
-        <InterviewIcon />
-      </h1>
-      <div className={styles.steps}>
-        {[1, 2, 3, 4, 5, 6].map(p => (
-          <div className={`${styles.stepContainer} ${p < completed ? styles.completed : ''}`} key={p}>
-            <button className={styles.step} onClick={() => setCompleted(p)}>{p}</button>
-          </div>
-        ))}
+      <div className={styles.titleContainer}>
+        <h1 className={labStyles.title}>
+          Entrevista General
+          <InterviewIcon />
+        </h1>
+        <p className={styles.time}>Tiempo Restante: <span>23:20</span></p>
       </div>
+      <StepsBar interview={fullInterview} actualQuestion={actualQuestion} setQuestion={setActualQuestion} />
+      <AnswersForm
+        interview={fullInterview}
+        actualQuestion={actualQuestion}
+        setActualQuestion={setActualQuestion}
+      />
     </section>
   )
 }

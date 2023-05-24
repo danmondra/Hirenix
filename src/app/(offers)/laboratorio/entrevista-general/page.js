@@ -21,7 +21,7 @@ export default function Interview() {
         </h1>
         <p className={styles.time}>Tiempo Restante: <span>23:20</span></p>
       </div>
-      <StepsBar interview={fullInterview} actualQuestion={actualQuestion} setQuestion={setActualQuestion} />
+      <StepsBar interview={fullInterview} actualQuestion={actualQuestion} setQuestion={setActualQuestion} setFullInterview={setFullInterview} />
       <AnswersForm
         interview={fullInterview}
         actualQuestion={actualQuestion}

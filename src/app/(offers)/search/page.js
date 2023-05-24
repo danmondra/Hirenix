@@ -4,8 +4,6 @@ import { CardOffer } from '@/components/cardOffer'
 import { CardOfferSelect } from '@/components/cardOfferSelect'
 
 export default function Search({ searchParams }) {
-  console.log(searchParams)
-
   return (
     <section className={`containerExplore ${styles.search}`}>
       <header>
@@ -14,20 +12,9 @@ export default function Search({ searchParams }) {
         <Filters />
       </header>
       <section className={styles.offersContainer}>
-        {
-          searchParams?.select
-            ? <>
-              <CardOfferSelect />
-              <CardOfferSelect />
-              <CardOfferSelect />
-              </>
-            : <>
-              <CardOffer />
-              <CardOffer />
-              <CardOffer />
-              </>
-
-        }
+        {searchParams?.select
+          ? <> <CardOfferSelect /> <CardOfferSelect /> <CardOfferSelect /> </>
+          : <> <CardOffer /> <CardOffer /> <CardOffer /> </>}
       </section>
     </section>
   )

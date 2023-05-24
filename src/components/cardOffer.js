@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import offerStyles from '@/styles/offer.module.css'
-import { CardOfferCharacteristics } from '@/components/offerCharacteristics'
+import { CardOfferCharacteristics } from '@/components/offer/offerCharacteristics'
 import { BtnGetCompatibility } from '@/components/btnGetCompatibility'
 import { HeaderOfferCard } from '@/components/headerOfferCard'
 import { SaveIcon } from '@/components/icons/icons'

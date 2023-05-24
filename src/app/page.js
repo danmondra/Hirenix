@@ -1,7 +1,7 @@
-import { HeaderLanding } from '@/components/headerLanding'
-import { MainSectionLanding } from '@/components/mainSectionLanding'
-import { PoweredSection } from '@/components/poweredSection'
-import { ProductsSection } from '@/components/productsSection'
+import { HeaderLanding } from '@/components/landing/headerLanding'
+import { MainSectionLanding } from '@/components/landing/mainSectionLanding'
+import { PoweredSection } from '@/components/landing/poweredSection'
+import { ProductsSection } from '@/components/landing/productsSection'
 import { Footer } from '@/components/footer'
 
 export default function Home() {

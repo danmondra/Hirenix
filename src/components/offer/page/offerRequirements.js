@@ -1,5 +1,5 @@
 import offerStyles from '@/styles/offer.module.css'
-import { OfferCharacteristic } from '@/components/offerCharacteristic'
+import { OfferCharacteristic } from '@/components/offer/offerCharacteristic'
 import { ExperienceIcon, LocationIcon, SalaryIcon } from '@/components/icons/icons'
 
 export function OfferRequirements() {

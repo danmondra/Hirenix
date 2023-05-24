@@ -1,6 +1,6 @@
-import { SalaryIcon, ExperienceIcon, ModalityIcon, LocationIcon, WorkdayIcon, TimeIcon } from '@/components/icons/icons'
 import offerStyles from '@/styles/offer.module.css'
-import { OfferCharacteristic } from '@/components/offerCharacteristic'
+import { OfferCharacteristic } from '@/components/offer/offerCharacteristic'
+import { SalaryIcon, ExperienceIcon, ModalityIcon, LocationIcon, WorkdayIcon, TimeIcon } from '@/components/icons/icons'
 
 export function CardOfferCharacteristics() {
   return (

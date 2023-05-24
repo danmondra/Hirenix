@@ -1,6 +1,6 @@
 import styles from '@/styles/landingPage.module.css'
 import { PoweredLogos } from '@/components/poweredLogos'
-import { MainLink } from './mainLink'
+import { MainLink } from '@/components/landing/mainLink'
 
 export function PoweredSection() {
   return (

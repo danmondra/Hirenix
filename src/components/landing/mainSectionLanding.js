@@ -1,8 +1,8 @@
+import Link from 'next/link'
 import styles from '@/styles/landingPage.module.css'
 import { JobsGrid } from '@/components/jobsGrid'
-import { JobExampleLanding } from '@/components/jobExampleLanding'
-import Link from 'next/link'
-import { MainLink } from './mainLink'
+import { JobExampleLanding } from '@/components/landing/jobExampleLanding'
+import { MainLink } from '@/components/landing/mainLink'
 
 export function MainSectionLanding() {
   return (

@@ -1,6 +1,6 @@
 import offerStyles from '@/styles/offer.module.css'
-import { OfferCharacteristics } from '@/components/offerCharacteristics'
-import { OfferActions } from '@/components/offerActions'
+import { OfferCharacteristics } from '@/components/offer/offerCharacteristics'
+import { OfferActions } from '@/components/offer/page/offerActions'
 
 export function OfferHeader() {
   return (

@@ -29,6 +29,23 @@ export function CardOfferCharacteristics() {
   )
 }
 
+export function CardOfferSelectCharacteristics() {
+  return (
+    <div className={offerStyles.characteristicsGroup}>
+      <OfferCharacteristic
+        icon={<Salary size='small' />}
+      >
+        900€ - 1.800€
+      </OfferCharacteristic>
+      <OfferCharacteristic
+        icon={<Experience size='small' />}
+      >
+        Sin experiencia
+      </OfferCharacteristic>
+    </div>
+  )
+}
+
 export function OfferCharacteristics() {
   return (
     <div className={offerStyles.characteristicsGroup}>

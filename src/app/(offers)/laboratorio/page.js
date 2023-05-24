@@ -20,8 +20,10 @@ export default function Laboratory() {
       <TechnicalTestsSection />
       <hr className='divisorLineBlue' />
       <section className={styles.discover}>
-        <h3 className={styles.subtitle}>Descubre tu puesto</h3>
-        <p className={styles.cardProductDescription}>Completa el cuestionario sobre tus habilidades, capacidades y experiencias para recibir recomendaciones personalizadas y descubrir qué trabajos se adaptan mejor a ti.</p>
+        <div className={styles.discoverTextContainer}>
+          <h3 className={styles.subtitle}>Descubre tu puesto</h3>
+          <p className={styles.cardProductDescription}>Completa el cuestionario sobre tus habilidades, capacidades y experiencias para recibir recomendaciones personalizadas y descubrir qué trabajos se adaptan mejor a ti.</p>
+        </div>
         <BtnArrow
           color='blue'
         >

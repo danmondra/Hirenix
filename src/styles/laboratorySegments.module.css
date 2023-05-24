@@ -120,3 +120,25 @@
   gap: 1rem;
   font-size: 1.6rem;
 }
+
+/* -------- Techincal Test -------- */
+
+.puestoContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.puestoName {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(var(--color-secondaryGray) / 1);
+  display: flex;
+  align-items: center;
+  gap: 2rem
+}
+
+.puestoName svg {
+  width: 32px;
+  height: 32px;
+}

@@ -21,6 +21,13 @@
   background-color: rgb(0 0 0 / .05);
 }
 
+.cardSelect {
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .card header {
   display: flex;
   gap: 2rem;
@@ -69,6 +76,26 @@
   margin: 0;
   color: var(--color-greenPrimary);
   font-weight: 700;
+}
+
+.select {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  font-size: 1.8rem;
+  gap: 1rem;
+  color: rgb(var(--color-secondaryGray) / 1);
+  border-bottom: 3px transparent solid;
+
+  transition: border-color .3s ease;
+}
+
+.cardSelect:hover > .select {
+  border-bottom: 3px var(--color-greenPrimary) solid;
+}
+
+.select svg {
+  color: var(--color-greenPrimary);
 }
 
 .cardActions {
@@ -150,6 +177,10 @@
   margin: 4rem 0;
 }
 
+.cardSelect .cardInfo {
+  margin: 0;
+}
+
 @media (min-width: 998px) {
   .cardInfo {
     flex-direction: row;
@@ -166,6 +197,10 @@
 @media (min-width: 998px) {
   .characteristicsGroup {
     margin-left: 12rem;
+  }
+
+  .cardSelect .characteristicsGroup {
+    margin: 0;
   }
 
   .offer .characteristicsGroup {

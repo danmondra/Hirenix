@@ -18,7 +18,7 @@ export function TechnicalTestsSection() {
       </div>
       <div className={styles.rolesGrid}>
         {technicalRoles.map(({ id, name, key, icon }) => (
-          <Link href={`/${key}`} className={styles.role} key={id}>
+          <Link href={`/laboratorio/prueba-tecnica/${key}`} className={styles.role} key={id}>
             {icon}
             <p className={styles.roleName}>
               {name}

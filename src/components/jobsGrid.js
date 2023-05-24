@@ -1,70 +1,70 @@
 import Link from 'next/link'
 import styles from '@/styles/jobsGrid.module.css'
 import {
-  Developer,
-  Designer,
-  Engineer,
-  Construction,
-  Management,
-  Legal,
-  Support,
-  Health,
-  Manufacturing,
-  Accountant,
-  Mechanical,
-  Education,
-  AllJobs
-} from '@/components/jobIcons.js'
+  DeveloperIcon,
+  DesignerIcon,
+  EngineerIcon,
+  ConstructionIcon,
+  ManagementIcon,
+  LegalIcon,
+  SupportIcon,
+  HealthIcon,
+  ManufacturingIcon,
+  AccountantIcon,
+  MechanicalIcon,
+  EducationIcon,
+  AllJobsIcon
+} from '@/components/icons/jobIcons.js'
 
 export function JobsGrid({ length }) {
   const jobs = [
     {
       name: 'Desarrollo',
-      icon: <Developer />
+      icon: <DeveloperIcon />
     },
     {
       name: 'Diseño',
-      icon: <Designer />
+      icon: <DesignerIcon />
     },
     {
       name: 'Ingeniería',
-      icon: <Engineer />
+      icon: <EngineerIcon />
     },
     {
       name: 'Construcción',
-      icon: <Construction />
+      icon: <ConstructionIcon />
     },
     {
       name: 'Administración',
-      icon: <Management />
+      icon: <ManagementIcon />
     },
     {
       name: 'Servicios Legales',
-      icon: <Legal />
+      icon: <LegalIcon />
     },
     {
       name: 'Soporte al cliente',
-      icon: <Support />
+      icon: <SupportIcon />
     },
     {
       name: 'Sanidad y salud',
-      icon: <Health />
+      icon: <HealthIcon />
     },
     {
       name: 'Calidad y producción',
-      icon: <Manufacturing />
+      icon: <ManufacturingIcon />
     },
     {
       name: 'Contabilidad y finanzas',
-      icon: <Accountant />
+      icon: <AccountantIcon />
     },
     {
       name: 'Mecánica',
-      icon: <Mechanical />
+      icon: <MechanicalIcon />
     },
     {
       name: 'Educación',
-      icon: <Education />
+      icon: <EducationIcon />
     }
   ]
 
@@ -89,7 +89,7 @@ export function JobsGrid({ length }) {
               href='/'
               className={styles.job}
             >
-              <AllJobs />
+              <AllJobsIcon />
               Todos
             </Link>
         }

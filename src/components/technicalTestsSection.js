@@ -2,8 +2,8 @@ import styles from '@/styles/laboratory.module.css'
 import Link from 'next/link'
 import exploreStyles from '@/styles/explore.module.css'
 import { SearchAside } from '@/components/searchAside'
-import { AllJobs } from '@/components/jobIcons'
 import { Science } from '@/components/icons'
+import { AllJobsIcon } from '@/components/icons/jobIcons'
 import { technicalRoles } from '@/consts/technicalRoles'
 
 export function TechnicalTestsSection() {
@@ -26,7 +26,7 @@ export function TechnicalTestsSection() {
           </Link>
         ))}
         <article className={styles.role}>
-          <AllJobs />
+          <AllJobsIcon />
           <div>
             <p className={styles.roleName}>
               Otro Rol

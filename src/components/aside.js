@@ -1,9 +1,9 @@
 import styles from '@/styles/explore.module.css'
 import { Logo } from '@/components/logo'
-import { UserAccountIcon } from '@/components/icons'
 import { Login } from '@/components/login'
 import { UserOffers } from '@/components/userOffers'
 import { SearchAside } from '@/components/searchAside'
+import { UserAccountIcon } from '@/components/icons/icons'
 
 export function Aside() {
   return (

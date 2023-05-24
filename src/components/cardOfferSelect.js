@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import offerStyles from '@/styles/offer.module.css'
-import { CardOfferSelectCharacteristics } from './offerCharacteristics'
-import { ArrowRight } from './icons'
-import { HeaderOfferCard } from './headerOfferCard'
+import { CardOfferSelectCharacteristics } from '@/components/offerCharacteristics'
+import { HeaderOfferCard } from '@/components/headerOfferCard'
+import { ArrowRightIcon } from '@/components/icons/icons'
 
 export function CardOfferSelect() {
   return (
@@ -14,7 +14,7 @@ export function CardOfferSelect() {
         </div>
         <p className={offerStyles.select}>
           Seleccionar
-          <ArrowRight size='medium' />
+          <ArrowRightIcon size='medium' />
         </p>
       </Link>
     </article>

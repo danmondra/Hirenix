@@ -1,5 +1,5 @@
 import { BtnGetCompatibility } from '@/components/btnGetCompatibility'
-import { Interview, Science } from '@/components/icons'
+import { InterviewIcon, ScienceIcon } from '@/components/icons/icons'
 import offerStyles from '@/styles/offer.module.css'
 
 export function OfferActions() {
@@ -8,11 +8,11 @@ export function OfferActions() {
       <div className={offerStyles.buttonsContainer}>
         <BtnGetCompatibility />
         <button className={`${offerStyles.actionButton} ${offerStyles.blue}`}>
-          <Science size='medium' />
+          <ScienceIcon size='medium' />
           <span>Prueba Técnica</span>
         </button>
         <button className={`${offerStyles.actionButton} ${offerStyles.purpura}`}>
-          <Interview size='medium' />
+          <InterviewIcon size='medium' />
           <span>Entrevista Simulada</span>
         </button>
       </div>

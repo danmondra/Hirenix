@@ -1,14 +1,14 @@
-import styles from '@/styles/laboratory.module.css'
 import Link from 'next/link'
-import { Interview } from '@/components/icons'
+import styles from '@/styles/laboratory.module.css'
 import { SearchAside } from '@/components/searchAside'
+import { InterviewIcon } from '@/components/icons/icons'
 
 export function InterviewsSection() {
   return (
     <section className={styles.interview}>
       <h2 className={styles.subtitle}>
         Entrevistas Simuladas
-        <Interview size='medium' />
+        <InterviewIcon size='medium' />
       </h2>
       <Link href='/laboratorio/entrevista-general' className={styles.cardProductOption}>
         <h3 className={styles.cardProductTitle}>

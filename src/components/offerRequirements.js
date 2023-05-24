@@ -1,6 +1,6 @@
 import offerStyles from '@/styles/offer.module.css'
 import { OfferCharacteristic } from '@/components/offerCharacteristic'
-import { Experience, Location, Salary } from '@/components/icons'
+import { ExperienceIcon, LocationIcon, SalaryIcon } from '@/components/icons/icons'
 
 export function OfferRequirements() {
   const text = `
@@ -42,17 +42,17 @@ También a destacar del puesto, su dinamismo, las actividades extra laborales (t
       <div>
         <div className={offerStyles.characteristicsGroup}>
           <OfferCharacteristic
-            icon={<Location size='small' />}
+            icon={<LocationIcon size='small' />}
           >
             Madrid, España
           </OfferCharacteristic>
           <OfferCharacteristic
-            icon={<Salary size='small' />}
+            icon={<SalaryIcon size='small' />}
           >
             900€ - 1.800€
           </OfferCharacteristic>
           <OfferCharacteristic
-            icon={<Experience size='small' />}
+            icon={<ExperienceIcon size='small' />}
           >
             Sin experiencia
           </OfferCharacteristic>

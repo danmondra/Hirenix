@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import { ArrowRight } from './icons'
+import { ArrowRightIcon } from '@/components/icons/icons'
 
 export function MainLink() {
   return (
     <Link href='/explorar' className='linkExplore'>
       Explorar empleos
-      <ArrowRight size='medium' />
+      <ArrowRightIcon size='medium' />
     </Link>
   )
 }

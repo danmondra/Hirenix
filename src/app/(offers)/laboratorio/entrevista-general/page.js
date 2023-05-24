@@ -3,10 +3,10 @@
 import { useState } from 'react'
 import styles from '@/styles/laboratorySegments.module.css'
 import labStyles from '@/styles/laboratory.module.css'
-import { Interview as InterviewIcon } from '@/components/icons'
 import { StepsBar } from '@/components/setpsBar'
 import { generalInterview } from '@/consts/generalInterview'
 import { AnswersForm } from '@/components/answersForm'
+import { InterviewIcon } from '@/components/icons/icons'
 
 export default function Interview() {
   const [fullInterview, setFullInterview] = useState(generalInterview)

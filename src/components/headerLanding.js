@@ -1,7 +1,7 @@
-import { Logo } from './logo'
-import { NavigationLinks } from './navigationLinks'
-import { Menu } from './icons'
-import { Login } from './login'
+import { Logo } from '@/components/logo'
+import { NavigationLinks } from '@/components/navigationLinks'
+import { Login } from '@/components/login'
+import { MenuIcon } from '@/components/icons/icons'
 
 export function HeaderLanding() {
   return (
@@ -15,7 +15,7 @@ export function HeaderLanding() {
         </nav>
         <Login />
         <button className='btnMenu' aria-label='Menú'>
-          <Menu />
+          <MenuIcon />
         </button>
       </div>
     </header>

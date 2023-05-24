@@ -1,5 +1,5 @@
 import styles from '@/styles/explore.module.css'
-import { ArrowRight, InfoIcon, SearchIcon, ToggleOnIcon } from '@/components/icons'
+import { ArrowRightIcon, InfoIcon, SearchIcon, ToggleOnIcon } from '@/components/icons/icons'
 
 export function SearchAside() {
   return (
@@ -10,7 +10,7 @@ export function SearchAside() {
         </label>
         <input type='search' id='searchAside' placeholder='Puesto, empresa o palabra clave' className={styles.searchInput} />
         <label className={styles.searchSubmit}>
-          <ArrowRight size='small' />
+          <ArrowRightIcon size='small' />
           <input type='submit' value='' />
         </label>
       </fieldset>

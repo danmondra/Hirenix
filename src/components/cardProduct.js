@@ -1,6 +1,6 @@
 import styles from '@/styles/explore.module.css'
-import { Labs, MagicSearch, Scan } from '@/components/icons'
 import { BtnArrow } from '@/components/btnArrow'
+import { LabsIcon, MagicSearchIcon, ScanIcon } from '@/components/icons/icons'
 
 export function CardProduct({ product }) {
   const products = {
@@ -8,19 +8,19 @@ export function CardProduct({ product }) {
       title: 'Practica en el laboratorio',
       textBtn: 'Practicar',
       color: 'blue',
-      icon: <Labs size='normal' />
+      icon: <LabsIcon size='normal' />
     },
     search: {
       title: 'Busca acorde a tu perfil',
       textBtn: 'Buscar',
       color: 'purpura',
-      icon: <MagicSearch size='normal' />
+      icon: <MagicSearchIcon size='normal' />
     },
     cv: {
       title: 'Sube y mejora tu CV',
       textBtn: 'Subir',
       color: 'green',
-      icon: <Scan size='normal' />
+      icon: <ScanIcon size='normal' />
     }
   }
 

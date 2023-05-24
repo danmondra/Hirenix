@@ -1,10 +1,10 @@
 'use client'
 
-import { Expand, Filter } from '@/components/icons'
 import styles from '@/styles/search.module.css'
 import { useState } from 'react'
-import { FilterSelectionGroup } from './filterSelectionGroup'
+import { FilterSelectionGroup } from '@/components/filterSelectionGroup'
 import * as dictionaries from '@/consts/infojobsFiltersDictionary'
+import { ExpandIcon, FilterIcon } from '@/components/icons/icons'
 
 export function Filters() {
   const [toggleFilters, setToggleFilters] = useState(false)
@@ -15,9 +15,9 @@ export function Filters() {
         className={styles.filtersToggle}
         onClick={() => setToggleFilters(!toggleFilters)}
       >
-        <Filter size='medium' />
+        <FilterIcon size='medium' />
         <span>Filtrar</span>
-        <Expand size='medium' rotate={toggleFilters} />
+        <ExpandIcon size='medium' rotate={toggleFilters} />
       </button>
 
       {

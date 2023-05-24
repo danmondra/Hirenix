@@ -1,11 +1,11 @@
 import offerStyles from '@/styles/offer.module.css'
-import { Question } from '@/components/icons'
+import { QuestionIcon } from '@/components/icons/icons'
 
 export function BtnGetCompatibility() {
   return (
     <div>
       <button className={`${offerStyles.cardActionButton} ${offerStyles.actionButton}`}>
-        <Question size='medium' />
+        <QuestionIcon size='medium' />
         <span>
           Obtener Compatibilidad
         </span>

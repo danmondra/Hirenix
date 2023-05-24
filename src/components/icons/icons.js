@@ -7,7 +7,7 @@ const sizes = {
   xl: '102'
 }
 
-function ArrowRight({ size = 'normal' }) {
+function ArrowRightIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -21,7 +21,7 @@ function ArrowRight({ size = 'normal' }) {
   )
 }
 
-function Location({ size = 'normal' }) {
+function LocationIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -36,7 +36,7 @@ function Location({ size = 'normal' }) {
   )
 }
 
-function Salary({ size = 'normal' }) {
+function SalaryIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -51,7 +51,7 @@ function Salary({ size = 'normal' }) {
   )
 }
 
-function Experience({ size = 'normal' }) {
+function ExperienceIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -66,7 +66,7 @@ function Experience({ size = 'normal' }) {
   )
 }
 
-function Menu({ size = 'normal' }) {
+function MenuIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -80,7 +80,7 @@ function Menu({ size = 'normal' }) {
   )
 }
 
-function Scan({ size = 'normal' }) {
+function ScanIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -94,7 +94,7 @@ function Scan({ size = 'normal' }) {
   )
 }
 
-function MagicSearch({ size = 'normal' }) {
+function MagicSearchIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -113,7 +113,7 @@ function MagicSearch({ size = 'normal' }) {
   )
 }
 
-function Labs({ size = 'normal' }) {
+function LabsIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -127,7 +127,7 @@ function Labs({ size = 'normal' }) {
   )
 }
 
-function Management({ size = 'normal' }) {
+function ManagementIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -201,7 +201,7 @@ function ToggleOnIcon({ size = 'normal' }) {
   )
 }
 
-function Save({ size = 'normal' }) {
+function SaveIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -215,7 +215,7 @@ function Save({ size = 'normal' }) {
   )
 }
 
-function Question({ size = 'normal' }) {
+function QuestionIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -229,7 +229,7 @@ function Question({ size = 'normal' }) {
   )
 }
 
-function Modality({ size = 'normal' }) {
+function ModalityIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -244,7 +244,7 @@ function Modality({ size = 'normal' }) {
   )
 }
 
-function Workday({ size = 'normal' }) {
+function WorkdayIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -259,7 +259,7 @@ function Workday({ size = 'normal' }) {
   )
 }
 
-function Time({ size = 'normal' }) {
+function TimeIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -274,7 +274,7 @@ function Time({ size = 'normal' }) {
   )
 }
 
-function Science({ size = 'normal' }) {
+function ScienceIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -288,7 +288,7 @@ function Science({ size = 'normal' }) {
   )
 }
 
-function Interview({ size = 'normal' }) {
+function InterviewIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -302,7 +302,7 @@ function Interview({ size = 'normal' }) {
   )
 }
 
-function Filter({ size = 'normal' }) {
+function FilterIcon({ size = 'normal' }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -316,7 +316,7 @@ function Filter({ size = 'normal' }) {
   )
 }
 
-function Expand({ size = 'normal', rotate }) {
+function ExpandIcon({ size = 'normal', rotate }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -334,26 +334,26 @@ function Expand({ size = 'normal', rotate }) {
 }
 
 export {
-  ArrowRight,
-  Location,
-  Salary,
-  Experience,
-  Menu,
-  Scan,
-  MagicSearch,
-  Labs,
-  Management,
+  ArrowRightIcon,
+  LocationIcon,
+  SalaryIcon,
+  ExperienceIcon,
+  MenuIcon,
+  ScanIcon,
+  MagicSearchIcon,
+  LabsIcon,
+  ManagementIcon,
   UserAccountIcon,
   SearchIcon,
   InfoIcon,
   ToggleOnIcon,
-  Save,
-  Question,
-  Modality,
-  Workday,
-  Time,
-  Science,
-  Interview,
-  Filter,
-  Expand
+  SaveIcon,
+  QuestionIcon,
+  ModalityIcon,
+  WorkdayIcon,
+  TimeIcon,
+  ScienceIcon,
+  InterviewIcon,
+  FilterIcon,
+  ExpandIcon
 }

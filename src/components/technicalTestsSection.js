@@ -1,10 +1,10 @@
-import styles from '@/styles/laboratory.module.css'
 import Link from 'next/link'
+import styles from '@/styles/laboratory.module.css'
 import exploreStyles from '@/styles/explore.module.css'
 import { SearchAside } from '@/components/searchAside'
-import { Science } from '@/components/icons'
 import { AllJobsIcon } from '@/components/icons/jobIcons'
 import { technicalRoles } from '@/consts/technicalRoles'
+import { ScienceIcon } from '@/components/icons/icons'
 
 export function TechnicalTestsSection() {
   return (
@@ -12,7 +12,7 @@ export function TechnicalTestsSection() {
       <div className={styles.subtitleContainer}>
         <h2 className={styles.subtitle}>
           Pruebas Técnicas
-          <Science size='medium' />
+          <ScienceIcon size='medium' />
         </h2>
         <p className=''>Elige el rol:</p>
       </div>

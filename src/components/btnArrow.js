@@ -1,5 +1,5 @@
 import styles from '@/styles/explore.module.css'
-import { ArrowRight } from '@/components/icons'
+import { ArrowRightIcon } from '@/components/icons/icons'
 
 export function BtnArrow({ children, color, type = 'button' }) {
   return (
@@ -8,7 +8,7 @@ export function BtnArrow({ children, color, type = 'button' }) {
       className={`${styles.btnArrow} ${styles[color]}`}
     >
       {children}
-      <ArrowRight size='medium' />
+      <ArrowRightIcon size='medium' />
     </button>
   )
 }

@@ -1,9 +1,9 @@
-import { Labs } from '@/components/icons'
 import styles from '@/styles/laboratory.module.css'
 import exploreStyles from '@/styles/explore.module.css'
 import { InterviewsSection } from '@/components/interviewsSection'
 import { TechnicalTestsSection } from '@/components/technicalTestsSection'
 import { BtnArrow } from '@/components/btnArrow'
+import { LabsIcon } from '@/components/icons/icons'
 
 export default function Laboratory() {
   return (
@@ -11,7 +11,7 @@ export default function Laboratory() {
       <header className={styles.header}>
         <h1 className={styles.title}>
           Laboratorio
-          <Labs size='normal' />
+          <LabsIcon size='normal' />
         </h1>
         <p>Con el poder de la IA fortalece tus habilidades haciendo pruebas técnicas o entrevistas simuladas.</p>
       </header>

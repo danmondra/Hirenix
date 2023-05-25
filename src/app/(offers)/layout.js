@@ -11,13 +11,15 @@ export default function OffersLayout({ children }) {
       <div className={styles.page}>
         <Aside />
         <main className={`exploreMain ${styles.main}`}>
-          <header className='exploreHeader'>
-            <nav className='navigation'>
-              <NavigationLinks />
-            </nav>
-          </header>
-          {children}
-          <Footer />
+          <section className={styles.mainContainerChild}>
+            <header className='exploreHeader'>
+              <nav className='navigation'>
+                <NavigationLinks />
+              </nav>
+            </header>
+            {children}
+            <Footer />
+          </section>
         </main>
       </div>
     </>

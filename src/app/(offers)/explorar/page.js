@@ -1,9 +1,10 @@
 import styles from '@/styles/explore.module.css'
 import { JobsGrid } from '@/components/explore/jobsGrid'
 import { SearchSection } from '@/components/explore/searchSection'
-import { CardOffer } from '@/components/offer/card/cardOffer'
+import { CardListOffer } from '@/components/offer/card/cardListOffer'
+import { Suspense } from 'react'
 
-export default function Explore() {
+export default async function Explore() {
   return (
     <>
       <SearchSection />
@@ -14,8 +15,9 @@ export default function Explore() {
       <hr className='containerExplore divisorLineGreen' />
       <section className={`containerExplore ${styles.offersSection}`}>
         <h2 className={styles.offersSectionTitle}>Nuevas Ofertas</h2>
-        <CardOffer />
-        <CardOffer />
+        <Suspense fallback={<h1 style={{ color: 'black' }}>CARGANDO</h1>}>
+          <CardListOffer />
+        </Suspense>
       </section>
     </>
   )

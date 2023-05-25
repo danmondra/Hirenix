@@ -1,22 +1,25 @@
 import offerStyles from '@/styles/offer.module.css'
 import { OfferCharacteristics } from '@/components/offer/offerCharacteristics'
 import { OfferActions } from '@/components/offer/page/offerActions'
+import { placeholderImageOffer } from '@/consts/miscellaneousDataInfojobs'
 
-export function OfferHeader() {
+export function OfferHeader({ offer }) {
+  const { title, profile } = offer
+
   return (
     <div>
       <header className={offerStyles.offerHeader}>
         <picture className={offerStyles.logoContainer}>
-          <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqyaPH6cdsDxpxehiAWNt5gMKzOAvsYdDbruljddF8&s' alt='' className={offerStyles.companyLogo} />
+          <img src={profile?.logoUrl || placeholderImageOffer} alt='' width='400' className={offerStyles.companyLogo} />
         </picture>
         <div className={offerStyles.titleContainer}>
-          <h1 className={offerStyles.title}>UX/UI and Front-End Engineering Manager - Madrid, Spain</h1>
-          <p className={offerStyles.companyName}>Western Union</p>
+          <h1 className={offerStyles.title}>{title}</h1>
+          <p className={offerStyles.companyName}>{profile?.name}</p>
         </div>
       </header>
       <div className={offerStyles.cardInfo}>
-        <OfferCharacteristics />
-        <OfferActions />
+        <OfferCharacteristics offer={offer} />
+        <OfferActions id={offer.id} />
       </div>
     </div>
   )

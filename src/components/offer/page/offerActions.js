@@ -1,20 +1,21 @@
+import Link from 'next/link'
+import offerStyles from '@/styles/offer.module.css'
 import { BtnGetCompatibility } from '@/components/btnGetCompatibility'
 import { InterviewIcon, ScienceIcon } from '@/components/icons/icons'
-import offerStyles from '@/styles/offer.module.css'
 
-export function OfferActions() {
+export function OfferActions({ id }) {
   return (
     <div className={offerStyles.actionsContainer}>
       <div className={offerStyles.buttonsContainer}>
         <BtnGetCompatibility />
-        <button className={`${offerStyles.actionButton} ${offerStyles.blue}`}>
+        <Link href='/' className={`${offerStyles.actionButton} ${offerStyles.blue}`}>
           <ScienceIcon size='medium' />
           <span>Prueba Técnica</span>
-        </button>
-        <button className={`${offerStyles.actionButton} ${offerStyles.purpura}`}>
+        </Link>
+        <Link href='/' className={`${offerStyles.actionButton} ${offerStyles.purpura}`}>
           <InterviewIcon size='medium' />
           <span>Entrevista Simulada</span>
-        </button>
+        </Link>
       </div>
     </div>
   )

@@ -5,14 +5,16 @@ import { BtnGetCompatibility } from '@/components/btnGetCompatibility'
 import { CardOfferHeader } from '@/components/offer/card/cardOfferHeader'
 import { SaveIcon } from '@/components/icons/icons'
 
-export function CardOffer() {
+export function CardOffer({ offer }) {
+  const { id, requirementMin } = offer
+
   return (
     <article className={offerStyles.cardContainer}>
-      <Link href='/explorar/offer' className={offerStyles.card} scroll={false}>
-        <CardOfferHeader />
+      <Link href={`/explorar/${id}`} className={offerStyles.card}>
+        <CardOfferHeader offer={offer} />
         <div className={offerStyles.cardInfo}>
-          <CardOfferCharacteristics />
-          <p className={offerStyles.shortDescription}>Do you see front-end development as more than just solving back-end technical issues and instead view it as creating a unique user experience? Are you enthusiastic about collaboration with Product, Design, Business, and Marketing teams and enjoy synthesizing diverse demands into innovative solutions?</p>
+          <CardOfferCharacteristics offer={offer} />
+          <p className={offerStyles.shortDescription}>{requirementMin}</p>
         </div>
       </Link>
       <div className={offerStyles.cardActions}>

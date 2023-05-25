@@ -333,6 +333,51 @@ function ExpandIcon({ size = 'normal', rotate }) {
   )
 }
 
+function LanguageIcon({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 -960 960 960'
+      fill='currentColor'
+    >
+      <title>Idiomas</title>
+      <path d='M480-80q-84 0-157-31.5T196-197q-54-54-85-127.5T80-482q0-84 31-156.5T196-765q54-54 127-84.5T480-880q84 0 157 30.5T764-765q54 54 85 126.5T880-482q0 84-31 157.5T764-197q-54 54-127 85.5T480-80zm0-58q35-36 58.5-82.5T577-331H384q14 60 37.5 108t58.5 85zm-85-12q-25-38-43-82t-30-99H172q38 71 88 111.5T395-150zm171-1q72-23 129.5-69T788-331H639q-13 54-30.5 98T566-151zM152-391h159q-3-27-3.5-48.5T307-482q0-25 1-44.5t4-43.5H152q-7 24-9.5 43t-2.5 45q0 26 2.5 46.5T152-391zm221 0h215q4-31 5-50.5t1-40.5q0-20-1-38.5t-5-49.5H373q-4 31-5 49.5t-1 38.5q0 21 1 40.5t5 50.5zm275 0h160q7-24 9.5-44.5T820-482q0-26-2.5-45t-9.5-43H649q3 35 4 53.5t1 34.5q0 22-1.5 41.5T648-391zm-10-239h150q-33-69-90.5-115T565-810q25 37 42.5 80T638-630zm-254 0h194q-11-53-37-102.5T480-820q-32 27-54 71t-42 119zm-212 0h151q11-54 28-96.5t43-82.5q-75 19-131 64t-91 115z' />
+    </svg>
+  )
+}
+
+function ResidenceIcon({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 -960 960 960'
+      fill='currentColor'
+    >
+      <title>Residencia Obligatoria</title>
+      <path d='M697-623h60v-60h-60v60zm0 171h60v-60h-60v60zm0 170h60v-60h-60v60zm-56 162v-60h219v-600H465v112l-60-42v-130h515v720H641zm-601 0v-390l271-194 270 194v390H364v-201H258v201H40zm60-60h98v-201h226v201h97v-299L311-630 100-478.578V-180zm541-365zM424-180v-201H198v201-201h226v201z' />
+    </svg>
+  )
+}
+
+function StudyIcon({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 -960 960 960'
+      fill='currentColor'
+    >
+      <title>Estudios Mínimos</title>
+      <path d='M479-120L189-279v-240L40-600l439-240 441 240v317h-60v-282l-91 46v240L479-120zm0-308l315-172-315-169-313 169 313 172zm0 240l230-127v-168L479-360 249-485v170l230 127zm1-240zm-1 74zm0 0z' />
+    </svg>
+  )
+}
+
 export {
   ArrowRightIcon,
   LocationIcon,
@@ -355,5 +400,8 @@ export {
   ScienceIcon,
   InterviewIcon,
   FilterIcon,
-  ExpandIcon
+  ExpandIcon,
+  LanguageIcon,
+  ResidenceIcon,
+  StudyIcon
 }

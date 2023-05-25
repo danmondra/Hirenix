@@ -226,6 +226,10 @@
   max-width: 30ch;
 }
 
+.characteristic span {
+  color: var(--color-greenPrimary);
+}
+
 .shortDescription {
   margin: 0;
   max-width: 65ch;
@@ -261,7 +265,7 @@
 
 
 .offer {
-  margin: 10rem auto;
+  padding: 10rem 0;
   display: flex;
   flex-direction: column;
 }
@@ -281,15 +285,17 @@
 }
 
 .logoContainer {
-  max-width: 5rem;
   display: block;
   aspect-ratio: 1/1;
-  max-width: 5rem;
+  width: 5rem;
+  height: 5rem;
+
 }
 
 @media (min-width: 998px) {
   .logoContainer {
-    max-width: 12rem;
+    width: 12rem;
+    height: 12rem;
   }
 }
 
@@ -359,6 +365,37 @@
   }
 }
 
-.text {
-  white-space: pre-line;
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill {
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  background-color: rgb(var(--color-secondaryGray) / .15);
+  color: rgb(var(--color-secondaryGray) / 1);
+
+}
+
+.skill:hover {
+  background-color: rgb(var(--color-greenPrimaryRGB) / 1);
+  color: var(--color-white);
+}
+
+.info .descriptionItem {
+  line-height: 2.4rem;
+}
+
+.info .listItem {
+  display: list-item;
+  list-style-type: disc;
+  margin-left: 20px;
 }

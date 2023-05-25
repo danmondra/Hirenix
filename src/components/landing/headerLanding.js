@@ -1,6 +1,6 @@
-import { Logo } from '@/components/logo'
-import { NavigationLinks } from '@/components/navigationLinks'
-import { Login } from '@/components/login'
+import { Logo } from '@/components/layout/logo'
+import { NavigationLinks } from '@/components/layout/navigationLinks'
+import { Login } from '@/components/layout/login'
 import { MenuIcon } from '@/components/icons/icons'
 
 export function HeaderLanding() {

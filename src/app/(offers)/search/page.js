@@ -1,7 +1,7 @@
-import { Filters } from '@/components/filters'
 import styles from '@/styles/search.module.css'
-import { CardOffer } from '@/components/cardOffer'
-import { CardOfferSelect } from '@/components/cardOfferSelect'
+import { Filters } from '@/components/search/filters'
+import { CardOffer } from '@/components/offer/card/cardOffer'
+import { CardOfferSelect } from '@/components/offer/card/cardOfferSelect'
 
 export default function Search({ searchParams }) {
   return (

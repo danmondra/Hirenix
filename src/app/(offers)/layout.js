@@ -1,8 +1,8 @@
 import styles from '@/styles/explore.module.css'
-import { ExploreBG } from '@/components/exploreBg'
-import { Aside } from '@/components/aside'
-import { NavigationLinks } from '@/components/navigationLinks'
-import { Footer } from '@/components/footer'
+import { ExploreBG } from '@/components/layout/exploreBg'
+import { Aside } from '@/components/layout/aside'
+import { NavigationLinks } from '@/components/layout/navigationLinks'
+import { Footer } from '@/components/layout/footer'
 
 export default function OffersLayout({ children }) {
   return (

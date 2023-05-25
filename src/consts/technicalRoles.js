@@ -1,4 +1,4 @@
-import { AdministratorIcon, BackEndIcon, CybersecurityIcon, DevOpsIcon, FrontEndIcon, FullStackIcon, MobileDevIcon } from '@/components/technicalProfileIcons'
+import { AdministratorIcon, BackEndIcon, CybersecurityIcon, DevOpsIcon, FrontEndIcon, FullStackIcon, MobileDevIcon } from '@/components/icons/technicalProfileIcons'
 
 export const technicalRoles = [
   {

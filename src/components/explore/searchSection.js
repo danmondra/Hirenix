@@ -1,6 +1,6 @@
 import styles from '@/styles/explore.module.css'
 import { BtnArrow } from '@/components/btnArrow'
-import { CardProduct } from '@/components/cardProduct'
+import { CardProduct } from '@/components/explore/cardProduct'
 
 export function SearchSection() {
   return (

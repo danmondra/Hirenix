@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styles from '@/styles/laboratory.module.css'
-import { SearchAside } from '@/components/searchAside'
+import { SearchAside } from '@/components/layout/searchAside'
 import { InterviewIcon } from '@/components/icons/icons'
 
 export function InterviewsSection() {

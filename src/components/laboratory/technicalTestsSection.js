@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from '@/styles/laboratory.module.css'
 import exploreStyles from '@/styles/explore.module.css'
-import { SearchAside } from '@/components/searchAside'
+import { SearchAside } from '@/components/layout/searchAside'
 import { AllJobsIcon } from '@/components/icons/jobIcons'
 import { technicalRoles } from '@/consts/technicalRoles'
 import { ScienceIcon } from '@/components/icons/icons'

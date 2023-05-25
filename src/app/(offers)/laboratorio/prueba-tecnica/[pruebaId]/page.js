@@ -1,10 +1,10 @@
 import styles from '@/styles/laboratorySegments.module.css'
 import labStyles from '@/styles/laboratory.module.css'
 import exploreStyles from '@/styles/explore.module.css'
-import { BackEndIcon } from '@/components/technicalProfileIcons'
 import { BtnArrow } from '@/components/btnArrow'
-import { CardOfferSelect } from '@/components/cardOfferSelect'
+import { CardOfferSelect } from '@/components/offer/card/cardOfferSelect'
 import { ScienceIcon } from '@/components/icons/icons'
+import { BackEndIcon } from '@/components/icons/technicalProfileIcons'
 
 export default function TechnicalTest() {
   return (

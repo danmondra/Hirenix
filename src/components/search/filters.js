@@ -2,7 +2,7 @@
 
 import styles from '@/styles/search.module.css'
 import { useState } from 'react'
-import { FilterSelectionGroup } from '@/components/filterSelectionGroup'
+import { FilterSelectionGroup } from '@/components/search/filterSelectionGroup'
 import * as dictionaries from '@/consts/infojobsFiltersDictionary'
 import { ExpandIcon, FilterIcon } from '@/components/icons/icons'
 

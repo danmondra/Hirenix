@@ -1,5 +1,5 @@
-import { Logo } from '@/components/logo'
-import { NavigationLinks } from '@/components/navigationLinks'
+import { Logo } from '@/components/layout/logo'
+import { NavigationLinks } from '@/components/layout/navigationLinks'
 
 export function Footer() {
   return (

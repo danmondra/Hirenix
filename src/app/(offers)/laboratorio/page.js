@@ -1,7 +1,7 @@
 import styles from '@/styles/laboratory.module.css'
 import exploreStyles from '@/styles/explore.module.css'
-import { InterviewsSection } from '@/components/interviewsSection'
-import { TechnicalTestsSection } from '@/components/technicalTestsSection'
+import { InterviewsSection } from '@/components/laboratory/interviewsSection'
+import { TechnicalTestsSection } from '@/components/laboratory/technicalTestsSection'
 import { BtnArrow } from '@/components/btnArrow'
 import { LabsIcon } from '@/components/icons/icons'
 

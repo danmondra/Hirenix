@@ -2,14 +2,14 @@ import Link from 'next/link'
 import offerStyles from '@/styles/offer.module.css'
 import { CardOfferCharacteristics } from '@/components/offer/offerCharacteristics'
 import { BtnGetCompatibility } from '@/components/btnGetCompatibility'
-import { HeaderOfferCard } from '@/components/headerOfferCard'
+import { CardOfferHeader } from '@/components/offer/card/cardOfferHeader'
 import { SaveIcon } from '@/components/icons/icons'
 
 export function CardOffer() {
   return (
     <article className={offerStyles.cardContainer}>
       <Link href='/explorar/offer' className={offerStyles.card} scroll={false}>
-        <HeaderOfferCard />
+        <CardOfferHeader />
         <div className={offerStyles.cardInfo}>
           <CardOfferCharacteristics />
           <p className={offerStyles.shortDescription}>Do you see front-end development as more than just solving back-end technical issues and instead view it as creating a unique user experience? Are you enthusiastic about collaboration with Product, Design, Business, and Marketing teams and enjoy synthesizing diverse demands into innovative solutions?</p>

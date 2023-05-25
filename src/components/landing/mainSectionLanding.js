@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styles from '@/styles/landingPage.module.css'
-import { JobsGrid } from '@/components/jobsGrid'
+import { JobsGrid } from '@/components/explore/jobsGrid'
 import { JobExampleLanding } from '@/components/landing/jobExampleLanding'
 import { MainLink } from '@/components/landing/mainLink'
 

@@ -1,5 +1,5 @@
 import styles from '@/styles/landingPage.module.css'
-import { ProductsGrid } from '@/components/productGrid'
+import { ProductsGrid } from '@/components/explore/productGrid'
 
 export function ProductsSection() {
   return (

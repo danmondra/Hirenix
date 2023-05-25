@@ -1,7 +1,7 @@
 import styles from '@/styles/explore.module.css'
-import { JobsGrid } from '@/components/jobsGrid'
-import { SearchSection } from '@/components/searchSection'
-import { CardOffer } from '@/components/cardOffer'
+import { JobsGrid } from '@/components/explore/jobsGrid'
+import { SearchSection } from '@/components/explore/searchSection'
+import { CardOffer } from '@/components/offer/card/cardOffer'
 
 export default function Explore() {
   return (

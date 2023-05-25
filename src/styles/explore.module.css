@@ -103,8 +103,15 @@
   border-radius: 15px;
   height: 100%;
   background-color: var(--color-exploreBackground);
-  overflow-y: auto;
+  overflow: hidden;
   position: relative;
+}
+
+.mainContainerChild {
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  color-scheme: auto;
 }
 
 .headerContainerAside {

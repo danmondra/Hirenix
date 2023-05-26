@@ -69,13 +69,13 @@ export function JobsGrid({ length }) {
   ]
 
   return (
-    <section className={`${styles.searchByJobs} ${length && styles.landing}`}>
+    <section className={`${styles.searchByJobs} ${length && styles.landing}`} id='categories'>
       <h3 className={styles.title}>Busca empleos en tu campo:</h3>
       <div className={styles.jobsGrid}>
         {jobs.splice(0, length || jobs.length).map(({ icon, name }) => (
           <Link
             key={name}
-            href='/'
+            href={`/search?q=${name}`}
             className={styles.job}
           >
             {icon}
@@ -86,7 +86,7 @@ export function JobsGrid({ length }) {
         {
           length &&
             <Link
-              href='/'
+              href='/explorar'
               className={styles.job}
             >
               <AllJobsIcon />

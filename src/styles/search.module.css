@@ -18,9 +18,22 @@
   color: var(--color-greenPrimary);
 }
 
+.searchSkeleton .title span {
+  display: inline-block;
+  height: 3.6rem;
+  width: 9ch;
+  background-color: var(--color-greenPrimary);
+}
+
 .text {
   margin: 0;
   color: rgb(var(--color-secondaryGray) / 1);
+}
+
+.searchSkeleton .text {
+  height: 1.6rem;
+  width: 28ch;
+  background-color: var(--color-skeletonGray);
 }
 
 .filtersToggle {

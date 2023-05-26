@@ -6,7 +6,9 @@ export function CardOfferHeader({ offer }) {
 
   return (
     <header>
-      <img src={author.logoUrl || placeholderImageOffer} alt='' className={styles.cardCompanyLogo} />
+      <picture className={styles.cardLogoContainer}>
+        <img src={author.logoUrl || placeholderImageOffer} alt={`Logo of author ${author?.name}`} className={styles.cardCompanyLogo} />
+      </picture>
       <div className={styles.titleContainer}>
         <h3 className={styles.cardTitle}>{title}</h3>
         <p className={styles.companyName}>{author?.name}</p>

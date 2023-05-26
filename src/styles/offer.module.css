@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.cardContainerSkeleton {
+
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -39,17 +43,30 @@
   }
 }
 
-.cardCompanyLogo {
+.cardLogoContainer {
   display: block;
   aspect-ratio: 1/1;
-  object-fit: cover;
-  max-width: 5rem;
+  width: 5rem;
+  height: 5rem;
+
 }
 
 @media (min-width: 998px) {
-  .cardCompanyLogo {
-    max-width: 10rem;
+  .cardLogoContainer {
+    width: 10rem;
+    height: 10rem;
   }
+}
+
+.cardContainerSkeleton .cardLogoContainer {
+  background-color: var(--color-skeletonGray);
+}
+
+.cardCompanyLogo {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .titleContainer {
@@ -72,10 +89,22 @@
   }
 }
 
+.cardContainerSkeleton .cardTitle {
+  background-color: var(--color-skeletonGray);
+  width: 30ch;
+  height: 4.6rem;
+}
+
 .companyName {
   margin: 0;
   color: var(--color-greenPrimary);
   font-weight: 700;
+}
+
+.cardContainerSkeleton .companyName {
+  background-color: var(--color-skeletonGray);
+  width: 20ch;
+  height: 2rem;
 }
 
 .cardSelect > header {
@@ -112,6 +141,12 @@
   top: 4rem;
   right: 3rem;
   gap: 1rem;
+}
+
+.cardContainerSkeleton .cardActions button {
+  user-select: none;
+  pointer-events: none;
+  filter: grayscale(1)
 }
 
 @media (min-width: 998px) {
@@ -238,6 +273,12 @@
   color: var(--color-greenPrimary);
 }
 
+.characteristicSkeleton {
+  background-color: var(--color-skeletonGray);
+  width: 30ch;
+  height: 2.4rem;
+}
+
 .shortDescription {
   margin: 0;
   max-width: 65ch;
@@ -250,6 +291,12 @@
   -webkit-line-clamp: 3;
   white-space: normal;
   text-overflow: ellipsis;
+}
+
+.cardContainerSkeleton .shortDescription {
+  background-color: var(--color-skeletonGray);
+  width: 100%;
+  height: 12rem;
 }
 
 @media (min-width: 998px) {

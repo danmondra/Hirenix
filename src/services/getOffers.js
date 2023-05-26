@@ -6,7 +6,7 @@ const clientSecret = process.env.INFOJOBS_CLIENTSECRET
 const credentials = `${clientId}:${clientSecret}`
 const encodedCredentials = Buffer.from(credentials).toString('base64')
 
-export async function getInfojobsOffers(filters = { page: 1, maxResults: 15 }) {
+export async function getInfojobsOffers(filters = { page: 1, maxResults: 20 }) {
   const URLWithParams = `${URL}${objectToParams(filters)}`
 
   const res = await fetch(URLWithParams, {

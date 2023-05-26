@@ -378,6 +378,8 @@ template {
 
   --transition-bezierPrimary: cubic-bezier(0.45,0.05,0.55,0.95);
 
+  --color-skeletonGray: #ddd;
+
   /* ----ScrollBar */
   --sb-track-color: rgb(0 0 0 / .2);
   --sb-thumb-color: rgb(255 255 255 / .5);

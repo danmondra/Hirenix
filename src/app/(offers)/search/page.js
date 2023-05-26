@@ -3,8 +3,18 @@ import { Filters } from '@/components/search/filters'
 import { CardOffer } from '@/components/offer/card/cardOffer'
 import { getInfojobsOffers } from '@/services/getOffers'
 import { CardOfferSelect } from '@/components/offer/card/cardOfferSelect'
+import { Suspense } from 'react'
+import Loading from '@/app/(offers)/search/loading'
 
-export default async function Search({ searchParams }) {
+export default function Prueba({ searchParams }) {
+  return (
+    <Suspense fallback={<Loading searchParams={searchParams} />} key={Date.now().toString()}>
+      <Search searchParams={searchParams} />
+    </Suspense>
+  )
+}
+
+export async function Search({ searchParams }) {
   const { items: offerList, currentResults, totalResults } = await getInfojobsOffers(searchParams)
 
   return (

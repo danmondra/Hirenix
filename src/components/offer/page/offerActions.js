@@ -3,7 +3,7 @@ import offerStyles from '@/styles/offer.module.css'
 import { BtnGetCompatibility } from '@/components/btnGetCompatibility'
 import { InterviewIcon, ScienceIcon } from '@/components/icons/icons'
 
-export function OfferActions({ id }) {
+export function OfferActions({ id = null }) {
   return (
     <div className={offerStyles.actionsContainer}>
       <div className={offerStyles.buttonsContainer}>

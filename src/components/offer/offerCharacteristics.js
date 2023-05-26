@@ -36,7 +36,7 @@ export function CardOfferCharacteristics({ offer }) {
       <OfferCharacteristic
         icon={<ModalityIcon size='small' />}
       >
-        {teleworking?.value}
+        {teleworking?.value || 'No especificado'}
       </OfferCharacteristic>
     </div>
   )
@@ -84,7 +84,7 @@ export function OfferCharacteristics({ offer }) {
       <OfferCharacteristic
         icon={<ModalityIcon size='small' />}
       >
-        {teleworking?.value}
+        {teleworking?.value || 'No especificado'}
       </OfferCharacteristic>
       <OfferCharacteristic
         icon={<WorkdayIcon size='small' />}

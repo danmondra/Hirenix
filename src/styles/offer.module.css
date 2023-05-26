@@ -2,10 +2,6 @@
   position: relative;
 }
 
-.cardContainerSkeleton {
-
-}
-
 .card {
   display: flex;
   flex-direction: column;
@@ -146,7 +142,8 @@
 .cardContainerSkeleton .cardActions button {
   user-select: none;
   pointer-events: none;
-  filter: grayscale(1)
+  filter: grayscale(1);
+  opacity: .5;
 }
 
 @media (min-width: 998px) {
@@ -344,7 +341,6 @@
   aspect-ratio: 1/1;
   width: 5rem;
   height: 5rem;
-
 }
 
 @media (min-width: 998px) {
@@ -352,6 +348,10 @@
     width: 12rem;
     height: 12rem;
   }
+}
+
+.offerSkeleton .logoContainer {
+  background-color: var(--color-skeletonGray);
 }
 
 .companyLogo {
@@ -375,10 +375,29 @@
   }
 }
 
+.offerSkeleton .title {
+  background-color: var(--color-skeletonGray);
+  height: 7rem;
+  width: 30ch;
+}
+
+.offerSkeleton .companyName {
+  background-color: rgb(var(--color-greenPrimaryRGB) / .7);
+  width: 20ch;
+  height: 2rem;
+}
+
 .actionsContainer {
   flex: 1;
   display: flex;
   justify-content: center;
+}
+
+.offerSkeleton .actionsContainer {
+  user-select: none;
+  pointer-events: none;
+  filter: grayscale(1);
+  opacity: .5;
 }
 
 .buttonsContainer {
@@ -414,9 +433,16 @@
   margin-bottom: 4rem;
 }
 
+
 @media (min-width: 998px) {
   .offerSubtitle {
     font-size: 3rem;
+  }
+
+  .offerSkeleton .offerSubtitle {
+    width: 8ch;
+    height: 3rem;
+    background-color: var(--color-skeletonGray);
   }
 }
 
@@ -437,7 +463,11 @@
   border-radius: 5px;
   background-color: rgb(var(--color-secondaryGray) / .15);
   color: rgb(var(--color-secondaryGray) / 1);
+}
 
+.offerSkeleton .skill {
+  height: 2.5rem;
+  width: 7ch;
 }
 
 .skill:hover {
@@ -447,6 +477,11 @@
 
 .info .descriptionItem {
   line-height: 2.4rem;
+}
+
+.offerSkeleton .info .descriptionItem {
+  background-color: rgb(var(--color-secondaryGray) / .15);
+  height: 30rem;
 }
 
 .info .listItem {

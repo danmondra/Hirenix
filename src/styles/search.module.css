@@ -22,7 +22,7 @@
   display: inline-block;
   height: 3.6rem;
   width: 9ch;
-  background-color: var(--color-greenPrimary);
+  background-color: rgb(var(--color-greenPrimaryRGB) / .8);
 }
 
 .text {

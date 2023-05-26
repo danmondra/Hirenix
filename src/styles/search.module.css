@@ -10,7 +10,6 @@
 
 .title {
   color: rgb(var(--color-secondaryGray) / 1);
-  max-width: 80rem;
   font-size: 4rem;
   margin: 0;
 }

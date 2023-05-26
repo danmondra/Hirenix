@@ -42,18 +42,20 @@ export function CardOfferCharacteristics({ offer }) {
   )
 }
 
-export function CardOfferSelectCharacteristics() {
+export function CardOfferSelectCharacteristics({ offer }) {
+  const { salaryMin, salaryMax, salaryPeriod, experienceMin } = offer
+
   return (
     <div className={styles.characteristicsGroup}>
       <OfferCharacteristic
         icon={<SalaryIcon size='small' />}
       >
-        900€ - 1.800€
+        {salaryMin?.value && salaryMax?.value ? `${salaryMin?.value} - ${salaryMax?.value} ${salaryPeriod?.value}` : 'No específicado'}
       </OfferCharacteristic>
       <OfferCharacteristic
         icon={<ExperienceIcon size='small' />}
       >
-        Sin experiencia
+        {experienceMin?.value}
       </OfferCharacteristic>
     </div>
   )

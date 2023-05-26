@@ -1,14 +1,15 @@
+import { objectToParams } from '@/utils/transformURLParams'
+
 const URL = `${process.env.INFOJOBS_API}/9/offer`
 const clientId = process.env.INFOJOBS_CLIENTID
 const clientSecret = process.env.INFOJOBS_CLIENTSECRET
 const credentials = `${clientId}:${clientSecret}`
 const encodedCredentials = Buffer.from(credentials).toString('base64')
 
-export async function getInfojobsOffers(page = 1, maxResults = 15) {
-  // TODO --- Disable cache, try with cache: 'no-cache' o 'no-store'
-  const URLTransformed = `${URL}?page=${page}&maxResults=${maxResults}`
+export async function getInfojobsOffers(filters = { page: 1, maxResults: 15 }) {
+  const URLWithParams = `${URL}${objectToParams(filters)}`
 
-  const res = await fetch(URLTransformed, {
+  const res = await fetch(URLWithParams, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Basic ${encodedCredentials}`

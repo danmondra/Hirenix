@@ -4,13 +4,13 @@ import { CardOfferSelectCharacteristics } from '@/components/offer/offerCharacte
 import { CardOfferHeader } from '@/components/offer/card/cardOfferHeader'
 import { ArrowRightIcon } from '@/components/icons/icons'
 
-export function CardOfferSelect() {
+export function CardOfferSelect({ offer }) {
   return (
     <article className={offerStyles.cardContainer}>
       <Link href='/explorar/offer' className={`${offerStyles.card} ${offerStyles.cardSelect}`} scroll={false}>
-        <CardOfferHeader />
+        <CardOfferHeader offer={offer} />
         <div className={offerStyles.cardInfo}>
-          <CardOfferSelectCharacteristics />
+          <CardOfferSelectCharacteristics offer={offer} />
         </div>
         <p className={offerStyles.select}>
           Seleccionar

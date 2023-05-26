@@ -78,6 +78,14 @@
   font-weight: 700;
 }
 
+.cardSelect > header {
+  flex: 2;
+}
+
+.cardSelect > .cardInfo {
+  flex: 1;
+}
+
 .select {
   display: flex;
   margin: 0;

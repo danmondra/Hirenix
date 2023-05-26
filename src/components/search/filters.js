@@ -3,11 +3,22 @@
 import styles from '@/styles/search.module.css'
 import { useState } from 'react'
 import { FilterSelectionGroup } from '@/components/search/filterSelectionGroup'
-import * as dictionaries from '@/consts/infojobsFiltersDictionary'
+import { filterParamsInfojobs } from '@/consts/infojobsFiltersDictionary'
 import { ExpandIcon, FilterIcon } from '@/components/icons/icons'
 
-export function Filters() {
+export function Filters({ searchParams }) {
   const [toggleFilters, setToggleFilters] = useState(false)
+  console.log(searchParams)
+
+  const {
+    sinceDate,
+    teleworking,
+    category,
+    study,
+    workday,
+    contractType,
+    experienceMin
+  } = filterParamsInfojobs
 
   return (
     <div className={styles.filtersContainer}>
@@ -24,42 +35,42 @@ export function Filters() {
         toggleFilters &&
           <form className={styles.filters}>
             <FilterSelectionGroup
-              dictionary={dictionaries.date}
+              dictionary={sinceDate}
               groupName='date'
               type='radio'
             >
               Fecha
             </FilterSelectionGroup>
             <FilterSelectionGroup
-              dictionary={dictionaries.teleworking}
+              dictionary={teleworking}
               groupName='modality'
               type='checkbox'
             >
               Modalidad
             </FilterSelectionGroup>
             <FilterSelectionGroup
-              dictionary={dictionaries.category}
+              dictionary={category}
               groupName='category'
               type='checkbox'
             >
               Categoría del puesto
             </FilterSelectionGroup>
             <FilterSelectionGroup
-              dictionary={dictionaries.study}
+              dictionary={study}
               groupName='study'
               type='checkbox'
             >
               Estudios Mínimos
             </FilterSelectionGroup>
             <FilterSelectionGroup
-              dictionary={dictionaries.workday}
+              dictionary={workday}
               groupName='workday'
               type='checkbox'
             >
               Jornada Laboral
             </FilterSelectionGroup>
             <FilterSelectionGroup
-              dictionary={dictionaries.contractType}
+              dictionary={contractType}
               groupName='contractType'
               type='checkbox'
             >
@@ -72,7 +83,7 @@ export function Filters() {
               </label>
               <input id='experienceMin' type='range' name='experienceMin' list='experienceMinValues' step='1' max={6} min={0} defaultValue={0} />
               <datalist id='experienceMinValues'>
-                {dictionaries.minExperience.map(({ id, label, key }) => (
+                {experienceMin.map(({ id, label, key }) => (
                   <option value={key} label={label} key={id} />
                 ))}
               </datalist>

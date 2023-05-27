@@ -1,33 +1,45 @@
 'use client'
 
 import { useState } from 'react'
-import offerStyles from '@/styles/offer.module.css'
+import styles from '@/styles/offer.module.css'
 import { InfoIcon, QuestionIcon } from '@/components/icons/icons'
 
 export function BtnGetCompatibility() {
   const [loading, setLoading] = useState(false)
+  const [compatibility, setCompatibility] = useState(0)
 
-  const handleClick = () => {
-    // TODO --- Get Compatibility HERE
-    setLoading(!loading)
+  const handleClick = async () => {
+    setLoading(true)
+    const res = await fetch('/compatibility', {
+      cache: 'no-store'
+    })
+    const data = await res.json()
+
+    setLoading(false)
+    setCompatibility(data.compatibility)
   }
 
   return (
-    <div className={offerStyles.getCompatibilityContainer}>
+    <div className={styles.getCompatibilityContainer}>
       <button
-        className={`${offerStyles.cardActionButton} ${offerStyles.actionButton}`}
+        className={`${styles.cardActionButton} ${styles.actionButton}`}
         onClick={handleClick}
+        disabled={Boolean(compatibility)}
       >
         {
           loading
             ? <div className='lds-dual-ring' />
-            : <QuestionIcon size='medium' />
+            : compatibility ? <span className={styles.compatibility}>{compatibility}</span> : <QuestionIcon size='medium' />
         }
-        <span>Obtener Compatibilidad</span>
+        {
+          compatibility
+            ? <span>de Compatibilidad</span>
+            : <span>Obtener Compatibilidad</span>
+        }
       </button>
-      <span className={offerStyles.compatibilityToolTip}>
+      <span className={styles.compatibilityToolTip}>
         Obtener Compatibilidad
-        <span className={offerStyles.compatibilityInfo}>
+        <span className={styles.compatibilityInfo}>
           <InfoIcon size='xs' />
           <span>
             Para obtener tu compatibilidad con un empleo, primero inicia sesión y sube un CV

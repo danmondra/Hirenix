@@ -156,10 +156,6 @@
   }
 }
 
-.cardActionButton span {
-  display: none;
-}
-
 .actionButton {
   background-color: unset;
   border: unset;
@@ -181,8 +177,12 @@
   }
 }
 
-.offer .actionButton:hover {
+.offer .actionButton:hover:not(:disabled) {
   background-color: rgb(var(--color-secondaryGray) / .15);
+}
+
+.offer .actionButton:disabled {
+  cursor: auto;
 }
 
 .actionButton.blue svg {
@@ -193,7 +193,7 @@
   color: var(--color-purpura);
 }
 
-.offer .actionButton span {
+.actionButton span {
   display: block;
   font-size: 1.6rem;
   font-weight: 500;
@@ -209,7 +209,7 @@
 .cardInfo {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
   margin-top: 3rem;
 }
 
@@ -230,7 +230,7 @@
 
 .characteristicsGroup {
   display: grid;
-  min-width: max-content;
+  width: 100%;
   gap: .5rem;
 }
 
@@ -272,7 +272,7 @@
 
 .characteristicSkeleton {
   background-color: var(--color-skeletonGray);
-  width: 30ch;
+  width: 28ch;
   height: 2.4rem;
 }
 
@@ -387,14 +387,13 @@
   height: 2rem;
 }
 
-.offer .cardActionButton span {
+.offer .cardActionButton span:not(.compatibility) {
   display: block;
 }
 
 .actionsContainer {
   flex: 1;
   display: flex;
-  justify-content: center;
 }
 
 .offerSkeleton .actionsContainer {
@@ -535,6 +534,10 @@
   }
 }
 
+.cardActionButton span {
+  display: none;
+}
+
 .compatibilityInfo {
   margin-top: 1rem;
   display: flex;
@@ -547,4 +550,16 @@
 
 .compatibilityInfo svg {
   min-width: 18px;
+}
+
+.actionButton .compatibility {
+  font-size: 1.4rem;
+  font-weight: 500;
+  width: 29px;
+  height: 29px;
+  color: var(--color-greenPrimary);
+  border: 3px var(--color-greenPrimary) solid;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
 }

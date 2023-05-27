@@ -555,8 +555,8 @@
 .actionButton .compatibility {
   font-size: 1.4rem;
   font-weight: 500;
-  width: 29px;
-  height: 29px;
+  width: 32px;
+  height: 32px;
   color: var(--color-greenPrimary);
   border: 3px var(--color-greenPrimary) solid;
   border-radius: 50%;

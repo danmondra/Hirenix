@@ -1,0 +1,51 @@
+.pager {
+  margin: 10rem auto;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.pager a {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: unset;
+  cursor: pointer;
+  background-color: unset;
+
+  transition: background-color .3s ease;
+}
+
+.pager a:hover:not(.active) {
+  background-color: rgb(var(--color-secondaryGray) / .15);
+}
+
+.navigationLink {
+  color: var(--color-greenPrimary);
+}
+
+.pager svg {
+  display: block;
+}
+
+.numberLink {
+  padding: .5rem;
+  color: rgb(var(--color-secondaryGray) / 1);
+  width: 5rem;
+  height: 5rem;
+  font-size: 2rem;
+}
+
+.numberLink.active {
+  background-color: var(--color-greenPrimary);
+  color: var(--color-white);
+}
+
+.numberLink.disable {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}

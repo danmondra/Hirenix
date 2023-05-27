@@ -5,11 +5,16 @@ import { getInfojobsOffers } from '@/services/getOffers'
 import { CardOfferSelect } from '@/components/offer/card/cardOfferSelect'
 import { Suspense } from 'react'
 import Loading from '@/app/(offers)/search/loading'
+import { Pager } from '@/components/search/pager'
 
 export default function Prueba({ searchParams }) {
+  const params = Object.keys(searchParams).includes('page')
+    ? searchParams
+    : { ...searchParams, page: 1 }
+
   return (
     <Suspense fallback={<Loading searchParams={searchParams} />} key={Date.now().toString()}>
-      <Search searchParams={searchParams} />
+      <Search searchParams={params} />
     </Suspense>
   )
 }
@@ -35,6 +40,7 @@ export async function Search({ searchParams }) {
             <CardOffer offer={offer} key={offer.id} />
             )))}
       </section>
+      <Pager searchParams={searchParams} />
     </section>
   )
 }

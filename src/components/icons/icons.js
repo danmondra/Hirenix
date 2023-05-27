@@ -378,6 +378,36 @@ function StudyIcon({ size = 'normal' }) {
   )
 }
 
+function PagerForwardIcon({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 -960 960 960'
+      fill='currentColor'
+    >
+      <title>Siguiente Página</title>
+      <path d='M375-240l-43-43 198-198-198-198 43-43 241 241-241 241z' />
+    </svg>
+  )
+}
+
+function PagerBackIcon({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 -960 960 960'
+      fill='currentColor'
+    >
+      <title>Página anterior</title>
+      <path d='M561-240L320-481l241-241 43 43-198 198 198 198-43 43z' />
+    </svg>
+  )
+}
+
 export {
   ArrowRightIcon,
   LocationIcon,
@@ -403,5 +433,7 @@ export {
   ExpandIcon,
   LanguageIcon,
   ResidenceIcon,
-  StudyIcon
+  StudyIcon,
+  PagerForwardIcon,
+  PagerBackIcon
 }

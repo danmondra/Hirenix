@@ -234,6 +234,10 @@
   gap: .5rem;
 }
 
+.card .characteristicsGroup {
+  width: max-content;
+}
+
 @media (min-width: 998px) {
   .characteristicsGroup {
     margin-left: 12rem;

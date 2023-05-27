@@ -3,7 +3,7 @@ import { getInfojobsOffers } from '@/services/getOffers'
 import { CardOfferSelect } from '@/components/offer/card/cardOfferSelect'
 
 export async function CardListOffer() {
-  const { items: offerList } = await getInfojobsOffers()
+  const { items: offerList } = await getInfojobsOffers({ maxResults: 10 })
 
   return (
     <>

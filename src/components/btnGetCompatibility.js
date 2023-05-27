@@ -24,7 +24,7 @@ export function BtnGetCompatibility() {
       <button
         className={`${styles.cardActionButton} ${styles.actionButton}`}
         onClick={handleClick}
-        disabled={Boolean(compatibility)}
+        disabled={Boolean(compatibility) || !'usuarioFalse'}
       >
         {
           loading

@@ -1,10 +1,12 @@
 import styles from '@/styles/landingPage.module.css'
+import searchStyles from '@/styles/search.module.css'
 import { PoweredLogos } from '@/components/landing/poweredLogos'
 import { MainLink } from '@/components/landing/mainLink'
 
 export function PoweredSection() {
   return (
     <section className={styles.powered}>
+      <span className={searchStyles.toLoadSearchStylesAndAvoidError} />
       <div className={styles.poweredBg} />
       <div className={`container ${styles.poweredContainer}`}>
         <div className={styles.poweredTopContainer}>

@@ -3,6 +3,7 @@ import { JobsGrid } from '@/components/explore/jobsGrid'
 import { SearchSection } from '@/components/explore/searchSection'
 import { CardListOffer } from '@/components/offer/card/cardListOffer'
 import { Suspense } from 'react'
+import { CardOfferSkeleton } from '@/components/offer/card/cardOfferSkeleton'
 
 export default async function Explore() {
   return (
@@ -15,7 +16,7 @@ export default async function Explore() {
       <hr className='containerExplore divisorLineGreen' />
       <section className={`containerExplore ${styles.offersSection}`}>
         <h2 className={styles.offersSectionTitle}>Nuevas Ofertas</h2>
-        <Suspense fallback={<h1 style={{ color: 'black' }}>CARGANDO</h1>}>
+        <Suspense fallback={[0, 0, 0].map((_, i) => <CardOfferSkeleton key={i} />)}>
           <CardListOffer />
         </Suspense>
       </section>

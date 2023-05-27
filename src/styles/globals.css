@@ -807,3 +807,31 @@ a {
     stroke-dashoffset: 2.118270261325792;
   }
 }  
+
+/* ----Spinner---- */
+.lds-dual-ring {
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  border-radius: 50%;
+  border: 3px solid var(--color-greenPrimary);
+  border-color: var(--color-greenPrimary) transparent var(--color-greenPrimary) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -387,6 +387,10 @@
   height: 2rem;
 }
 
+.offer .cardActionButton span {
+  display: block;
+}
+
 .actionsContainer {
   flex: 1;
   display: flex;
@@ -488,4 +492,59 @@
   display: list-item;
   list-style-type: disc;
   margin-left: 20px;
+}
+
+
+/* ---------Tool Tip --------- */
+
+.getCompatibilityContainer {
+  position: relative;
+}
+
+.compatibilityToolTip {
+  position: absolute;
+  bottom: 110%;
+  right: 0;
+  background-color: var(--color-white);
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 1rem 3rem;
+  color: var(--color-greenPrimary);
+  font-weight: 700;
+  width: max-content;
+  max-width: 30ch;
+  text-align: start;
+  display: none;
+}
+
+.cardActionButton:hover + .compatibilityToolTip,
+.compatibilityToolTip:hover {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: unset;
+    opacity: 1;
+  }
+}
+
+.compatibilityInfo {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: rgb(var(--color-secondaryGray) / 1);
+}
+
+.compatibilityInfo svg {
+  min-width: 18px;
 }

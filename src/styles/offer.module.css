@@ -563,3 +563,11 @@
   display: grid;
   place-items: center;
 }
+
+
+/* ----------- Avoid Error https://github.com/vercel/next.js/issues/33286 ---------- */
+/* CSS modules dont download when are required in /search page */
+
+.toLoadSearchStylesAndAvoidError {
+  display: none;
+}

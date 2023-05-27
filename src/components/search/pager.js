@@ -3,19 +3,22 @@
 import Link from 'next/link'
 import styles from '@/styles/pager.module.css'
 import { PagerBackIcon, PagerForwardIcon } from '@/components/icons/icons'
+import { objectToParams } from '@/utils/transformURLParams'
 
 export function Pager({ searchParams }) {
   const { page } = searchParams
   const actualPage = Number(page) < 1 ? 1 : Number(page)
 
+  const setParams = (value) => objectToParams({ ...searchParams, page: value })
+
   return (
     <div className={styles.pager}>
-      <Link href={`/search?page=${actualPage - 1}`} className={styles.navigationLink}>
+      <Link href={`/search${setParams(actualPage - 1)}`} className={styles.navigationLink}>
         <PagerBackIcon size='normal' />
       </Link>
       {[actualPage - 1, actualPage, actualPage + 1].map((value, i) => (
         <Link
-          href={`/search?page=${value}`}
+          href={`/search${setParams(value)}`}
           key={i}
           className={`
               ${styles.numberLink}
@@ -26,7 +29,7 @@ export function Pager({ searchParams }) {
           {value}
         </Link>
       ))}
-      <Link href={`/search?page=${actualPage + 1}`} className={styles.navigationLink}>
+      <Link href={`/search${setParams(actualPage + 1)}`} className={styles.navigationLink}>
         <PagerForwardIcon size='normal' />
       </Link>
     </div>

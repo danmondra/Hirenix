@@ -7,7 +7,7 @@ export function CardOfferHeader({ offer }) {
   return (
     <header>
       <picture className={styles.cardLogoContainer}>
-        <img src={author.logoUrl || placeholderImageOffer} alt={`Logo of author ${author?.name}`} className={styles.cardCompanyLogo} />
+        <img src={author.logoUrl || placeholderImageOffer} alt={`Logo of author ${author?.name}`} className={styles.cardCompanyLogo} lazy='loading' />
       </picture>
       <div className={styles.titleContainer}>
         <h3 className={styles.cardTitle}>{title}</h3>

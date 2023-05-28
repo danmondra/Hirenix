@@ -4,23 +4,34 @@ import { useRouter } from 'next/navigation'
 import styles from '@/styles/explore.module.css'
 import { ArrowRightIcon, InfoIcon, SearchIcon, ToggleOnIcon } from '@/components/icons/icons'
 import { objectToParams } from '@/utils/transformURLParams'
+import { useState } from 'react'
+import { getGPTResponse } from '@/services/getGPTResponse'
 
 export function SearchAside() {
+  const [loading, setLoading] = useState(false)
   const router = useRouter()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    setLoading(true)
     e.preventDefault()
 
-    const data = Object.fromEntries(new FormData(e.currentTarget))
-    const searchParams = objectToParams(data)
+    const dataForm = Object.fromEntries(new FormData(e.currentTarget))
+    let searchParams = objectToParams(dataForm)
 
-    if(data?.ai === 'on') {
-      // TODO --- Add chatGPT here
-      console.log('ai on')
+    if(dataForm?.ai === 'true') {
+      const data = await getGPTResponse('/search', { userSearch: dataForm?.q })
+
+      searchParams = objectToParams(data)
     }
 
+    setLoading(false)
     router.push(`/search${searchParams}`)
-    e.currentTarget.reset()
+    e.target.reset()
+  }
+
+  const handleChange = (e) => {
+    localStorage.setItem('searchWithAi', e.currentTarget.checked)
+    e.currentTarget.defaultChecked = e.currentTarget.checked
   }
 
   return (
@@ -34,7 +45,11 @@ export function SearchAside() {
         </label>
         <input type='search' id='searchAside' placeholder='Puesto, empresa o palabra clave' className={styles.searchInput} name='q' />
         <label className={styles.searchSubmit}>
-          <ArrowRightIcon size='small' />
+          {
+            loading
+              ? <div className='lds-dual-ring small' />
+              : <ArrowRightIcon size='small' />
+          }
           <input type='submit' value='' />
         </label>
       </fieldset>
@@ -43,7 +58,13 @@ export function SearchAside() {
           Busqueda con AI
           <InfoIcon size='small' />
         </span>
-        <input type='checkbox' name='ai' />
+        <input
+          type='checkbox'
+          name='ai'
+          value='true'
+          onChange={handleChange}
+          defaultChecked={JSON.parse(localStorage.getItem('searchWithAi'))}
+        />
         <ToggleOnIcon />
       </label>
     </form>

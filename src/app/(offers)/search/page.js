@@ -33,10 +33,10 @@ export async function Search({ searchParams }) {
       </header>
       <section className={styles.offersContainer}>
         {searchParams?.select
-          ? (offerList.map((offer) => (
+          ? (offerList?.map((offer) => (
             <CardOfferSelect offer={offer} key={offer.id} />
             )))
-          : (offerList.map((offer) => (
+          : (offerList?.map((offer) => (
             <CardOffer offer={offer} key={offer.id} />
             )))}
       </section>

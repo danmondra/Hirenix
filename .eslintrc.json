@@ -4,6 +4,7 @@
     "space-before-function-paren": "off",
     "camelcase": "off",
     "keyword-spacing": "off",
-    "no-img-element": "off"
+    "no-img-element": "off",
+    "array-callback-return": "off"
   }
 }

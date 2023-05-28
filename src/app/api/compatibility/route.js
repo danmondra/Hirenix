@@ -14,14 +14,14 @@ export async function POST(req) {
   const { offerId } = await req.json()
   const offer = await getOfferById(offerId)
 
-  const [promptSystem, responseExample] = compatibilityPromptGenerator(userExample, offer?.description)
+  const [systemPrompt, responseExample] = compatibilityPromptGenerator(userExample, offer?.description)
 
   const response = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
     messages: [
       {
         role: ChatCompletionRequestMessageRoleEnum.System,
-        content: promptSystem
+        content: systemPrompt
       },
       {
         role: ChatCompletionRequestMessageRoleEnum.Assistant,

@@ -19,7 +19,7 @@ export function OfferHeader({ offer }) {
       </header>
       <div className={offerStyles.cardInfo}>
         <OfferCharacteristics offer={offer} />
-        <OfferActions id={offer.id} />
+        <OfferActions id={offer?.id} />
       </div>
     </div>
   )

@@ -354,6 +354,7 @@
 
 .searchSection {
   display: flex;
+  flex-direction: column;
   margin: 10rem 0;
 }
 

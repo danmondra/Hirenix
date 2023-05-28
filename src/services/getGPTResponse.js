@@ -1,13 +1,11 @@
-export async function getCompatibility(offerId) {
+export async function getGPTResponse(apiRoute, body) {
   try {
-    const res = await fetch('/compatibility', {
+    const res = await fetch(`/api${apiRoute}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        offerId
-      })
+      body: JSON.stringify(body)
     })
     return await res.json()
   } catch(e) {

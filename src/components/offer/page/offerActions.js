@@ -7,7 +7,7 @@ export function OfferActions({ id = null }) {
   return (
     <div className={offerStyles.actionsContainer}>
       <div className={offerStyles.buttonsContainer}>
-        <BtnGetCompatibility />
+        <BtnGetCompatibility offerId={id} />
         <Link href='/' className={`${offerStyles.actionButton} ${offerStyles.blue}`}>
           <ScienceIcon size='medium' />
           <span>Prueba Técnica</span>

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import styles from '@/styles/offer.module.css'
 import { InfoIcon, QuestionIcon } from '@/components/icons/icons'
-import { getCompatibility } from '@/services/getCompatibility'
+import { getGPTResponse } from '@/services/getGPTResponse'
 
 export function BtnGetCompatibility({ offerId }) {
   const [loading, setLoading] = useState(false)
@@ -18,7 +18,7 @@ export function BtnGetCompatibility({ offerId }) {
     if(value) return
     setLoading(true)
     try {
-      const data = await getCompatibility(offerId)
+      const data = await getGPTResponse('/compatibility', { offerId })
       setCompatibility(data)
     } catch(e) {
       console.log(e)
@@ -65,7 +65,7 @@ export function BtnGetCompatibility({ offerId }) {
             Obtener Compatibilidad
             <span className={styles.compatibilityInfo}>
               <InfoIcon size='xs' />
-              <span> Para obtener tu compatibilidad con un empleo, primero inicia sesión y sube un CV</span>
+              <span> Para obtener tu compatibilidad con un empleo, primero sube un CV, o completa una entrevista general.</span>
             </span>
           </div>
           )}

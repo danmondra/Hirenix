@@ -181,8 +181,9 @@
   background-color: rgb(var(--color-secondaryGray) / .15);
 }
 
-.offer .actionButton:disabled {
+.actionButon:nt(:disabled) {
   cursor: auto;
+  pointer-events: none;
 }
 
 .actionButton.blue svg {

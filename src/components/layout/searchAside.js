@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import styles from '@/styles/explore.module.css'
+import offerStyles from '@/styles/offer.module.css'
 import { ArrowRightIcon, InfoIcon, SearchIcon, ToggleOnIcon } from '@/components/icons/icons'
 import { objectToParams } from '@/utils/transformURLParams'
 import { useState } from 'react'
@@ -60,20 +61,31 @@ export function SearchAside() {
           <input type='submit' value='' />
         </label>
       </fieldset>
-      <label className={styles.searchGroupAi}>
-        <span>
+      <div className={`${styles.searchGroupAi}`}>
+        <span className={offerStyles.search}>
           Busqueda con AI
           <InfoIcon size='small' />
+          <span className={offerStyles.compatibilityToolTip}>
+            Busqueda Con Inteligencia Artificial
+            <h4>Ejemplo de busqueda:</h4>
+            <span className={offerStyles.compatibilityInfo}>"Me gustaría tener un empleo en diseño, con un sueldo superior a 2000 euros anuales y que esté en Barcelona, España"</span>
+            <span className={offerStyles.compatibilityInfo}>
+              <InfoIcon size='xs' />
+              <span>Te recomendamos activar esta opción solo cuando no tengas claridad sobre lo que estás buscando. Ten en cuenta que cuanto más específica sea tu búsqueda, obtendrás menos resultados.</span>
+            </span>
+          </span>
         </span>
-        <input
-          type='checkbox'
-          name='ai'
-          value='true'
-          onChange={handleChange}
-          defaultChecked={aiEnabled}
-        />
-        <ToggleOnIcon />
-      </label>
+        <label>
+          <input
+            type='checkbox'
+            name='ai'
+            value='true'
+            onChange={handleChange}
+            defaultChecked={aiEnabled}
+          />
+          <ToggleOnIcon />
+        </label>
+      </div>
     </form>
   )
 }

@@ -240,11 +240,16 @@
   background: unset;
 }
 
+.searchAiContainer {
+  display: flex;
+  align-items: center;
+}
+
 .searchGroupAi {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 30rem;
+  position: relative;
 }
 
 .technicalTest .searchGroupAi {

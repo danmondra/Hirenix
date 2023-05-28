@@ -518,11 +518,23 @@
   width: max-content;
   max-width: 30ch;
   text-align: start;
+  z-index: 100;
   display: none;
 }
 
 .cardActionButton:hover + .compatibilityToolTip,
 .compatibilityToolTip:hover {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.search .compatibilityToolTip {
+  bottom: unset;
+  top: 110%;
+  display: none;
+}
+
+.search:hover .compatibilityToolTip {
   display: block;
   animation: fadeIn 0.3s ease;
 }

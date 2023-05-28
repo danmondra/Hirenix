@@ -18,7 +18,7 @@ export function CardOffer({ offer }) {
         </div>
       </Link>
       <div className={offerStyles.cardActions}>
-        <BtnGetCompatibility />
+        <BtnGetCompatibility offerId={id} />
         <button className={`${offerStyles.cardActionButton} ${offerStyles.actionButton}`}>
           <SaveIcon size='medium' />
         </button>

@@ -4,19 +4,26 @@ import { useState } from 'react'
 import styles from '@/styles/offer.module.css'
 import { InfoIcon, QuestionIcon } from '@/components/icons/icons'
 
-export function BtnGetCompatibility() {
+export function BtnGetCompatibility({ offerId }) {
   const [loading, setLoading] = useState(false)
   const [compatibility, setCompatibility] = useState(0)
 
   const handleClick = async () => {
     setLoading(true)
     const res = await fetch('/compatibility', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        offerId
+      }),
       cache: 'no-store'
     })
     const data = await res.json()
 
+    setCompatibility(Number(data.studiesCompatibility) + Number(data.experienceCompatibility) + Number(data.skillsCompatibility))
     setLoading(false)
-    setCompatibility(data.compatibility)
   }
 
   return (

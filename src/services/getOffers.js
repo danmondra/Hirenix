@@ -25,10 +25,6 @@ export async function getOfferById(id) {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Basic ${encodedCredentials}`
-    },
-    cache: 'force-cache',
-    next: {
-      revalidate: 3600
     }
   })
 

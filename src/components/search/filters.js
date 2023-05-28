@@ -8,7 +8,6 @@ import { ExpandIcon, FilterIcon } from '@/components/icons/icons'
 
 export function Filters({ searchParams }) {
   const [toggleFilters, setToggleFilters] = useState(false)
-  console.log(searchParams)
 
   const {
     sinceDate,

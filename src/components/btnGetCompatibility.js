@@ -6,7 +6,7 @@ import { InfoIcon, QuestionIcon } from '@/components/icons/icons'
 
 export function BtnGetCompatibility({ offerId }) {
   const [loading, setLoading] = useState(false)
-  const [compatibility, setCompatibility] = useState(0)
+  const [compatibility, setCompatibility] = useState({})
 
   const handleClick = async () => {
     setLoading(true)
@@ -22,7 +22,7 @@ export function BtnGetCompatibility({ offerId }) {
     })
     const data = await res.json()
 
-    setCompatibility(Number(data.studiesCompatibility) + Number(data.experienceCompatibility) + Number(data.skillsCompatibility))
+    setCompatibility(data)
     setLoading(false)
   }
 
@@ -31,15 +31,15 @@ export function BtnGetCompatibility({ offerId }) {
       <button
         className={`${styles.cardActionButton} ${styles.actionButton}`}
         onClick={handleClick}
-        disabled={Boolean(compatibility) || !'usuarioFalse'}
+        disabled={Boolean(compatibility?.compatibility) || !'usuarioFalse'}
       >
         {
           loading
             ? <div className='lds-dual-ring' />
-            : compatibility ? <span className={styles.compatibility}>{compatibility}</span> : <QuestionIcon size='medium' />
+            : compatibility?.compatibility ? <span className={styles.compatibility}>{compatibility?.compatibility}</span> : <QuestionIcon size='medium' />
         }
         {
-          compatibility
+          compatibility.compatibility
             ? <span>de Compatibilidad</span>
             : <span>Obtener Compatibilidad</span>
         }
@@ -48,9 +48,11 @@ export function BtnGetCompatibility({ offerId }) {
         Obtener Compatibilidad
         <span className={styles.compatibilityInfo}>
           <InfoIcon size='xs' />
-          <span>
-            Para obtener tu compatibilidad con un empleo, primero inicia sesión y sube un CV
-          </span>
+          {
+            compatibility?.compatibility
+              ? <span>compatibility?.reasons</span>
+              : <span> Para obtener tu compatibilidad con un empleo, primero inicia sesión y sube un CV</span>
+          }
         </span>
       </span>
     </div>

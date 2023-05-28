@@ -14,9 +14,7 @@ export async function POST(req) {
   const { offerId } = await req.json()
   const offer = await getOfferById(offerId)
 
-  const { studiesMin, skillsList, experienceMin } = offer
-
-  const [promptSystem, responseExample] = compatibilityPromptGenerator(userExample, { studies: studiesMin.value, skills: skillsList, experience: experienceMin.value })
+  const [promptSystem, responseExample] = compatibilityPromptGenerator(userExample, offer?.description)
 
   const response = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',

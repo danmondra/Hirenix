@@ -33,7 +33,6 @@ export async function POST(req) {
     temperature: 1
   })
   const data = response.data.choices[0].message?.content ?? ''
-  console.log(data)
 
   let json
   try {
@@ -44,11 +43,14 @@ export async function POST(req) {
     json = JSON.parse(data.slice(firstBracket, lastBracket + 1))
   }
 
-  // Convert values to string
   const dataToArray = Object.entries(json)
+
+  // Filter data that only have a valid value
   const dataWithValue = dataToArray.filter(prop =>
-    prop[1].length > 0 || typeof prop[1] === 'number'
+    (prop[1].length > 0 && prop[1][0] !== 'non-specified' && prop[1] !== 'non-specified') || typeof prop[1] === 'number'
   )
+
+  // Convert values to string
   const stringValues = dataWithValue.map(prop => {
     if(typeof prop[1] === 'object') return [prop[0], prop[1][0]]
     if(typeof prop[1] === 'number') return [prop[0], prop[1].toString()]

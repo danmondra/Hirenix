@@ -7,7 +7,10 @@ import { objectToParams } from '@/utils/transformURLParams'
 import { useState } from 'react'
 import { getGPTResponse } from '@/services/getGPTResponse'
 
-const aiEnabled = JSON.parse(localStorage.getItem('searchWithAi'))
+let aiEnabled = false
+if (typeof window !== 'undefined') {
+  aiEnabled = JSON.parse(localStorage.getItem('searchWithAi'))
+}
 
 export function SearchAside() {
   const [loading, setLoading] = useState(false)

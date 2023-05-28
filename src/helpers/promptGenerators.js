@@ -1,7 +1,9 @@
 export function compatibilityPromptGenerator(candidate, job) {
   const promptSystem = `
     Calculates the candidate's compatibility with a job offer and returns a JSON from 0 to 100.
-    Don't be strict. In the reasons speak directly to the candidate in Spanish.
+    In the missingRequirements separate each one and speak directly to the candidate in Spanish.
+    Only return the JSON.
+    Don't be strict and be concise.
 
     Job offer: 
     ${job}
@@ -15,7 +17,6 @@ export function compatibilityPromptGenerator(candidate, job) {
   const responseExample = `
     {
       compatibility: Number,
-      reasons: String,
       missingRequirements: Array
     }
   `

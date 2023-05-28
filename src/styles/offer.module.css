@@ -556,6 +556,22 @@
   min-width: 18px;
 }
 
+.compatibilityToolTip ul {
+  padding: 0;
+  list-style: inside;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgb(var(--color-secondaryGray) / 1);
+}
+
+.compatibilityToolTip h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: rgb(var(--color-secondaryGray) / 1);
+}
+
 .actionButton .compatibility {
   font-size: 1.4rem;
   font-weight: 500;

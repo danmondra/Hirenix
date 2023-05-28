@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import styles from '@/styles/offer.module.css'
 import { formatText } from '@/utils/formatText'
 import { OfferCharacteristicsRequirements } from '../offerCharacteristics'
+import { SkillsList } from './skillsList'
 
 export function OfferRequirements({ offer }) {
   const { minRequirements, skillsList } = offer
@@ -14,11 +14,7 @@ export function OfferRequirements({ offer }) {
 
         {
           skillsList.length !== 0 &&
-            <div className={styles.skillsContainer}>
-              {skillsList.map(({ skill }, i) => (
-                <Link href={`/search?q=${skill}`} key={i} className={styles.skill}>{skill}</Link>
-              ))}
-            </div>
+            <SkillsList skillsList={skillsList} />
         }
 
         <div>

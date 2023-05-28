@@ -3,26 +3,26 @@
 import { useState } from 'react'
 import styles from '@/styles/offer.module.css'
 import { InfoIcon, QuestionIcon } from '@/components/icons/icons'
+import { getCompatibility } from '@/services/getCompatibility'
 
 export function BtnGetCompatibility({ offerId }) {
   const [loading, setLoading] = useState(false)
   const [compatibility, setCompatibility] = useState({})
 
-  const handleClick = async () => {
-    setLoading(true)
-    const res = await fetch('/compatibility', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        offerId
-      }),
-      cache: 'no-store'
-    })
-    const data = await res.json()
+  const {
+    compatibility: value,
+    missingRequirements
+  } = compatibility
 
-    setCompatibility(data)
+  const handleClick = async () => {
+    if(value) return
+    setLoading(true)
+    try {
+      const data = await getCompatibility(offerId)
+      setCompatibility(data)
+    } catch(e) {
+      console.log(e)
+    }
     setLoading(false)
   }
 
@@ -31,30 +31,44 @@ export function BtnGetCompatibility({ offerId }) {
       <button
         className={`${styles.cardActionButton} ${styles.actionButton}`}
         onClick={handleClick}
-        disabled={Boolean(compatibility?.compatibility) || !'usuarioFalse'}
+        disabled={Boolean(value) || !'usuarioFalse'}
       >
         {
           loading
             ? <div className='lds-dual-ring' />
-            : compatibility?.compatibility ? <span className={styles.compatibility}>{compatibility?.compatibility}</span> : <QuestionIcon size='medium' />
+            : value ? <span className={styles.compatibility}>{value}</span> : <QuestionIcon size='medium' />
         }
         {
-          compatibility.compatibility
+          value
             ? <span>de Compatibilidad</span>
             : <span>Obtener Compatibilidad</span>
         }
       </button>
-      <span className={styles.compatibilityToolTip}>
-        Obtener Compatibilidad
-        <span className={styles.compatibilityInfo}>
-          <InfoIcon size='xs' />
-          {
-            compatibility?.compatibility
-              ? <span>compatibility?.reasons</span>
-              : <span> Para obtener tu compatibilidad con un empleo, primero inicia sesión y sube un CV</span>
-          }
-        </span>
-      </span>
+
+      {value
+        ? (
+          <div className={styles.compatibilityToolTip}>
+            {value} / 100 de compatibilidad:
+            <h4>No cumples con estos requisitos:</h4>
+            {
+              missingRequirements.length > 0 &&
+                <ul>
+                  {missingRequirements.map((req, i) => (
+                    <li key={i}>{req}</li>
+                  ))}
+                </ul>
+            }
+          </div>
+          )
+        : (
+          <div className={styles.compatibilityToolTip}>
+            Obtener Compatibilidad
+            <span className={styles.compatibilityInfo}>
+              <InfoIcon size='xs' />
+              <span> Para obtener tu compatibilidad con un empleo, primero inicia sesión y sube un CV</span>
+            </span>
+          </div>
+          )}
     </div>
   )
 }

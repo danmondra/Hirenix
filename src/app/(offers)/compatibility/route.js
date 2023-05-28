@@ -1,7 +1,7 @@
 import { compatibilityPromptGenerator } from '@/helpers/promptGenerators'
 import { NextResponse } from 'next/server'
 import { Configuration, OpenAIApi, ChatCompletionRequestMessageRoleEnum } from 'openai'
-import { userExample, job } from '@/consts/userExample'
+import { userExample } from '@/consts/userExample'
 import { getOfferById } from '@/services/getOffers'
 
 const configuration = new Configuration({
@@ -33,7 +33,6 @@ export async function POST(req) {
     temperature: 1
   })
   const data = response.data.choices[0].message?.content ?? ''
-  console.log(data)
 
   let json
   try {

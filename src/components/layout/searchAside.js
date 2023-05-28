@@ -7,6 +7,8 @@ import { objectToParams } from '@/utils/transformURLParams'
 import { useState } from 'react'
 import { getGPTResponse } from '@/services/getGPTResponse'
 
+const aiEnabled = JSON.parse(localStorage.getItem('searchWithAi'))
+
 export function SearchAside() {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
@@ -30,8 +32,10 @@ export function SearchAside() {
   }
 
   const handleChange = (e) => {
-    localStorage.setItem('searchWithAi', e.currentTarget.checked)
-    e.currentTarget.defaultChecked = e.currentTarget.checked
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('searchWithAi', e.currentTarget.checked)
+      e.currentTarget.defaultChecked = e.currentTarget.checked
+    }
   }
 
   return (
@@ -63,7 +67,7 @@ export function SearchAside() {
           name='ai'
           value='true'
           onChange={handleChange}
-          defaultChecked={JSON.parse(localStorage.getItem('searchWithAi'))}
+          defaultChecked={aiEnabled}
         />
         <ToggleOnIcon />
       </label>

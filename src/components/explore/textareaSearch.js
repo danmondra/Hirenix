@@ -17,7 +17,7 @@ export function TextareaSearch() {
     setLoading(true)
 
     const data = await getGPTResponse('/search', { userSearch: textarea })
-    const searchParams = objectToParams(data)
+    const searchParams = objectToParams({ ...data, ai: true })
 
     setLoading(false)
     setTextarea('')

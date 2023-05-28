@@ -8,11 +8,6 @@ import { objectToParams } from '@/utils/transformURLParams'
 import { useState } from 'react'
 import { getGPTResponse } from '@/services/getGPTResponse'
 
-let aiEnabled = false
-if (typeof window !== 'undefined') {
-  aiEnabled = JSON.parse(localStorage.getItem('searchWithAi'))
-}
-
 export function SearchAside() {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
@@ -33,13 +28,6 @@ export function SearchAside() {
     setLoading(false)
     router.push(`/search${searchParams}`)
     e.target.reset()
-  }
-
-  const handleChange = (e) => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('searchWithAi', e.currentTarget.checked)
-      e.currentTarget.defaultChecked = e.currentTarget.checked
-    }
   }
 
   return (
@@ -80,8 +68,6 @@ export function SearchAside() {
             type='checkbox'
             name='ai'
             value='true'
-            onChange={handleChange}
-            defaultChecked={aiEnabled}
           />
           <ToggleOnIcon />
         </label>

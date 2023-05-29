@@ -22,7 +22,9 @@ export default function Interview() {
       return int
     })
     const answersInterviewJoin = review.map(revInt => {
+      console.log({ review, revInt, formatedInterview })
       const question = formatedInterview.find(int => int.id === revInt.id)
+      console.log({ question })
 
       return { ...question, ...revInt }
     })

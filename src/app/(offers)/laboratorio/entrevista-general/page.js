@@ -12,7 +12,6 @@ export default function Interview() {
   const [fullInterview, setFullInterview] = useState(generalInterview)
   const [actualQuestion, setActualQuestion] = useState(fullInterview[0])
   const [minutes, setMinutes] = useState(0)
-  const [seconds, setSeconds] = useState(0)
 
   const deadline = 'December, 31, 2023'
 
@@ -21,7 +20,6 @@ export default function Interview() {
     console.log(minutes)
 
     setMinutes(Math.floor((time / 1000 / 60) % 60))
-    setSeconds(Math.floor((time / 1000) % 60))
   }
 
   useEffect(() => {

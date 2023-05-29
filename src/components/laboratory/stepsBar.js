@@ -2,7 +2,6 @@ import styles from '@/styles/laboratorySegments.module.css'
 
 export function StepsBar({ interview, actualQuestion, setQuestion }) {
   const { id } = actualQuestion
-  console.log(actualQuestion)
 
   return (
     <div className={styles.steps}>

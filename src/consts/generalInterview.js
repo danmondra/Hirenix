@@ -2,7 +2,7 @@ export const generalInterview = [
   {
     id: 0,
     format: 'open-ended-question',
-    question: 'Háblame sobre tu experiencia laboral previa y cómo crees que se relaciona con este puesto en particular.'
+    question: 'Háblame sobre tu experiencia laboral previa y en qué puestos te has desarrollado.'
   },
   {
     id: 1,
@@ -33,7 +33,7 @@ export const generalInterview = [
       a: 'Buscaría un compromiso y trataría de llegar a un consenso.',
       b: 'Plantearía mis argumentos y trataría de convencer al compañero de mi punto de vista.',
       c: 'Pediría la intervención de un superior para resolver el desacuerdo.',
-      d: 'Otro (especificar).'
+      d: 'Aceptaría que tiene razón.'
     }
   },
   {

@@ -12,7 +12,7 @@ export function InterviewsSection() {
       </h2>
       <Link href='/laboratorio/entrevista-general' className={styles.cardProductOption}>
         <h3 className={styles.cardProductTitle}>
-          Entrevista General
+          Practica para una Entrevista General
         </h3>
         <p className={styles.cardProductDescription}>
           Evalúa tus competencias básicas y tu idoneidad para un puesto general. Se te harán preguntas sobre tu experiencia laboral previa, habilidades generales, personalidad y capacidad de comunicación.
@@ -20,7 +20,7 @@ export function InterviewsSection() {
       </Link>
       <article className={styles.cardProductOption}>
         <h3 className={styles.cardProductTitle}>
-          Entrevista de un puesto específico
+          Practica para una entrevista de un puesto específico
         </h3>
         <p className={styles.cardProductDescription}>
           Evalúa tus competencias básicas y tu idoneidad para un puesto específico.

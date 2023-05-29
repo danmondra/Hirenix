@@ -463,3 +463,14 @@ export const filterParamsInfojobs = {
     }
   ]
 }
+
+export const allowedFilters = {
+  q: '',
+  category: '',
+  salaryMin: '',
+  contractType: '',
+  experienceMin: '',
+  workday: '',
+  sinceDate: '',
+  teleworking: ''
+}

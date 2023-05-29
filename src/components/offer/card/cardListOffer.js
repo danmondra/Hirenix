@@ -2,8 +2,8 @@ import { CardOffer } from '@/components/offer/card/cardOffer'
 import { getInfojobsOffers } from '@/services/getOffers'
 import { CardOfferSelect } from '@/components/offer/card/cardOfferSelect'
 
-export async function CardListOffer() {
-  const { items: offerList } = await getInfojobsOffers({ maxResults: 10 })
+export async function CardListOffer({ maxResults = 10 }) {
+  const { items: offerList } = await getInfojobsOffers({ maxResults })
 
   return (
     <>

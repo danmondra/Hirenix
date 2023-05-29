@@ -1,10 +1,10 @@
 import styles from '@/styles/search.module.css'
+import Loading from '@/app/(offers)/search/loading'
 import { Filters } from '@/components/search/filters'
 import { CardOffer } from '@/components/offer/card/cardOffer'
 import { getInfojobsOffers } from '@/services/getOffers'
 import { CardOfferSelect } from '@/components/offer/card/cardOfferSelect'
 import { Suspense } from 'react'
-import Loading from '@/app/(offers)/search/loading'
 import { Pager } from '@/components/search/pager'
 
 export default function Prueba({ searchParams }) {
@@ -26,11 +26,16 @@ export async function Search({ searchParams }) {
     <section className={`containerExplore ${styles.search}`}>
       <header>
         <h1 className={styles.title}>
-          <span>{totalResults} Ofertas</span> {searchParams?.q && `para “${searchParams?.q}”`}
+          {
+            searchParams?.ai && offerList?.length < 1
+              ? <><span>Sin resultados</span> para tu busqueda, intenta con otro prompt</>
+              : <><span>{totalResults} Ofertas</span> {searchParams?.q && `para “${searchParams?.q}”`}</>
+          }
         </h1>
         <p className={styles.text}>Mostrando {currentResults} resultados de {totalResults}</p>
         <Filters searchParams={searchParams} />
       </header>
+
       <section className={styles.offersContainer}>
         {searchParams?.select
           ? (offerList?.map((offer) => (
@@ -40,7 +45,11 @@ export async function Search({ searchParams }) {
             <CardOffer offer={offer} key={offer.id} />
             )))}
       </section>
-      <Pager searchParams={searchParams} />
+
+      {
+        offerList?.length > 0 &&
+          <Pager searchParams={searchParams} />
+      }
     </section>
   )
 }

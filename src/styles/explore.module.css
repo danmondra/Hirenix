@@ -266,7 +266,7 @@
   display: none;
 }
 
-.searchGroupAi > svg {
+.searchGroupAi input + svg {
   cursor: pointer;
 }
 

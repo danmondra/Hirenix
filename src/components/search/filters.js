@@ -21,13 +21,13 @@ const {
 export function Filters({ searchParams }) {
   const [toggleFilters, setToggleFilters] = useState(false)
   const [filters, setFilters] = useState({
-    sinceDate: searchParams.sinceDate ?? '',
-    teleworking: searchParams.teleworking ?? [],
-    category: searchParams.category ?? [],
-    study: searchParams.study ?? [],
-    workday: searchParams.workday ?? [],
-    contractType: searchParams.contractType ?? [],
-    experienceMin: searchParams.experienceMin ?? ''
+    sinceDate: searchParams?.sinceDate ?? '',
+    teleworking: searchParams?.teleworking ?? [],
+    category: searchParams?.category ?? [],
+    study: searchParams?.study ?? [],
+    workday: searchParams?.workday ?? [],
+    contractType: searchParams?.contractType ?? [],
+    experienceMin: searchParams?.experienceMin ?? ''
   })
   const router = useRouter()
 

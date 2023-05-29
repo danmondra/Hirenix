@@ -10,7 +10,7 @@ import { responseFormatsChatGPT } from '@/consts/responseFormatsChatGPT'
 import { generalInterview } from '@/consts/generalInterview'
 
 export default function Interview() {
-  const [interview, setInterview] = useState(generalInterview)
+  const [interview, setInterview] = useState([generalInterview[0], generalInterview[1], generalInterview[2]])
   const [reviewedInterview, setReviewedInterview] = useState([])
   const [actualQuestion, setActualQuestion] = useState(interview[0])
 

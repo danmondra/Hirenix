@@ -4,7 +4,7 @@ import { responseFormatsChatGPT } from '@/consts/responseFormatsChatGPT'
 import { useEffect, useState } from 'react'
 import { getGPTResponse } from '@/services/getGPTResponse'
 
-export function AnswersForm({ interview, setInterview, actualQuestion, setActualQuestion, setReview }) {
+export function AnswersForm({ endpoint, interview, setInterview, actualQuestion, setActualQuestion, handleData }) {
   const [answer, setAnswer] = useState('')
 
   const {
@@ -26,8 +26,11 @@ export function AnswersForm({ interview, setInterview, actualQuestion, setActual
     // Verify that have all answers
     if(interviewWithLastAnswer.some(({ answer }) => !answer)) {
       // TODO
+      console.log('cancelado')
+      return
     }
 
+    console.log('enviando')
     const formatedInterview = interviewWithLastAnswer.map(question => {
       let formatedAnswer = question.answer
       if(question.format === responseFormatsChatGPT.multipleChoiceQuestion) {
@@ -40,8 +43,8 @@ export function AnswersForm({ interview, setInterview, actualQuestion, setActual
       }
     })
 
-    const data = await getGPTResponse('/interviewReview', { interview: formatedInterview })
-    setReview(data)
+    const data = await getGPTResponse(endpoint, { interview: formatedInterview })
+    handleData(data)
   }
 
   const handleChange = (e) => {

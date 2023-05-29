@@ -2,8 +2,8 @@ import styles from '@/styles/laboratory.module.css'
 import exploreStyles from '@/styles/explore.module.css'
 import { InterviewsSection } from '@/components/laboratory/interviewsSection'
 import { TechnicalTestsSection } from '@/components/laboratory/technicalTestsSection'
-import { BtnArrow } from '@/components/btnArrow'
-import { LabsIcon } from '@/components/icons/icons'
+import { ArrowRightIcon, LabsIcon } from '@/components/icons/icons'
+import Link from 'next/link'
 
 export default function Laboratory() {
   return (
@@ -24,11 +24,13 @@ export default function Laboratory() {
           <h3 className={styles.subtitle}>Descubre tu puesto</h3>
           <p className={styles.cardProductDescription}>Completa el cuestionario sobre tus habilidades, capacidades y experiencias para recibir recomendaciones personalizadas y descubrir qué trabajos se adaptan mejor a ti.</p>
         </div>
-        <BtnArrow
-          color='blue'
+        <Link
+          href='/laboratorio/descubrir-puesto'
+          className={`${exploreStyles.btnArrow} ${exploreStyles.blue}`}
         >
           Descubrir
-        </BtnArrow>
+          <ArrowRightIcon size='medium' />
+        </Link>
       </section>
     </section>
   )

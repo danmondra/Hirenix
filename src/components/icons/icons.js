@@ -422,6 +422,20 @@ function CircleCheck({ size = 'normal' }) {
   )
 }
 
+function EditIcon({ size = 'normal' }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width={sizes[size]}
+      height={sizes[size]}
+      viewBox='0 -960 960 960'
+      fill='currentColor'
+    >
+      <path d='M180-180h44l443-443-44-44-443 443v44zm614-486L666-794l42-42q17-17 42-17t42 17l44 44q17 17 17 42t-17 42l-42 42zm-42 42L248-120H120v-128l504-504 128 128zm-107-21l-22-22 44 44-22-22z' />
+    </svg>
+  )
+}
+
 export {
   ArrowRightIcon,
   LocationIcon,
@@ -450,5 +464,6 @@ export {
   StudyIcon,
   PagerForwardIcon,
   PagerBackIcon,
-  CircleCheck
+  CircleCheck,
+  EditIcon
 }

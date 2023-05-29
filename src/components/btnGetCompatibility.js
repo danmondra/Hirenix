@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from '@/styles/offer.module.css'
 import { InfoIcon, QuestionIcon } from '@/components/icons/icons'
 import { getGPTResponse } from '@/services/getGPTResponse'
@@ -8,23 +8,31 @@ import { getGPTResponse } from '@/services/getGPTResponse'
 export function BtnGetCompatibility({ offerId }) {
   const [loading, setLoading] = useState(false)
   const [compatibility, setCompatibility] = useState({})
+  const [userProfile, setUserProfile] = useState([])
 
-  const {
-    compatibility: value,
-    missingRequirements
-  } = compatibility
+  useEffect(() => {
+    if(typeof window !== 'undefined') {
+      const profileLS = JSON.parse(localStorage.getItem('userProfile')) ?? []
+      setUserProfile(profileLS)
+    }
+  }, [])
 
   const handleClick = async () => {
     if(value) return
     setLoading(true)
     try {
-      const data = await getGPTResponse('/compatibility', { offerId })
+      const data = await getGPTResponse('/compatibility', { offerId, user: userProfile })
       setCompatibility(data)
     } catch(e) {
       console.log(e)
     }
     setLoading(false)
   }
+
+  const {
+    compatibility: value,
+    missingRequirements
+  } = compatibility
 
   return (
     <div className={styles.getCompatibilityContainer}>

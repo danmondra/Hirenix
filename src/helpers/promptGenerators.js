@@ -75,3 +75,20 @@ export function interviewReviewPromptGenerator(interview) {
 
   return [systemPrompt, userPrompt, responseExample]
 }
+
+export function discoverPromptGenerator(interview) {
+  const systemPrompt = 'Based on the interview, break down the information from the answers and create an JSON Object from them. Only return a JSON.'
+
+  const userPrompt = JSON.stringify(interview)
+
+  const responseExample = `
+    {
+      skills: [],
+      experience: '',
+      jobAreas: '',
+      location: ''
+    }
+    `
+
+  return [systemPrompt, userPrompt, responseExample]
+}

@@ -21,12 +21,9 @@ export default function Interview() {
       }
       return int
     })
-    console.log({ formatedInterview })
 
-    const answersInterviewJoin = review.map(revInt => {
-      console.log({ review, revInt, formatedInterview })
+    const answersInterviewJoin = review?.map(revInt => {
       const question = formatedInterview.find(int => int.id === revInt.id)
-      console.log({ question })
 
       return { ...question, ...revInt }
     })
@@ -42,12 +39,6 @@ export default function Interview() {
           <InterviewIcon />
         </h1>
       </div>
-      <StepsBar
-        interview={interview}
-        actualQuestion={actualQuestion}
-        setQuestion={setActualQuestion}
-        setInterview={setInterview}
-      />
       {
         reviewedInterview?.length > 0
           ? (
@@ -75,14 +66,24 @@ export default function Interview() {
               </div>
             </div>
             )
-          : <AnswersForm
+          : (
+            <><StepsBar
               interview={interview}
-              setInterview={setInterview}
               actualQuestion={actualQuestion}
-              setActualQuestion={setActualQuestion}
-              setReview={linkQuestionsReview}
-            />
-      }
+              setQuestion={setActualQuestion}
+              setInterview={setInterview}
+              />
+              <AnswersForm
+                endpoint='/interviewReview'
+                interview={interview}
+                setInterview={setInterview}
+                actualQuestion={actualQuestion}
+                setActualQuestion={setActualQuestion}
+                handleData={linkQuestionsReview}
+              />
+            </>
+            )
+}
     </section>
   )
 }

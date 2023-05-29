@@ -10,3 +10,13 @@ export function SkillsList({ skillsList }) {
     </div>
   )
 }
+
+export function UserSkillsList({ skillsList }) {
+  return (
+    <div className={styles.skillsContainer}>
+      {skillsList.map((skill, i) => (
+        <Link href={`/search?q=${skill}`} key={i} className={styles.skill}>{skill}</Link>
+      ))}
+    </div>
+  )
+}

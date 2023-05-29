@@ -1,17 +1,57 @@
 import styles from '@/styles/laboratorySegments.module.css'
 import { BtnArrow } from '@/components/btnArrow'
 import { responseFormatsChatGPT } from '@/consts/responseFormatsChatGPT'
+import { useEffect, useState } from 'react'
+import { getGPTResponse } from '@/services/getGPTResponse'
 
-export function AnswersForm({ interview, actualQuestion, setActualQuestion }) {
+export function AnswersForm({ interview, setInterview, actualQuestion, setActualQuestion, setReview }) {
+  const [answer, setAnswer] = useState('')
+
   const {
     id,
     format,
     paragraphs,
-    question
+    question,
+    answer: answerSaved
   } = actualQuestion
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    setAnswer(answerSaved ?? '')
+  }, [actualQuestion])
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    const interviewWithLastAnswer = interview.map(int => int.id === id ? { ...actualQuestion, answer } : int)
+
+    // Verify that have all answers
+    if(interviewWithLastAnswer.some(({ answer }) => !answer)) {
+      // TODO
+    }
+
+    const formatedInterview = interviewWithLastAnswer.map(question => {
+      let formatedAnswer = question.answer
+      if(question.format === responseFormatsChatGPT.multipleChoiceQuestion) {
+        formatedAnswer = question.paragraphs[question.answer]
+      }
+      return {
+        id: question.id,
+        question: question.question,
+        answer: formatedAnswer
+      }
+    })
+
+    const data = await getGPTResponse('/interviewReview', { interview: formatedInterview })
+    setReview(data)
+  }
+
+  const handleChange = (e) => {
+    setAnswer(e.currentTarget.value)
+  }
+
+  const handleClick = () => {
+    const interviewWithAnswer = interview.map(int => int.id === id ? { ...actualQuestion, answer } : int)
+    setInterview(interviewWithAnswer)
+    setAnswer('')
     setActualQuestion(interview[id + 1])
   }
 
@@ -25,24 +65,56 @@ export function AnswersForm({ interview, actualQuestion, setActualQuestion }) {
         format === responseFormatsChatGPT.openEndedQuestion &&
           <fieldset className={styles.answersGroup}>
             <label htmlFor='answer'>Respuesta:</label>
-            <textarea id='answer' name='answer' cols='10' rows='5' />
+            <textarea
+              id='answer'
+              name='answer'
+              cols='10'
+              rows='5'
+              value={answer}
+              onChange={handleChange}
+            />
           </fieldset>
       }
       {
         format === responseFormatsChatGPT.multipleChoiceQuestion &&
           <fieldset className={styles.answersGroup}>
             {Object.keys(paragraphs).map(key => (
-              <fieldset className={styles.radioContainer} key={key}>
-                <input id={'option' + key} type='radio' name={'question' + id} />
+              <div className={styles.radioContainer} key={key}>
+                <input
+                  id={'option' + key}
+                  type='radio'
+                  name={'question' + id}
+                  value={key}
+                  checked={answer === key}
+                  onChange={handleChange}
+                />
                 <label htmlFor={'option' + key}>{paragraphs[key]}</label>
-              </fieldset>
+              </div>
             ))}
           </fieldset>
       }
 
-      <BtnArrow color='green' type='submit'>
-        {interview.length - 1 > actualQuestion.id ? 'Siguiente' : 'Finalizar'}
-      </BtnArrow>
+      {
+        interview.length - 1 > actualQuestion?.id
+          ? (
+            <BtnArrow
+              color='green'
+              type='button'
+              callback={handleClick}
+            >
+              Siguiente
+            </BtnArrow>
+            )
+
+          : (
+            <BtnArrow
+              color='green'
+              type='submit'
+            >
+              Finalizar
+            </BtnArrow>
+            )
+      }
     </form>
   )
 }

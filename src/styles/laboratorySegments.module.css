@@ -142,3 +142,36 @@
   width: 32px;
   height: 32px;
 }
+
+/* -----Interview Review-----  */
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  color-scheme: auto;
+}
+
+.reviewTitle {
+  color: rgb(var(--color-secondaryGray) / 1);
+  max-width: 65ch;
+  font-size: 1.8rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reviewTitle svg {
+  color: var(--color-greenPrimary);
+}
+
+.feedback {
+  max-width: 65ch;
+  color: rgb(var(--color-secondaryGray) / 1);
+}
+
+.answerFeedback {
+  padding: 4rem 0;
+  border-top: 1px rgb(0 0 0 / .1) solid;
+  border-bottom: 1px rgb(0 0 0 / .1) solid;
+}

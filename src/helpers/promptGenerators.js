@@ -50,3 +50,28 @@ export function searchPromptGenerator(userSearch) {
 
   return [systemPrompt, userPrompt, responseExample]
 }
+
+export function interviewReviewPromptGenerator(interview) {
+  const systemPrompt = `
+    You are a reviewer and interview counselor, review the following interview and give him feedback or congratulations for each question, so he can improve on each of the questions.
+    Also tell him what he said well. Don't be strict. Speak directly to the candidate in Spanish. 
+    The response will be in JSON format.
+`
+
+  const userPrompt = JSON.stringify(interview)
+
+  const responseExample = `
+  [
+    {
+      id: Number,
+      feedback: ''
+    },
+    {
+      id: Number,
+      feedback: ''
+    },
+  ]
+  `
+
+  return [systemPrompt, userPrompt, responseExample]
+}

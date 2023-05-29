@@ -22,6 +22,7 @@ export function AnswersForm({ endpoint, interview, setInterview, actualQuestion,
   const handleSubmit = async (e) => {
     e.preventDefault()
     const interviewWithLastAnswer = interview.map(int => int.id === id ? { ...actualQuestion, answer } : int)
+    console.log({ interviewWithLastAnswer })
 
     // Verify that have all answers
     if(interviewWithLastAnswer.some(({ answer }) => !answer)) {
@@ -30,7 +31,6 @@ export function AnswersForm({ endpoint, interview, setInterview, actualQuestion,
       return
     }
 
-    console.log('enviando')
     const formatedInterview = interviewWithLastAnswer.map(question => {
       let formatedAnswer = question.answer
       if(question.format === responseFormatsChatGPT.multipleChoiceQuestion) {
@@ -51,7 +51,8 @@ export function AnswersForm({ endpoint, interview, setInterview, actualQuestion,
     setAnswer(e.currentTarget.value)
   }
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault()
     const interviewWithAnswer = interview.map(int => int.id === id ? { ...actualQuestion, answer } : int)
     setInterview(interviewWithAnswer)
     setAnswer('')
@@ -98,7 +99,7 @@ export function AnswersForm({ endpoint, interview, setInterview, actualQuestion,
       }
 
       {
-        interview.length - 1 > actualQuestion?.id
+        interview.length - 1 !== interview.findIndex(ques => ques.id === actualQuestion.id)
           ? (
             <BtnArrow
               color='green'

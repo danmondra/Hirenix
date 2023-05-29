@@ -13,7 +13,7 @@ export async function POST(req) {
 
   const [systemPrompt, userPrompt, responseExample] = discoverPromptGenerator(interview)
 
-  const response = await openai.createChatCompletion({
+  const responseGpt = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
     messages: [
       {
@@ -31,8 +31,7 @@ export async function POST(req) {
     ],
     temperature: 1
   })
-  const data = response.data.choices[0].message?.content ?? ''
-  console.log(data)
+  const data = responseGpt.data.choices[0].message?.content ?? ''
 
   let json
   try {
@@ -42,6 +41,15 @@ export async function POST(req) {
     const lastBracket = data.lastIndexOf('}')
     json = JSON.parse(data.slice(firstBracket, lastBracket + 1))
   }
+  console.log({ json, data })
 
-  return NextResponse.json(json)
+  const jsonEncoded = encodeURIComponent(JSON.stringify(json))
+  const response = NextResponse.json(json)
+  response.cookies.set({
+    name: 'userProfileGenerated',
+    value: jsonEncoded,
+    maxAge: 60 * 60 * 24 * 365
+  })
+
+  return response
 }

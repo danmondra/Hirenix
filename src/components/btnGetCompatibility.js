@@ -13,6 +13,7 @@ export function BtnGetCompatibility({ offerId }) {
   useEffect(() => {
     if(typeof window !== 'undefined') {
       const profileLS = JSON.parse(localStorage.getItem('userProfile')) ?? []
+      console.log(profileLS)
       setUserProfile(profileLS)
     }
   }, [])

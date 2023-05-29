@@ -3,11 +3,14 @@
 import { useEffect, useState } from 'react'
 import styles from '@/styles/laboratorySegments.module.css'
 import labStyles from '@/styles/laboratory.module.css'
+
+import Cookies from 'js-cookie'
+
 import { StepsBar } from '@/components/laboratory/stepsBar'
 import { AnswersForm } from '@/components/laboratory/answersForm'
-import { discoverJobInterview } from '@/consts/discoverJobInterview'
 import { UserSkillsList } from '@/components/offer/page/skillsList'
 import { CircleCheck, EditIcon, InterviewIcon } from '@/components/icons/icons'
+import { discoverJobInterview } from '@/consts/discoverJobInterview'
 
 export default function Discover() {
   const [interview, setInterview] = useState(discoverJobInterview)
@@ -15,17 +18,15 @@ export default function Discover() {
   const [actualQuestion, setActualQuestion] = useState(interview[0])
 
   useEffect(() => {
-    if(typeof window !== 'undefined') {
-      const profileLS = JSON.parse(localStorage.getItem('userProfile'))
-      setProfile(profileLS)
-    }
+    if(!Cookies.get('userProfileGenerated')) return
+    const profileCookie = Cookies.get('userProfileGenerated')
+    const profileDecoded = decodeURIComponent(profileCookie)
+
+    setProfile(JSON.parse(profileDecoded))
   }, [])
 
-  const saveProfile = (profileData) => {
-    if(typeof window !== 'undefined') {
-      localStorage.setItem('userProfile', JSON.stringify(profileData))
-    }
-    setProfile(profileData)
+  const handleData = (data) => {
+    setProfile(data)
   }
 
   return (
@@ -85,7 +86,7 @@ export default function Discover() {
                 setInterview={setInterview}
                 actualQuestion={actualQuestion}
                 setActualQuestion={setActualQuestion}
-                handleData={saveProfile}
+                handleData={handleData}
               />
             </>
             )

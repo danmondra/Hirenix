@@ -26,7 +26,7 @@ export function InterviewsSection() {
           Evalúa tus competencias básicas y tu idoneidad para un puesto específico.
           Busca el puesto:
         </p>
-        <SearchAside select />
+        <SearchAside select to='entrevista' />
       </article>
     </section>
   )

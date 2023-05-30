@@ -6,6 +6,7 @@ import { getInfojobsOffers } from '@/services/getOffers'
 import { CardOfferSelect } from '@/components/offer/card/cardOfferSelect'
 import { Suspense } from 'react'
 import { Pager } from '@/components/search/pager'
+import { cookies } from 'next/headers'
 
 export default function Prueba({ searchParams }) {
   const params = Object.keys(searchParams).includes('page')
@@ -21,13 +22,19 @@ export default function Prueba({ searchParams }) {
 
 export async function Search({ searchParams }) {
   const { items: offerList, currentResults, totalResults } = await getInfojobsOffers(searchParams)
+  const cookieStore = cookies()
+  let userProfile
+  if(cookieStore.has('userProfileGenerated')) {
+    const userProfileGenerated = cookieStore.get('userProfileGenerated')
+    userProfile = JSON.parse(decodeURIComponent(userProfileGenerated?.value))
+  }
 
   return (
     <section className={`containerExplore ${styles.search}`}>
       <header>
         <h1 className={styles.title}>
           {
-            searchParams?.ai && offerList?.length < 1
+            searchParams?.ai && !offerList
               ? <><span>Sin resultados</span> para tu busqueda, intenta con otro prompt</>
               : <><span>{totalResults} Ofertas</span> {searchParams?.q && `para “${searchParams?.q}”`}</>
           }
@@ -39,10 +46,10 @@ export async function Search({ searchParams }) {
       <section className={styles.offersContainer}>
         {searchParams?.select
           ? (offerList?.map((offer) => (
-            <CardOfferSelect offer={offer} key={offer.id} />
+            <CardOfferSelect offer={offer} key={offer.id} to={searchParams?.to} />
             )))
           : (offerList?.map((offer) => (
-            <CardOffer offer={offer} key={offer.id} />
+            <CardOffer offer={offer} key={offer.id} user={userProfile} />
             )))}
       </section>
 

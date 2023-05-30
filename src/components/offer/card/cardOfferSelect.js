@@ -4,10 +4,10 @@ import { CardOfferSelectCharacteristics } from '@/components/offer/offerCharacte
 import { CardOfferHeader } from '@/components/offer/card/cardOfferHeader'
 import { ArrowRightIcon } from '@/components/icons/icons'
 
-export function CardOfferSelect({ offer }) {
+export function CardOfferSelect({ offer, to = 'prueba-tecnica' }) {
   return (
     <article className={offerStyles.cardContainer}>
-      <Link href='/explorar/offer' className={`${offerStyles.card} ${offerStyles.cardSelect}`} scroll={false}>
+      <Link href={`/laboratorio/${to}/${offer?.id}`} className={`${offerStyles.card} ${offerStyles.cardSelect}`} scroll={false}>
         <CardOfferHeader offer={offer} />
         <div className={offerStyles.cardInfo}>
           <CardOfferSelectCharacteristics offer={offer} />

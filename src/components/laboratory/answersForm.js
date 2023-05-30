@@ -1,4 +1,6 @@
 import styles from '@/styles/laboratorySegments.module.css'
+import exploreStyles from '@/styles/explore.module.css'
+import { ArrowRightIcon } from '@/components/icons/icons'
 import { BtnArrow } from '@/components/btnArrow'
 import { responseFormatsChatGPT } from '@/consts/responseFormatsChatGPT'
 import { useEffect, useState } from 'react'
@@ -6,6 +8,7 @@ import { getGPTResponse } from '@/services/getGPTResponse'
 
 export function AnswersForm({ endpoint, interview, setInterview, actualQuestion, setActualQuestion, handleData }) {
   const [answer, setAnswer] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const {
     id,
@@ -22,6 +25,8 @@ export function AnswersForm({ endpoint, interview, setInterview, actualQuestion,
   const handleSubmit = async (e) => {
     e.preventDefault()
     const interviewWithLastAnswer = interview.map(int => int.id === id ? { ...actualQuestion, answer } : int)
+    setLoading(true)
+    return
 
     // Verify that have all answers
     if(interviewWithLastAnswer.some(({ answer }) => !answer)) {
@@ -43,6 +48,7 @@ export function AnswersForm({ endpoint, interview, setInterview, actualQuestion,
     })
 
     const data = await getGPTResponse(endpoint, { interview: formatedInterview })
+    setLoading(false)
     handleData(data)
   }
 
@@ -110,12 +116,16 @@ export function AnswersForm({ endpoint, interview, setInterview, actualQuestion,
             )
 
           : (
-            <BtnArrow
-              color='green'
+            <button
               type='submit'
+              className={`${exploreStyles.btnArrow} ${exploreStyles.green}`}
             >
-              Finalizar
-            </BtnArrow>
+              {
+            loading
+              ? <>Revisando <div className='lds-dual-ring small green' /></>
+              : <>Finalizar <ArrowRightIcon size='small' /></>
+          }
+            </button>
             )
       }
     </form>

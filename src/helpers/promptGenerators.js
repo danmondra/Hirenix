@@ -91,3 +91,35 @@ export function discoverPromptGenerator(interview) {
 
   return [systemPrompt, userPrompt, responseExample]
 }
+
+export function techincalTestPromptGenerator(offer) {
+  const systemPrompt = `
+  Create a technical interview in Spanish with 2 questions from a job offer.
+  Only technical questions related to the area of the job offer.
+  Return a valid JSON array
+  `
+
+  const userPrompt = `
+  Job:
+  ${offer?.title}
+  Job Requirements:
+  ${offer?.skillsList.map(skill => skill.skill).join(', ')}
+  Job Description:
+  ${offer?.description}
+  `
+
+  const responseExample = `
+  [
+    {
+      "id": 0,
+      "question": "¿Cuál es el resultado de Boolean(NaN) en JavaScript?"
+    },
+    {
+      "id": 1,
+      "question": "¿Cuáles son los 4 pilares de la programación orientada a objetos?"
+    }
+  ]
+`
+
+  return [systemPrompt, userPrompt, responseExample]
+}

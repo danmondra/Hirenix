@@ -5,6 +5,7 @@
     "camelcase": "off",
     "keyword-spacing": "off",
     "no-img-element": "off",
-    "array-callback-return": "off"
+    "array-callback-return": "off",
+    "react/jsx-indent": "off"
   }
 }

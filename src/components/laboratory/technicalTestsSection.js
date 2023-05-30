@@ -18,7 +18,7 @@ export function TechnicalTestsSection() {
       </div>
       <div className={styles.rolesGrid}>
         {technicalRoles.map(({ id, name, icon }) => (
-          <Link href={`/search?q=${name}&select=true`} className={styles.role} key={id}>
+          <Link href={`/search?q=${name}&select=true&to=prueba-tecnica`} className={styles.role} key={id}>
             {icon}
             <p className={styles.roleName}>
               {name}
@@ -31,7 +31,7 @@ export function TechnicalTestsSection() {
             <p className={styles.roleName}>
               Otro Rol
             </p>
-            <SearchAside />
+            <SearchAside select to='prueba-tecnica' />
           </div>
         </article>
       </div>

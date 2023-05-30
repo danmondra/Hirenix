@@ -24,6 +24,10 @@
   color: var(--color-blue);
 }
 
+.technicalTest {
+  gap: 8rem;
+}
+
 .technicalTest .title svg {
   color: rgb(var(--color-secondaryGray) / 1);
 }

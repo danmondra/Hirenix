@@ -8,7 +8,7 @@ import { objectToParams } from '@/utils/transformURLParams'
 import { useState } from 'react'
 import { getGPTResponse } from '@/services/getGPTResponse'
 
-export function SearchAside({ select = false }) {
+export function SearchAside({ select, to = 'prueba-tecnica' }) {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
 
@@ -22,10 +22,10 @@ export function SearchAside({ select = false }) {
     if(dataForm?.ai === 'true') {
       const data = await getGPTResponse('/search', { userSearch: dataForm?.q })
 
-      searchParams = objectToParams(data)
+      searchParams = objectToParams({ ...data, ai: 'true' })
     }
 
-    searchParams = select ? searchParams.concat('&select=true') : searchParams
+    searchParams = select ? `${searchParams}&select=true&to=${to}` : searchParams
     setLoading(false)
     router.push(`/search${searchParams}`)
     e.target.reset()

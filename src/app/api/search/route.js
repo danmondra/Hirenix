@@ -60,9 +60,12 @@ export async function POST(req) {
   const cleanMainProperty = stringValues.map(prop =>
     prop[0] === 'mainWord' ? ['q', prop[1].replaceAll(', ', ' ')] : prop)
 
+  const cleanMainProperties = cleanMainProperty.map(prop =>
+    prop[1] === 'bruto-anual' ? [prop[0], 'bruto-ano'] : prop)
+
   // Verify that properties can be existing filters
   const filters = Object.keys(filterParamsInfojobs)
-  const filterProperties = cleanMainProperty.filter(prop => filters.includes(prop[0]))
+  const filterProperties = cleanMainProperties.filter(prop => filters.includes(prop[0]))
 
   const dataCleaned = Object.fromEntries(filterProperties)
 

@@ -21,13 +21,13 @@ export async function CardListOffer({ filters = { maxResults: 10 } }) {
   )
 }
 
-export async function CardListOfferSelect() {
+export async function CardListOfferSelect({ to }) {
   const { items: offerList } = await getInfojobsOffers()
 
   return (
     <>
       {offerList.map((offer) => (
-        <CardOfferSelect offer={offer} key={offer.id} />
+        <CardOfferSelect offer={offer} key={offer.id} to={to} />
       ))}
     </>
   )

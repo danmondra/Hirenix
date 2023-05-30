@@ -6,6 +6,7 @@ import { SearchAside } from '@/components/layout/searchAside'
 import { UserAccountIcon } from '@/components/icons/icons'
 
 export function Aside() {
+  const userOffers = []
   return (
     <aside className={styles.aside}>
       <div className={styles.headerContainerAside}>
@@ -18,7 +19,7 @@ export function Aside() {
           </div>
         </header>
         <SearchAside />
-        <UserOffers />
+        {userOffers.length > 0 && <UserOffers />}
       </div>
 
       <footer className='footerAside'>

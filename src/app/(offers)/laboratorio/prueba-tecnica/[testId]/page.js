@@ -26,7 +26,7 @@ export default async function TechnicalTest({ params }) {
       {
         testsGenerated?.length
           ? <OtherTests />
-          : <TechincalTestQuestions offerId={testId} />
+          : <TechincalTestQuestions offerId={testId} type='technicalTest' />
       }
     </section>
   )

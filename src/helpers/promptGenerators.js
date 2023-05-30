@@ -96,8 +96,8 @@ export function techincalTestPromptGenerator(offer) {
   const systemPrompt = `
   Create a technical interview in Spanish with 2 questions from a job offer.
   Only technical questions related to the area of the job offer.
-  Return a valid JSON array
-  `
+  The response will be in JSON format, do not give descriptions or explanations. 
+  Create new questions`
 
   const userPrompt = `
   Job:

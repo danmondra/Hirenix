@@ -8,7 +8,7 @@ import { SabiasQue } from './sabiasQue'
 import { responseFormatsChatGPT } from '@/consts/responseFormatsChatGPT'
 import { CircleCheck } from '../icons/icons'
 
-export function TechincalTestQuestions({ offerId }) {
+export function TechincalTestQuestions({ offerId, type }) {
   const [interview, setInterview] = useState([])
   const [reviewedInterview, setReviewedInterview] = useState([])
   const [actualQuestion, setActualQuestion] = useState([])
@@ -91,7 +91,7 @@ export function TechincalTestQuestions({ offerId }) {
                 handleData={handleData}
               />
               </>
-          : <SabiasQue />
+          : <SabiasQue type={type} />
       }
     </>
   )

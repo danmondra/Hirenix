@@ -1,10 +1,21 @@
 import { useEffect, useState } from 'react'
 import styles from '@/styles/laboratorySegments.module.css'
-import { EmptyUnloggedGreen } from '../icons/infojobsImages'
+import { EmptyUnloggedGreen, InterviewImage } from '../icons/infojobsImages'
 import { sabiasQue } from '@/consts/sabiasQue'
 
-export function SabiasQue() {
+export function SabiasQue({ type }) {
   const [actualSabiasQue, setActualSabiasQue] = useState(0)
+
+  const types = {
+    interview: {
+      name: 'Entrevista',
+      image: <InterviewImage />
+    },
+    technicalTest: {
+      name: 'Prueba Técnica',
+      image: <EmptyUnloggedGreen />
+    }
+  }
 
   const timeout = setTimeout(() => {
     if(actualSabiasQue === sabiasQue.length - 1) {
@@ -22,9 +33,9 @@ export function SabiasQue() {
 
   return (
     <section className={styles.loading}>
-      <EmptyUnloggedGreen />
+      {types[type].image}
       <div>
-        <h3>Mientras creamos la Prueba Técnica</h3>
+        <h3>Mientras creamos la {types[type].name}</h3>
         <h3 className={styles.sabiasQue}>¿Sabías Que...?</h3>
         <p>{sabiasQue[actualSabiasQue]}</p>
       </div>

@@ -22,7 +22,6 @@ export function AnswersForm({ endpoint, interview, setInterview, actualQuestion,
   const handleSubmit = async (e) => {
     e.preventDefault()
     const interviewWithLastAnswer = interview.map(int => int.id === id ? { ...actualQuestion, answer } : int)
-    console.log({ interviewWithLastAnswer })
 
     // Verify that have all answers
     if(interviewWithLastAnswer.some(({ answer }) => !answer)) {

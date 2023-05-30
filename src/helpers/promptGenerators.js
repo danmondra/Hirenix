@@ -9,9 +9,10 @@ export function compatibilityPromptGenerator(candidate, job) {
     ${job}
 
     Candidate:
-    candidateStudies: ${candidate.studies}
-    candidateSkills: ${candidate.skills.join(', ')}
-    candidateExperience: ${candidate.experience}
+    candidateSkills: ${candidate?.skills.join(', ')}
+    candidateStudies: ${candidate?.jobAreas}
+    candidateExperience: ${candidate?.experience}
+    candidateLocation: ${candidate?.location}
   `
 
   const responseExample = `

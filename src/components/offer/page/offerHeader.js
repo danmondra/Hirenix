@@ -3,7 +3,7 @@ import { OfferCharacteristics } from '@/components/offer/offerCharacteristics'
 import { OfferActions } from '@/components/offer/page/offerActions'
 import { placeholderImageOffer } from '@/consts/miscellaneousDataInfojobs'
 
-export function OfferHeader({ offer }) {
+export function OfferHeader({ offer, user }) {
   const { title, profile } = offer
 
   return (
@@ -19,7 +19,7 @@ export function OfferHeader({ offer }) {
       </header>
       <div className={offerStyles.cardInfo}>
         <OfferCharacteristics offer={offer} />
-        <OfferActions id={offer?.id} />
+        <OfferActions id={offer?.id} user={user} />
       </div>
     </div>
   )

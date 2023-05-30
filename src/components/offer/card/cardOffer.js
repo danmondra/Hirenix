@@ -5,7 +5,7 @@ import { BtnGetCompatibility } from '@/components/btnGetCompatibility'
 import { CardOfferHeader } from '@/components/offer/card/cardOfferHeader'
 import { SaveIcon } from '@/components/icons/icons'
 
-export function CardOffer({ offer }) {
+export function CardOffer({ offer, user }) {
   const { id, requirementMin } = offer
 
   return (
@@ -18,7 +18,7 @@ export function CardOffer({ offer }) {
         </div>
       </Link>
       <div className={offerStyles.cardActions}>
-        <BtnGetCompatibility offerId={id} />
+        <BtnGetCompatibility offerId={id} user={user} />
         <button className={`${offerStyles.cardActionButton} ${offerStyles.actionButton}`}>
           <SaveIcon size='medium' />
         </button>

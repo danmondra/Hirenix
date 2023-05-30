@@ -1,7 +1,6 @@
 import { compatibilityPromptGenerator } from '@/helpers/promptGenerators'
 import { NextResponse } from 'next/server'
 import { Configuration, OpenAIApi, ChatCompletionRequestMessageRoleEnum } from 'openai'
-import { userExample } from '@/consts/userExample'
 import { getOfferById } from '@/services/getOffers'
 
 const configuration = new Configuration({
@@ -11,10 +10,13 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 export async function POST(req) {
+  const userProfileGenerated = req.cookies.get('userProfileGenerated')
+  const userProfileGeneratedDecoded = JSON.parse(decodeURIComponent(userProfileGenerated.value))
+
   const { offerId } = await req.json()
   const offer = await getOfferById(offerId)
 
-  const [systemPrompt, responseExample] = compatibilityPromptGenerator(userExample, offer?.description)
+  const [systemPrompt, responseExample] = compatibilityPromptGenerator(userProfileGeneratedDecoded, offer?.description)
 
   const response = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',

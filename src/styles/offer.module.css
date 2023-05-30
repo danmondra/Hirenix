@@ -181,9 +181,8 @@
   background-color: rgb(var(--color-secondaryGray) / .15);
 }
 
-.actionButon:nt(:disabled) {
+.actionButton:disabled {
   cursor: auto;
-  pointer-events: none;
 }
 
 .actionButton.blue svg {
@@ -507,7 +506,7 @@
 
 .compatibilityToolTip {
   position: absolute;
-  bottom: 110%;
+  bottom: 120%;
   right: 0;
   background-color: var(--color-white);
   border-radius: 5px;
@@ -526,6 +525,10 @@
 .compatibilityToolTip:hover {
   display: block;
   animation: fadeIn 0.3s ease;
+}
+
+.actionButton:disabled + .compatibilityToolTip {
+  bottom: 100%;
 }
 
 .search .compatibilityToolTip {

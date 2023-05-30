@@ -1,28 +1,24 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import styles from '@/styles/offer.module.css'
 import { InfoIcon, QuestionIcon } from '@/components/icons/icons'
 import { getGPTResponse } from '@/services/getGPTResponse'
 
-export function BtnGetCompatibility({ offerId }) {
+export function BtnGetCompatibility({ offerId, user }) {
   const [loading, setLoading] = useState(false)
   const [compatibility, setCompatibility] = useState({})
-  const [userProfile, setUserProfile] = useState([])
 
-  useEffect(() => {
-    if(typeof window !== 'undefined') {
-      const profileLS = JSON.parse(localStorage.getItem('userProfile')) ?? []
-      console.log(profileLS)
-      setUserProfile(profileLS)
-    }
-  }, [])
+  const {
+    compatibility: value,
+    missingRequirements
+  } = compatibility
 
   const handleClick = async () => {
-    if(value) return
+    if(value || !user) return
     setLoading(true)
     try {
-      const data = await getGPTResponse('/compatibility', { offerId, user: userProfile })
+      const data = await getGPTResponse('/compatibility', { offerId })
       setCompatibility(data)
     } catch(e) {
       console.log(e)
@@ -30,17 +26,12 @@ export function BtnGetCompatibility({ offerId }) {
     setLoading(false)
   }
 
-  const {
-    compatibility: value,
-    missingRequirements
-  } = compatibility
-
   return (
     <div className={styles.getCompatibilityContainer}>
       <button
         className={`${styles.cardActionButton} ${styles.actionButton}`}
         onClick={handleClick}
-        disabled={Boolean(value) || !'usuarioFalse'}
+        disabled={!user || value}
       >
         {
           loading
@@ -69,15 +60,25 @@ export function BtnGetCompatibility({ offerId }) {
             }
           </div>
           )
-        : (
-          <div className={styles.compatibilityToolTip}>
-            Obtener Compatibilidad
-            <span className={styles.compatibilityInfo}>
-              <InfoIcon size='xs' />
-              <span> Para obtener tu compatibilidad con un empleo, primero sube un CV, o completa una entrevista general.</span>
-            </span>
-          </div>
-          )}
+        : user
+          ? (
+            <div className={styles.compatibilityToolTip}>
+              Obtener Compatibilidad
+              <span className={styles.compatibilityInfo}>
+                <InfoIcon size='xs' />
+                <span>Encuentra tu compatibilidad con un empleo</span>
+              </span>
+            </div>
+            )
+          : (
+            <div className={styles.compatibilityToolTip}>
+              Obtener Compatibilidad
+              <span className={styles.compatibilityInfo}>
+                <InfoIcon size='xs' />
+                <span>Antes de obtener tu compatibilidad con un empleo, inicia sesión o completa una breve encuesta para completar tu perfil.</span>
+              </span>
+            </div>
+            )}
     </div>
   )
 }

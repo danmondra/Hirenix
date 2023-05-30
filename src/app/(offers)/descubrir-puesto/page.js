@@ -1,32 +1,17 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import styles from '@/styles/laboratorySegments.module.css'
 import labStyles from '@/styles/laboratory.module.css'
 
-import Cookies from 'js-cookie'
-
-import { StepsBar } from '@/components/laboratory/stepsBar'
-import { AnswersForm } from '@/components/laboratory/answersForm'
-import { UserSkillsList } from '@/components/offer/page/skillsList'
-import { CircleCheck, EditIcon, InterviewIcon } from '@/components/icons/icons'
-import { discoverJobInterview } from '@/consts/discoverJobInterview'
+import { InterviewIcon } from '@/components/icons/icons'
+import { cookies } from 'next/headers'
+import { DiscoverQuestions } from '@/components/laboratory/discoverQuestions'
+import { UserProfile } from '@/components/laboratory/userProfile'
 
 export default function Discover() {
-  const [interview, setInterview] = useState(discoverJobInterview)
-  const [profile, setProfile] = useState([])
-  const [actualQuestion, setActualQuestion] = useState(interview[0])
-
-  useEffect(() => {
-    if(!Cookies.get('userProfileGenerated')) return
-    const profileCookie = Cookies.get('userProfileGenerated')
-    const profileDecoded = decodeURIComponent(profileCookie)
-
-    setProfile(JSON.parse(profileDecoded))
-  }, [])
-
-  const handleData = (data) => {
-    setProfile(data)
+  const cookieStore = cookies()
+  let userProfile
+  if(cookieStore.has('userProfileGenerated')) {
+    const userProfileGenerated = cookieStore.get('userProfileGenerated')
+    userProfile = JSON.parse(decodeURIComponent(userProfileGenerated?.value))
   }
 
   return (
@@ -38,58 +23,9 @@ export default function Discover() {
         </h1>
       </div>
       {
-        profile?.experience
-          ? (
-            <>
-              <div className={styles.review}>
-
-                <header className={styles.reviewHeader}>
-                  <h3 className={styles.reviewTitle}>
-                    Perfil Listo
-                    <CircleCheck size='medium' />
-                  </h3>
-                  <button
-                    type='button'
-                    className={styles.reviewEdit}
-                    onClick={() => setProfile([])}
-                  >
-                    <EditIcon size='medium' />
-                  </button>
-                </header>
-                <div className={styles.feedback}>
-                  <div className={styles.answerFeedback}>
-                    <h4>Tus Habilidades:</h4>
-                    {profile.skills.length !== 0 &&
-                      <UserSkillsList skillsList={profile?.skills} />}
-                    <h4>Tu experiencia:</h4>
-                    <p>{profile?.experience}</p>
-                    <h4>Tus áreas de trabajo:</h4>
-                    <p>{profile?.jobAreas}</p>
-                    <h4>Resides en:</h4>
-                    <p>{profile?.location}</p>
-                  </div>
-                </div>
-              </div>
-            </>
-            )
-          : (
-            <>
-              <StepsBar
-                interview={interview}
-                actualQuestion={actualQuestion}
-                setQuestion={setActualQuestion}
-                setInterview={setInterview}
-              />
-              <AnswersForm
-                endpoint='/jobDiscover'
-                interview={interview}
-                setInterview={setInterview}
-                actualQuestion={actualQuestion}
-                setActualQuestion={setActualQuestion}
-                handleData={handleData}
-              />
-            </>
-            )
+       userProfile
+         ? <UserProfile profile={userProfile} />
+         : <DiscoverQuestions />
       }
     </section>
   )

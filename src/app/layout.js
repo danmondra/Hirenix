@@ -3,7 +3,12 @@ import { Be_Vietnam_Pro } from 'next/font/google'
 
 export const metadata = {
   title: 'Hirenix',
-  description: 'Search and find talent with the power of Artificial Intelligence'
+  description: 'Search and find talent with the power of Artificial Intelligence',
+  openGraph: {
+    images: '/metaimage.jpg',
+    title: 'Hirenix - El futuro de la busqueda de empleo',
+    description: 'Enfoca tus esfuerzos para encontrar empleo donde realmente lo vale.'
+  }
 }
 
 const vietnamPro = Be_Vietnam_Pro({

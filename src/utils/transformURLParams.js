@@ -2,7 +2,7 @@ export const objectToParams = (params) => {
   const URLWithParams = new URLSearchParams()
 
   const paramsToArray = Object.entries(params)
-  const cleanedParams = paramsToArray.filter(param => param[1].length > 0)
+  const cleanedParams = paramsToArray.filter(param => param[1].length > 0 || typeof param[1] === 'number')
 
   cleanedParams.forEach(([key, value]) => {
     if(typeof value === 'object') {

@@ -8,7 +8,7 @@ import { objectToParams } from '@/utils/transformURLParams'
 import { useState } from 'react'
 import { getGPTResponse } from '@/services/getGPTResponse'
 
-export function SearchAside() {
+export function SearchAside({ select = false }) {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
 
@@ -25,6 +25,7 @@ export function SearchAside() {
       searchParams = objectToParams(data)
     }
 
+    searchParams = select ? searchParams.concat('&select=true') : searchParams
     setLoading(false)
     router.push(`/search${searchParams}`)
     e.target.reset()

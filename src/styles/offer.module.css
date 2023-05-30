@@ -573,6 +573,10 @@
   min-width: 18px;
 }
 
+.compatibilityInfo a {
+  text-decoration: underline;
+}
+
 .compatibilityToolTip ul {
   padding: 0;
   list-style: inside;

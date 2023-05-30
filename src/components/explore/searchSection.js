@@ -20,7 +20,7 @@ export function SearchSection() {
       <section className={`containerExplore ${styles.cardsProductsGrid}`}>
         <CardProduct product='labs' />
         <CardProduct product='search' />
-        <CardProduct product='cv' />
+        <CardProduct product='descubrir' />
       </section>
     </section>
   )

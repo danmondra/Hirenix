@@ -25,7 +25,7 @@ export default function Laboratory() {
           <p className={styles.cardProductDescription}>Completa el cuestionario sobre tus habilidades, capacidades y experiencias para recibir recomendaciones personalizadas y descubrir qué trabajos se adaptan mejor a ti.</p>
         </div>
         <Link
-          href='/laboratorio/descubrir-puesto'
+          href='/descubrir-puesto'
           className={`${exploreStyles.btnArrow} ${exploreStyles.blue}`}
         >
           Descubrir

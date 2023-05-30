@@ -7,7 +7,7 @@ import { objectToParams } from '@/utils/transformURLParams'
 
 export function Pager({ searchParams }) {
   const { page } = searchParams
-  const actualPage = Number(page) < 1 ? 1 : Number(page)
+  const actualPage = parseInt(page) < 1 ? 1 : parseInt(page)
 
   const setParams = (value) => objectToParams({ ...searchParams, page: value })
 

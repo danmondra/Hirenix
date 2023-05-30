@@ -1,6 +1,6 @@
 import styles from '@/styles/explore.module.css'
-import { BtnArrow } from '@/components/btnArrow'
-import { LabsIcon, MagicSearchIcon, ScanIcon } from '@/components/icons/icons'
+import { ArrowRightIcon, LabsIcon, MagicSearchIcon, ScanIcon } from '@/components/icons/icons'
+import Link from 'next/link'
 
 export function CardProduct({ product }) {
   const products = {
@@ -8,19 +8,22 @@ export function CardProduct({ product }) {
       title: 'Practica en el laboratorio',
       textBtn: 'Practicar',
       color: 'blue',
-      icon: <LabsIcon size='normal' />
+      icon: <LabsIcon size='normal' />,
+      link: '/laboratorio'
     },
     search: {
       title: 'Busca acorde a tu perfil',
       textBtn: 'Buscar',
       color: 'purpura',
-      icon: <MagicSearchIcon size='normal' />
+      icon: <MagicSearchIcon size='normal' />,
+      link: '/search'
     },
-    cv: {
-      title: 'Sube y mejora tu CV',
-      textBtn: 'Subir',
+    descubrir: {
+      title: 'Descubre tu puesto',
+      textBtn: 'Descubrir',
       color: 'green',
-      icon: <ScanIcon size='normal' />
+      icon: <ScanIcon size='normal' />,
+      link: '/descubrir-puesto'
     }
   }
 
@@ -32,9 +35,13 @@ export function CardProduct({ product }) {
           {products[product].title}
         </h3>
       </header>
-      <BtnArrow color={products[product].color}>
+      <Link
+        href={products[product].link}
+        className={`${styles.btnArrow} ${styles[products[product].color]}`}
+      >
         {products[product].textBtn}
-      </BtnArrow>
+        <ArrowRightIcon size='medium' />
+      </Link>
     </article>
   )
 }

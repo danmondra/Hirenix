@@ -4,6 +4,7 @@ import { useState } from 'react'
 import styles from '@/styles/offer.module.css'
 import { InfoIcon, QuestionIcon } from '@/components/icons/icons'
 import { getGPTResponse } from '@/services/getGPTResponse'
+import Link from 'next/link'
 
 export function BtnGetCompatibility({ offerId, user }) {
   const [loading, setLoading] = useState(false)
@@ -75,7 +76,7 @@ export function BtnGetCompatibility({ offerId, user }) {
               Obtener Compatibilidad
               <span className={styles.compatibilityInfo}>
                 <InfoIcon size='xs' />
-                <span>Antes de obtener tu compatibilidad con un empleo, inicia sesión o completa una breve encuesta para completar tu perfil.</span>
+                <span>Antes de obtener tu compatibilidad con un empleo, inicia sesión o completa una <Link href='/descubrir-puesto'>breve encuesta</Link> para completar tu perfil.</span>
               </span>
             </div>
             )}

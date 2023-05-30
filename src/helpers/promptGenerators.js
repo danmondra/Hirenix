@@ -39,8 +39,6 @@ export function searchPromptGenerator(userSearch) {
     {
       "mainWord": "",
       "category": ["administracion-publica", "administracion-empresas", "atencion-a-cliente", "non-specified", "calidad-produccion-id", "comercial-ventas", "compras-logistica-almacen", "diseno-artes-graficas", "educacion-formacion", "finanzas-banca", "informatica-telecomunicaciones", "ingenieros-tecnicos", "inmobiliario-construccion", "legal", "marketing-comunicacion", "profesiones-artes-oficios", "recursos-humanos", "sanidad-salud", "sector-farmaceutico", "turismo-restauracion", "venta-detalle", "otros"],
-      "province": "",
-      "country": "",
       "salaryMin": "",
       "salaryMax": "",
       "salaryPeriod": ["bruto-ano", "bruto-mes", "bruto-hora", "non-specified"],

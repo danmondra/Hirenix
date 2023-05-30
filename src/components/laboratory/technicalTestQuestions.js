@@ -15,7 +15,7 @@ export function TechincalTestQuestions({ offerId }) {
 
   useEffect(() => {
     const getTechnicalTest = async () => {
-      const data = await fetch(`http://localhost:3000/api/technicalTest/${offerId}`)
+      const data = await fetch(`/api/technicalTest/${offerId}`)
       const technicalTest = await data.json()
       const formatTechnicalTest = technicalTest.map(ques => ({ ...ques, format: 'open-ended-question' }))
 

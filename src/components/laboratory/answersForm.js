@@ -25,9 +25,6 @@ export function AnswersForm({ endpoint, interview, setInterview, actualQuestion,
   const handleSubmit = async (e) => {
     e.preventDefault()
     const interviewWithLastAnswer = interview.map(int => int.id === id ? { ...actualQuestion, answer } : int)
-    setLoading(true)
-    return
-
     // Verify that have all answers
     if(interviewWithLastAnswer.some(({ answer }) => !answer)) {
       // TODO
@@ -35,6 +32,7 @@ export function AnswersForm({ endpoint, interview, setInterview, actualQuestion,
       return
     }
 
+    setLoading(true)
     const formatedInterview = interviewWithLastAnswer.map(question => {
       let formatedAnswer = question.answer
       if(question.format === responseFormatsChatGPT.multipleChoiceQuestion) {

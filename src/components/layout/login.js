@@ -2,7 +2,6 @@ export function Login({ user, searchParams }) {
   const scope = process.env.INFOJOBS_SCOPE
   const redirectUri = process.env.INFOJOBS_REDIRECT_URI
   const clientId = process.env.INFOJOBS_CLIENTID
-  console.log({ user })
 
   return (
     <div className='loginContainer'>

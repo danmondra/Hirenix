@@ -5,8 +5,10 @@ const clientSecret = process.env.INFOJOBS_CLIENTSECRET
 const clientId = process.env.INFOJOBS_CLIENTID
 
 export async function GET(req) {
+  console.log('entró')
   const { searchParams } = new URL(req.url)
   const code = searchParams.get('code')
+  console.log(code)
 
   const res = await fetch(`
           https://www.infojobs.net/oauth/
@@ -19,10 +21,11 @@ export async function GET(req) {
   })
   const token = await res.json()
   const tokenEncoded = JSON.stringify(encodeURI(token))
+  console.log({ token, tokenEncoded })
 
   const response = NextResponse.json({ msg: 'success' })
   response.cookies.set({
-    name: 'userProfileGenerated',
+    name: 'userTokenInfojobs',
     value: tokenEncoded,
     maxAge: 60 * 60 * 24 * 365
   })

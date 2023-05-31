@@ -12,10 +12,10 @@ export function Login({ tokenSaved }) {
   const [token, setToken] = useState(tokenSaved ?? '')
   const searchParams = useSearchParams()
   const test = searchParams.get('test')
+  const code = searchParams.get('code')
   const router = useRouter()
 
   useEffect(() => {
-    console.log('effect')
     const getAuth = async () => {
       try {
         const res = await fetch(`
@@ -23,21 +23,18 @@ export function Login({ tokenSaved }) {
           authorize?grant_type=authorization_code
           &client_id=${clientId}
           &client_secret=${clientSecret}
-          &code=${searchParams?.code}
+          &code=${code}
           &redirect_uri=${redirectUri}`, {
           method: 'POST'
         })
         const data = await res.json()
-        console.log(data)
 
         if(data?.error) {
           throw new Error('Hubo un error en la autenticación')
         }
 
         document.cookie = `userTokenInfojobs=${JSON.stringify(encodeURIComponent(data.access_token))}`
-        console.log(document.cookie)
 
-        console.log(data.access_token)
         setToken(data.access_token)
         router.refresh()
       } catch (e) {
@@ -46,7 +43,7 @@ export function Login({ tokenSaved }) {
     }
 
     if(token) return
-    if(searchParams?.code) {
+    if(code) {
       console.log('getAuth')
       getAuth()
     }

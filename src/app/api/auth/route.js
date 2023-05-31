@@ -9,26 +9,32 @@ export async function GET(req) {
   const { searchParams } = new URL(req.url)
   const code = searchParams.get('code')
   console.log(code)
+  console.log({ redirectUri, clientSecret, clientId })
 
-  const res = await fetch(`
+  try {
+    const res = await fetch(`
           https://www.infojobs.net/oauth/
           authorize?grant_type=authorization_code
           &client_id=${clientId}
-          &client_secret=${clientSecret}
+          &client_secret=${encodeURI(clientSecret)}
           &code=${code}
           &redirect_uri=${redirectUri}`, {
-    method: 'POST'
-  })
-  const token = await res.json()
-  const tokenEncoded = JSON.stringify(encodeURI(token))
-  console.log({ token, tokenEncoded })
+      method: 'POST'
+    })
+    const token = await res.json()
+    const tokenEncoded = JSON.stringify(encodeURI(token))
+    console.log({ token, tokenEncoded })
 
-  const response = NextResponse.json({ msg: 'success' })
-  response.cookies.set({
-    name: 'userTokenInfojobs',
-    value: tokenEncoded,
-    maxAge: 60 * 60 * 24 * 365
-  })
+    const response = NextResponse.json({ msg: 'success' })
+    response.cookies.set({
+      name: 'userTokenInfojobs',
+      value: tokenEncoded,
+      maxAge: 60 * 60 * 24 * 365
+    })
 
-  return response
+    return response
+  } catch(e) {
+    console.log(e)
+    return NextResponse.json({ msg: e })
+  }
 }

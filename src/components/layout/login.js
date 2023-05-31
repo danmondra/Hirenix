@@ -1,30 +1,29 @@
 'use client'
 
-import { useSearchParams, useRouter } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 
 const scope = process.env.INFOJOBS_SCOPE
 const redirectUri = process.env.INFOJOBS_REDIRECT_URI
 const clientId = process.env.INFOJOBS_CLIENTID
+const productionURL = 'https://hirenix.vercel.app'
 
 export function Login({ tokenSaved }) {
   const searchParams = useSearchParams()
   const test = searchParams.get('test')
   const code = searchParams.get('code')
-  const router = useRouter()
 
   useEffect(() => {
     if(tokenSaved) return
     const getAuth = async () => {
       try {
-        const res = await fetch(`/api/auth?code=${code}`)
+        const res = await fetch(`${productionURL}/api/auth?code=${code}`)
         const data = await res.json()
+        console.log(data)
 
         if(data?.error) {
           throw new Error('Hubo un error en la autenticación')
         }
-
-        router.refresh()
       } catch (e) {
         console.log(e)
       }

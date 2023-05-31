@@ -22,7 +22,7 @@ export default async function Home({ searchParams }) {
       method: 'POST'
     })
     const data = await res.json()
-    console.log(data)
+    console.log({ data })
 
     const authRes = await fetch('/api/auth', {
       method: 'POST',

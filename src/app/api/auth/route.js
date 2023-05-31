@@ -22,8 +22,8 @@ export async function GET(req) {
       method: 'POST'
     })
     const token = await res.json()
+    console.log({ token })
     const tokenEncoded = JSON.stringify(encodeURI(token))
-    console.log({ token, tokenEncoded })
 
     const response = NextResponse.json({ msg: 'success' })
     response.cookies.set({

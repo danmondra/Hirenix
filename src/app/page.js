@@ -7,6 +7,7 @@ import { cookies } from 'next/headers'
 
 export default async function Home() {
   const token = cookies().get('userTokenInfojobs')
+  console.log(token)
 
   return (
     <>

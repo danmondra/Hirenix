@@ -3,7 +3,7 @@ import { NavigationLinks } from '@/components/layout/navigationLinks'
 import { Login } from '@/components/layout/login'
 import { MenuIcon } from '@/components/icons/icons'
 
-export function HeaderLanding({ user, tokenSaved }) {
+export function HeaderLanding({ tokenSaved }) {
   return (
     <header className='headerLandingPage'>
       <div className='container containerHeader'>

@@ -15,6 +15,7 @@ export function Login({ tokenSaved }) {
   const router = useRouter()
 
   useEffect(() => {
+    console.log('effect')
     const getAuth = async () => {
       try {
         const res = await fetch(`
@@ -42,6 +43,7 @@ export function Login({ tokenSaved }) {
 
     if(token) return
     if(searchParams?.code) {
+      console.log('getAuth')
       getAuth()
     }
   }, [])

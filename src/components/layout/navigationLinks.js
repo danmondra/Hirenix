@@ -3,9 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-export function NavigationLinks({ user }) {
-  console.log({ user })
-
+export function NavigationLinks() {
   const pathname = usePathname()
 
   const paths = {

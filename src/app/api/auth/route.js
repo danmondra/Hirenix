@@ -12,13 +12,7 @@ export async function GET(req) {
   console.log({ redirectUri, clientSecret, clientId })
 
   try {
-    const res = await fetch(`
-          https://www.infojobs.net/oauth/
-          authorize?grant_type=authorization_code
-          &client_id=${clientId}
-          &client_secret=${encodeURI(clientSecret)}
-          &code=${code}
-          &redirect_uri=${redirectUri}`, {
+    const res = await fetch(`https://www.infojobs.net/oauth/authorize?grant_type=authorization_code&client_id=${clientId}&client_secret=${encodeURI(clientSecret)}&code=${code}&redirect_uri=${redirectUri}`, {
       method: 'POST'
     })
     const token = await res.json()
@@ -35,6 +29,6 @@ export async function GET(req) {
     return response
   } catch(e) {
     console.log(e)
-    return NextResponse.json({ msg: e })
+    return NextResponse.json({ msg: 'Hubo un error', error: e })
   }
 }

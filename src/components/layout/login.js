@@ -8,7 +8,7 @@ export function Login({ user, searchParams }) {
     <div className='loginContainer'>
       <a
         className='login'
-        href={!searchParams?.test ? `https://www.infojobs.net/api/oauth/user-authorize/index.xhtml?scope=${scope}&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code` : ''}
+        href={searchParams?.test ? `https://www.infojobs.net/api/oauth/user-authorize/index.xhtml?scope=${scope}&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code` : ''}
       >
       Ingresar
       </a>

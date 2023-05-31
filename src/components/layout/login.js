@@ -1,6 +1,6 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 
 const scope = process.env.INFOJOBS_SCOPE
@@ -12,6 +12,7 @@ export function Login({ tokenSaved }) {
   const searchParams = useSearchParams()
   const test = searchParams.get('test')
   const code = searchParams.get('code')
+  const router = useRouter()
 
   useEffect(() => {
     if(tokenSaved) return
@@ -24,6 +25,8 @@ export function Login({ tokenSaved }) {
         if(data?.error) {
           throw new Error('Hubo un error en la autenticación')
         }
+
+        router.refresh()
       } catch (e) {
         console.log(e)
       }

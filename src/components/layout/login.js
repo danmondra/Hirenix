@@ -1,4 +1,4 @@
-export function Login({ user }) {
+export function Login({ user, searchParams }) {
   const scope = process.env.INFOJOBS_SCOPE
   const redirectUri = process.env.INFOJOBS_REDIRECT_URI
   const clientId = process.env.INFOJOBS_CLIENTID
@@ -8,7 +8,7 @@ export function Login({ user }) {
     <div className='loginContainer'>
       <a
         className='login'
-        href={`https://www.infojobs.net/api/oauth/user-authorize/index.xhtml?scope=${scope}&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`}
+        href={!searchParams?.test ? `https://www.infojobs.net/api/oauth/user-authorize/index.xhtml?scope=${scope}&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code` : ''}
       >
       Ingresar
       </a>

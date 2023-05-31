@@ -44,7 +44,7 @@ export default async function Home({ searchParams }) {
 
   return (
     <>
-      <HeaderLanding user={userAuth} />
+      <HeaderLanding user={userAuth} searchParams={searchParams} />
       <MainSectionLanding />
       <ProductsSection />
       <PoweredSection />

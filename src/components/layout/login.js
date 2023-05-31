@@ -1,10 +1,18 @@
-import Link from 'next/link'
+export function Login({ user }) {
+  const scope = process.env.INFOJOBS_SCOPE
+  const redirectUri = process.env.INFOJOBS_REDIRECT_URI
+  const clientId = process.env.INFOJOBS_CLIENTID
+  console.log({ user })
 
-export function Login() {
   return (
     <div className='loginContainer'>
-      <Link href='/' className='login'>Ingresar</Link>
-      <Link href='/' className='register'>Registrarse</Link>
+      <a
+        className='login'
+        href={`https://www.infojobs.net/api/oauth/user-authorize/index.xhtml?scope=${scope}&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`}
+      >
+      Ingresar
+      </a>
+      <a className='register'>Registrarse</a>
     </div>
   )
 }

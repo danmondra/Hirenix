@@ -3,7 +3,7 @@ import { NavigationLinks } from '@/components/layout/navigationLinks'
 import { Login } from '@/components/layout/login'
 import { MenuIcon } from '@/components/icons/icons'
 
-export function HeaderLanding() {
+export function HeaderLanding({ user }) {
   return (
     <header className='headerLandingPage'>
       <div className='container containerHeader'>
@@ -11,9 +11,9 @@ export function HeaderLanding() {
           <Logo />
         </div>
         <nav className='navigation'>
-          <NavigationLinks />
+          <NavigationLinks user={user} />
         </nav>
-        <Login />
+        <Login user={user} />
         <button className='btnMenu' aria-label='Menú'>
           <MenuIcon />
         </button>

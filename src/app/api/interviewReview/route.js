@@ -43,7 +43,6 @@ export async function POST(req) {
     const lastBracket = data.lastIndexOf('}')
     json = JSON.parse(data.slice(firstBracket, lastBracket + 1))
   }
-  console.log({ json, data })
 
   return NextResponse.json(json)
 }

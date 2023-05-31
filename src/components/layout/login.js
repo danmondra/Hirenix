@@ -1,7 +1,6 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
-import { useRouter } from 'next/router'
+import { useSearchParams, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 const scope = process.env.INFOJOBS_SCOPE

@@ -1,48 +1,35 @@
 'use client'
 
 import { useSearchParams, useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 const scope = process.env.INFOJOBS_SCOPE
 const redirectUri = process.env.INFOJOBS_REDIRECT_URI
-const clientSecret = process.env.INFOJOBS_CLIENTSECRET
 const clientId = process.env.INFOJOBS_CLIENTID
 
 export function Login({ tokenSaved }) {
-  const [token, setToken] = useState(tokenSaved ?? '')
   const searchParams = useSearchParams()
   const test = searchParams.get('test')
   const code = searchParams.get('code')
   const router = useRouter()
 
   useEffect(() => {
+    if(tokenSaved) return
     const getAuth = async () => {
       try {
-        const res = await fetch(`
-          https://www.infojobs.net/oauth/
-          authorize?grant_type=authorization_code
-          &client_id=${clientId}
-          &client_secret=${clientSecret}
-          &code=${code}
-          &redirect_uri=${redirectUri}`, {
-          method: 'POST'
-        })
+        const res = await fetch(`/api/auth?code=${code}`)
         const data = await res.json()
 
         if(data?.error) {
           throw new Error('Hubo un error en la autenticación')
         }
 
-        document.cookie = `userTokenInfojobs=${JSON.stringify(encodeURIComponent(data.access_token))}`
-
-        setToken(data.access_token)
         router.refresh()
       } catch (e) {
         console.log(e)
       }
     }
 
-    if(token) return
     if(code) {
       console.log('getAuth')
       getAuth()
@@ -51,7 +38,7 @@ export function Login({ tokenSaved }) {
 
   return (
     <div className='loginContainer'>
-      {token
+      {tokenSaved
         ? 'Juan'
         : <>
           <a

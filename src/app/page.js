@@ -27,6 +27,7 @@ export default async function Home({ searchParams }) {
       }
     })
     const data = await res.json()
+    console.log(data)
 
     const authRes = await fetch('/api/auth', {
       method: 'POST',

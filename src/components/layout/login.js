@@ -11,6 +11,7 @@ const clientId = process.env.INFOJOBS_CLIENTID
 export function Login({ tokenSaved }) {
   const [token, setToken] = useState(tokenSaved ?? '')
   const searchParams = useSearchParams()
+  const test = searchParams.get('test')
   const router = useRouter()
 
   useEffect(() => {
@@ -54,7 +55,7 @@ export function Login({ tokenSaved }) {
         : <>
           <a
             className='login'
-            href={searchParams?.test ? `https://www.infojobs.net/api/oauth/user-authorize/index.xhtml?scope=${scope}&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code` : ''}
+            href={test ? `https://www.infojobs.net/api/oauth/user-authorize/index.xhtml?scope=${scope}&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code` : ''}
           >
             Ingresar
           </a>

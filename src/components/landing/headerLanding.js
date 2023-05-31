@@ -3,7 +3,7 @@ import { NavigationLinks } from '@/components/layout/navigationLinks'
 import { Login } from '@/components/layout/login'
 import { MenuIcon } from '@/components/icons/icons'
 
-export function HeaderLanding({ user, searchParams }) {
+export function HeaderLanding({ user, tokenSaved }) {
   return (
     <header className='headerLandingPage'>
       <div className='container containerHeader'>
@@ -11,9 +11,9 @@ export function HeaderLanding({ user, searchParams }) {
           <Logo />
         </div>
         <nav className='navigation'>
-          <NavigationLinks user={user} />
+          <NavigationLinks />
         </nav>
-        <Login user={user} searchParams={searchParams} />
+        <Login tokenSaved={tokenSaved} />
         <button className='btnMenu' aria-label='Menú'>
           <MenuIcon />
         </button>

@@ -3,13 +3,16 @@ import { ExploreBG } from '@/components/layout/exploreBg'
 import { Aside } from '@/components/layout/aside'
 import { NavigationLinks } from '@/components/layout/navigationLinks'
 import { Footer } from '@/components/layout/footer'
+import { cookies } from 'next/headers'
 
-export default function OffersLayout({ children }) {
+export default async function OffersLayout({ children }) {
+  const userToken = cookies().get('userTokenInfojobs')
+
   return (
     <>
       <ExploreBG />
       <div className={styles.page}>
-        <Aside />
+        <Aside userToken={userToken} />
         <main className={`exploreMain ${styles.main}`}>
           <section className={styles.mainContainerChild}>
             <header className='exploreHeader'>

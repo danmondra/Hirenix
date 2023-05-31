@@ -1,6 +1,8 @@
+'use client'
+
 import styles from '@/styles/laboratorySegments.module.css'
 import { UserSkillsList } from '@/components/offer/page/skillsList'
-import { CircleCheck, EditIcon } from '@/components/icons/icons'
+import { CircleCheck } from '@/components/icons/icons'
 
 export function UserProfile({ profile }) {
   return (
@@ -15,9 +17,7 @@ export function UserProfile({ profile }) {
           <button
             type='button'
             className={styles.reviewEdit}
-          >
-            <EditIcon size='medium' />
-          </button>
+          />
         </header>
         <div className={styles.feedback}>
           <div className={styles.answerFeedback}>

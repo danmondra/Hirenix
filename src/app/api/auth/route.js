@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server'
+import { clientId, redirectUri } from '@/consts'
 
-const redirectUri = process.env.INFOJOBS_REDIRECT_URI
 const clientSecret = process.env.INFOJOBS_CLIENTSECRET
-const clientId = process.env.INFOJOBS_CLIENTID
 
 export async function GET(req) {
   const { searchParams } = new URL(req.url)

@@ -1,55 +1,60 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
-
-const scope = process.env.INFOJOBS_SCOPE
-const redirectUri = process.env.INFOJOBS_REDIRECT_URI
-const clientId = process.env.INFOJOBS_CLIENTID
-const productionURL = 'https://hirenix.vercel.app'
+import Link from 'next/link'
+import exploreStyles from '@/styles/explore.module.css'
+import { getToken } from '@/services/getToken'
+import { UserAccountIcon } from '../icons/icons'
+import { clientId, redirectUri, scope } from '@/consts'
 
 export function Login({ tokenSaved }) {
   const searchParams = useSearchParams()
-  const test = searchParams.get('test')
+  const [user, setUser] = useState({})
   const code = searchParams.get('code')
   const router = useRouter()
 
   useEffect(() => {
-    if(tokenSaved) return
-    const getAuth = async () => {
+    const token = async () => await getToken()
+
+    if(code) {
+      token()
+      router.replace('')
+    }
+  }, [])
+
+  useEffect(() => {
+    if(!tokenSaved) return
+    const getUser = async () => {
       try {
-        const res = await fetch(`${productionURL}/api/auth?code=${code}`)
+        const res = await fetch('/api/user')
         const data = await res.json()
-        console.log(data)
-
-        if(data?.error) {
-          throw new Error('Hubo un error en la autenticación')
-        }
-
-        router.refresh()
-      } catch (e) {
-        console.log(e)
+        setUser(data)
+      } catch(e) {
+        document.cookie = 'userProfileGenerated' + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
       }
     }
 
-    if(code) {
-      console.log('getAuth')
-      getAuth()
-    }
+    getUser()
   }, [])
 
   return (
     <div className='loginContainer'>
       {tokenSaved
-        ? 'Juan'
+        ? <>
+          <Link href='/descubrir-puesto' className={`${exploreStyles.btnUser} ${exploreStyles.btnUserLanding}`}>
+            {user?.name}
+            <UserAccountIcon size='medium' />
+          </Link>
+          </>
         : <>
           <a
             className='login'
-            href={test ? `https://www.infojobs.net/api/oauth/user-authorize/index.xhtml?scope=${scope}&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code` : ''}
+            href={`https://www.infojobs.net/api/oauth/user-authorize/index.xhtml?scope=${scope}&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`}
           >
             Ingresar
           </a>
-          <a className='register'>Registrarse</a>
+          <a href='https://www.infojobs.net/candidate/candidate-login/candidate-login.xhtml' className='register'>Registrarse</a>
           </>}
     </div>
   )

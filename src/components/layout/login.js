@@ -28,12 +28,16 @@ export function Login({ tokenSaved }) {
           method: 'POST'
         })
         const data = await res.json()
+        console.log(data)
 
         if(data?.error) {
           throw new Error('Hubo un error en la autenticación')
         }
 
         document.cookie = `userTokenInfojobs=${JSON.stringify(encodeURIComponent(data.access_token))}`
+        console.log(document.cookie)
+
+        console.log(data.access_token)
         setToken(data.access_token)
         router.refresh()
       } catch (e) {

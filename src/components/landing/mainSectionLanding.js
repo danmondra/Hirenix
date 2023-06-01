@@ -13,7 +13,6 @@ export function MainSectionLanding() {
           <p className={styles.text}>Impulsada por <Link href='https://infojobs.net'>Infojobs</Link> y potenciada por Inteligencia Artificial</p>
           <div className={styles.btnsContainer}>
             <MainLink />
-            <Link href='/reclutar' className={styles.btnTalento}>Buscar talento</Link>
           </div>
           <JobsGrid
             length={5}

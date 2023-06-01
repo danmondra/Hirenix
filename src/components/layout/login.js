@@ -14,12 +14,15 @@ export function Login({ tokenSaved }) {
   const code = searchParams.get('code')
 
   useEffect(() => {
-    const token = async () => await getToken(code)
+    const token = async () => {
+      await getToken(code)
+      const newUrl = window.location.href.split('?')[0]
+      window.location.href = newUrl
+    }
 
     if(tokenSaved) return
     if(code) {
       token()
-      window.location.href = '/'
     }
   }, [])
 

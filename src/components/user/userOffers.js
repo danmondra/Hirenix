@@ -1,15 +1,33 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import styles from '@/styles/explore.module.css'
 import { UsersOfferGroups } from '@/components/user/userOfferGroups'
+import { UserOfferGroupsSkeleton } from './userOfferGroupsSkeleton'
 
-const productionURL = process.env.PRODUCTION_URL
+export function UserOffers({ userToken }) {
+  const [applications, setApplications] = useState([])
+  const [loading, setLoading] = useState(true)
 
-export async function UserOffers() {
+  useEffect(() => {
+    const getUserOffers = async () => {
+      const res = await fetch('/api/user/offers', {
+        method: 'POST'
+      })
+      const data = await res.json()
+      setApplications(data?.applications)
+      setLoading(false)
+    }
+    if(!userToken) return
+    getUserOffers()
+  }, [])
+
+  if(!userToken) return <p>Incia sesión para ver tus candidaturas</p>
+  if(loading) return <UserOfferGroupsSkeleton />
+
   return (
     <div className={styles.userOffers}>
-
-      <UsersOfferGroups />
-      <UsersOfferGroups />
-      <UsersOfferGroups />
+      <UsersOfferGroups nameGroup='Candidaturas Activas' offerList={applications} />
     </div>
   )
 }

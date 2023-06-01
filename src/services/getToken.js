@@ -1,4 +1,4 @@
-const productionURL = process.env.PRODUCTION_URL
+const productionURL = process.env.NEXT_PUBLIC_PRODUCTION_URL
 
 export const getToken = async (code) => {
   try {

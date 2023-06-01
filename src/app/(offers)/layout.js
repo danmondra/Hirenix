@@ -6,7 +6,7 @@ import { Footer } from '@/components/layout/footer'
 import { cookies } from 'next/headers'
 
 export default async function OffersLayout({ children }) {
-  const userToken = cookies().get('userTokenInfojobs')
+  const userToken = cookies().get('userTokenInfojobs') ?? null
 
   return (
     <>

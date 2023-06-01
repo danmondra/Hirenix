@@ -6,7 +6,7 @@ import { Footer } from '@/components/layout/footer'
 import { cookies } from 'next/headers'
 
 export default async function Home() {
-  const token = cookies().get('userTokenInfojobs')
+  const token = cookies().get('userTokenInfojobs') ?? null
 
   return (
     <>

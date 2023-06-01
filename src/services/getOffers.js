@@ -1,8 +1,8 @@
 import { objectToParams } from '@/utils/transformURLParams'
 
-const URL = `${process.env.INFOJOBS_API}/9/offer`
-const clientId = process.env.INFOJOBS_CLIENTID
-const clientSecret = process.env.INFOJOBS_CLIENTSECRET
+const URL = `${process.env.NEXT_PUBLIC_INFOJOBS_API}/9/offer`
+const clientId = process.env.NEXT_PUBLIC_INFOJOBS_CLIENTID
+const clientSecret = process.env.NEXT_PUBLIC_INFOJOBS_CLIENTSECRET
 const credentials = `${clientId}:${clientSecret}`
 const encodedCredentials = Buffer.from(credentials).toString('base64')
 

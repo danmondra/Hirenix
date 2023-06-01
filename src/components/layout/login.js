@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import exploreStyles from '@/styles/explore.module.css'
 import { getToken } from '@/services/getToken'
@@ -15,11 +15,12 @@ export function Login({ tokenSaved }) {
   const router = useRouter()
 
   useEffect(() => {
-    const token = async () => await getToken()
+    const token = async () => await getToken(code)
 
+    if(tokenSaved) return
     if(code) {
       token()
-      router.replace('')
+      router.push('/')
     }
   }, [])
 
@@ -27,7 +28,9 @@ export function Login({ tokenSaved }) {
     if(!tokenSaved) return
     const getUser = async () => {
       try {
-        const res = await fetch('/api/user')
+        const res = await fetch('/api/user/', {
+          method: 'POST'
+        })
         const data = await res.json()
         setUser(data)
       } catch(e) {

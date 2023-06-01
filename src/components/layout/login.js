@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useSearchParams, useRouter } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import exploreStyles from '@/styles/explore.module.css'
 import { getToken } from '@/services/getToken'
@@ -12,7 +12,6 @@ export function Login({ tokenSaved }) {
   const searchParams = useSearchParams()
   const [user, setUser] = useState({})
   const code = searchParams.get('code')
-  const router = useRouter()
 
   useEffect(() => {
     const token = async () => await getToken(code)
@@ -20,8 +19,7 @@ export function Login({ tokenSaved }) {
     if(tokenSaved) return
     if(code) {
       token()
-      router.push('/')
-      window.location.reload()
+      window.location.href = '/'
     }
   }, [])
 

@@ -1,8 +1,6 @@
-const productionURL = process.env.NEXT_PUBLIC_PRODUCTION_URL
-
 export const getToken = async (code) => {
   try {
-    const res = await fetch(`${productionURL}/api/auth?code=${code}`)
+    const res = await fetch(`/api/auth?code=${code}`)
     const data = await res.json()
     console.log(data)
 

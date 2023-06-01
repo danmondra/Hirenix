@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { clientId, redirectUri } from '@/consts'
 
-const clientSecret = process.env.PUBLIC_OFFERS_INFOJOBS_CLIENTSECRET
+const clientSecret = process.env.NEXT_PUBLIC_INFOJOBS_CLIENTSECRET
 
 export async function GET(req) {
   const { searchParams } = new URL(req.url)

@@ -76,7 +76,7 @@ export function BtnGetCompatibility({ offerId, user }) {
               Obtener Compatibilidad
               <span className={styles.compatibilityInfo}>
                 <InfoIcon size='xs' />
-                <span>Antes de obtener tu compatibilidad con un empleo, inicia sesión o completa una <Link href='/descubrir-puesto'>breve encuesta</Link> para completar tu perfil.</span>
+                <span>Antes de obtener tu compatibilidad con un empleo, haz una <Link href='/descubrir-puesto'>breve encuesta</Link> para completar tu perfil.</span>
               </span>
             </div>
             )}

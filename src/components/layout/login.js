@@ -21,6 +21,7 @@ export function Login({ tokenSaved }) {
     if(code) {
       token()
       router.push('/')
+      router.refresh()
     }
   }, [])
 

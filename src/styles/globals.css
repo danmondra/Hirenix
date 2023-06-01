@@ -856,7 +856,7 @@ a {
   border-color: var(--color-greenPrimary) transparent var(--color-greenPrimary) transparent;
 }
 
-.lds-dual-ring.small.purpura::after {
+.lds-dual-ring.purpura::after {
   border: 3px solid var(--color-purpura);
   border-color: var(--color-purpura) transparent var(--color-purpura) transparent;
 }

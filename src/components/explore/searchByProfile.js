@@ -47,7 +47,7 @@ export function SearchByProfile({ userProfile }) {
         Buscar
         {
           loading
-            ? <div className='lds-dual-ring small purpura' />
+            ? <div className='lds-dual-ring purpura' />
             : <ArrowRightIcon size='medium' />
         }
       </button>

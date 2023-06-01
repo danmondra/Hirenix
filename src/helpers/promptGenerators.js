@@ -123,3 +123,25 @@ export function techincalTestPromptGenerator(offer) {
 
   return [systemPrompt, userPrompt, responseExample]
 }
+
+export function searchByProfileGenerator(user) {
+  const systemPrompt = `
+  Which category fits the skills list
+  The response will be in JSON format, do not give descriptions or explanations. 
+  Only give me a JSON Object
+  `
+
+  const userPrompt = `
+    candidateSkills: ${user?.skills.join(', ')}
+  `
+
+  const responseExample = `
+    {
+      "category": ["administracion-publica", "administracion-empresas", "atencion-a-cliente", "non-specified", "calidad-produccion-id", "comercial-ventas", "compras-logistica-almacen", "diseno-artes-graficas", "educacion-formacion", "finanzas-banca", "informatica-telecomunicaciones", "ingenieros-tecnicos", "inmobiliario-construccion", "legal", "marketing-comunicacion", "profesiones-artes-oficios", "recursos-humanos", "sanidad-salud", "sector-farmaceutico", "turismo-restauracion", "venta-detalle", "otros"],
+    }
+  `
+
+  console.log(userPrompt)
+
+  return [systemPrompt, userPrompt, responseExample]
+}

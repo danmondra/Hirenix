@@ -4,11 +4,14 @@ import { SearchSection } from '@/components/explore/searchSection'
 import { CardListOffer } from '@/components/offer/card/cardListOffer'
 import { Suspense } from 'react'
 import { CardOfferSkeleton } from '@/components/offer/card/cardOfferSkeleton'
+import { cookies } from 'next/headers'
 
 export default async function Explore() {
+  const userProfileGenerated = cookies().get('userProfileGenerated') ?? null
+
   return (
     <>
-      <SearchSection />
+      <SearchSection userProfile={userProfileGenerated} />
       <hr className='containerExplore divisorLineGreen' />
       <section className={`containerExplore ${styles.jobCategories}`}>
         <JobsGrid />

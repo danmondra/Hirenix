@@ -531,6 +531,34 @@
   bottom: 100%;
 }
 
+.searchByProfile {
+  position: relative;
+}
+
+.searchByProfile .compatibilityToolTip {
+  bottom: 60%;
+  left: 50%;
+  color: var(--color-purpura);
+}
+
+.searchByProfile:hover .searchByProfileButton:disabled + .compatibilityToolTip {
+  display: block;
+  transform: translate(-50%, 0);
+  animation: fadeInCenter 0.3s ease;
+}
+
+@keyframes fadeInCenter {
+  from {
+    transform: translate(-50%, 1rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
 .search .compatibilityToolTip {
   bottom: unset;
   top: 110%;
@@ -538,7 +566,7 @@
   max-width: 100%;
 }
 
-.search:hover .compatibilityToolTip {
+.search:hover  .compatibilityToolTip {
   display: block;
   animation: fadeIn 0.3s ease;
 }

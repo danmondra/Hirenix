@@ -1,8 +1,9 @@
 import styles from '@/styles/explore.module.css'
 import { CardProduct } from '@/components/explore/cardProduct'
 import { TextareaSearch } from './textareaSearch'
+import { SearchByProfile } from './searchByProfile'
 
-export function SearchSection() {
+export function SearchSection({ userProfile }) {
   return (
     <section className={styles.searchSection}>
       <form
@@ -19,7 +20,7 @@ export function SearchSection() {
 
       <section className={`containerExplore ${styles.cardsProductsGrid}`}>
         <CardProduct product='labs' />
-        <CardProduct product='search' />
+        <SearchByProfile userProfile={userProfile} />
         <CardProduct product='descubrir' />
       </section>
     </section>

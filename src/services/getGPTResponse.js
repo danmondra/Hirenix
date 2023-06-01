@@ -1,4 +1,4 @@
-export async function getGPTResponse(apiRoute, body) {
+export async function getGPTResponse(apiRoute, body = {}) {
   try {
     const res = await fetch(`/api${apiRoute}`, {
       method: 'POST',

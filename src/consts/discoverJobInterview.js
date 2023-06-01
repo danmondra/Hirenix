@@ -10,18 +10,18 @@ export const discoverJobInterview = [
     question: '¿Te interesa alguna otra área en la que puedas desarrollarte?'
   },
   {
-    id: 3,
+    id: 2,
     format: 'open-ended-question',
     question: '¿Qué software, herramientas o tecnologías forman parte de tu conjunto de habilidades?'
   },
   {
-    id: 2,
+    id: 3,
     format: 'open-ended-question',
     question: '¿Qué habilidades blandas consideras que son tus puntos fuertes y cómo las has aplicado en tus trabajos anteriores?'
   },
   {
     id: 4,
     format: 'open-ended-question',
-    question: 'Por último. ¿Dónde resides?'
+    question: 'Por último. ¿En qué país resides?'
   }
 ]

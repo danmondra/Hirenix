@@ -524,6 +524,12 @@
 .btnArrow.purpura svg {
   color: var(--color-purpura);
 }
+
+.btnArrow:disabled:hover {
+  background-color: unset;
+  cursor: auto;
+}
+
 /* -----Cards Products----- */
 
 .cardsProductsGrid {

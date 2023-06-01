@@ -119,10 +119,10 @@ export function AnswersForm({ endpoint, interview, setInterview, actualQuestion,
               className={`${exploreStyles.btnArrow} ${exploreStyles.green}`}
             >
               {
-            loading
-              ? <>Revisando <div className='lds-dual-ring small green' /></>
-              : <>Finalizar <ArrowRightIcon size='small' /></>
-          }
+                loading
+                  ? <>Revisando <div className='lds-dual-ring small green' /></>
+                  : <>Finalizar <ArrowRightIcon size='small' /></>
+              }
             </button>
             )
       }

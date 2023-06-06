@@ -1,11 +1,12 @@
+import Link from 'next/link'
 import styles from '@/styles/explore.module.css'
+
 import { Logo } from '@/components/layout/logo'
 import { Login } from '@/components/layout/login'
 import { UserOffers } from '@/components/user/userOffers'
 import { SearchAside } from '@/components/layout/searchAside'
+import { Logout } from '@/components/layout/logout'
 import { UserAccountIcon } from '@/components/icons/icons'
-import Link from 'next/link'
-import { Logout } from './logout'
 
 export async function Aside({ userToken }) {
   return (

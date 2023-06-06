@@ -1,9 +1,10 @@
+import { cookies } from 'next/headers'
 import styles from '@/styles/explore.module.css'
+
 import { ExploreBG } from '@/components/layout/exploreBg'
 import { Aside } from '@/components/layout/aside'
 import { NavigationLinks } from '@/components/layout/navigationLinks'
 import { Footer } from '@/components/layout/footer'
-import { cookies } from 'next/headers'
 
 export default async function OffersLayout({ children }) {
   const userToken = cookies().get('userTokenInfojobs') ?? null

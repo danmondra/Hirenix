@@ -13,7 +13,7 @@ export function TextareaSearch() {
   const router = useRouter()
 
   const handleClick = async () => {
-    if(textarea.length < 1) return
+    if(textarea.trim() === '') return
     setLoading(true)
 
     const data = await getGPTResponse('/search', { userSearch: textarea })
@@ -42,6 +42,8 @@ export function TextareaSearch() {
         onClick={handleClick}
       >
         Buscar Empleos
+
+        {/* TODO - Loading button medium */}
         {
           loading
             ? <div className='lds-dual-ring medium' />

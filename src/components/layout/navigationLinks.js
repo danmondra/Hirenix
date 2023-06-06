@@ -16,10 +16,29 @@ export function NavigationLinks() {
 
   return (
     <>
-      <Link href='/'>Inicio</Link>
-      <Link href='/explorar' className={checkPathname(paths.explorar) ? 'active' : ''}>Explorar</Link>
-      <Link href='/laboratorio' className={checkPathname(paths.laboratorio) ? 'active' : ''}>Laboratorio</Link>
-      <Link href='/descubrir-puesto' className={checkPathname(paths.descubrir) ? 'active' : ''}>Descubrir</Link>
+      <Link
+        href='/'
+      >
+        Inicio
+      </Link>
+      <Link
+        href='/explorar'
+        className={checkPathname(paths.explorar) ? 'active' : ''}
+      >
+        Explorar
+      </Link>
+      <Link
+        href='/laboratorio'
+        className={checkPathname(paths.laboratorio) ? 'active' : ''}
+      >
+        Laboratorio
+      </Link>
+      <Link
+        href='/descubrir-puesto'
+        className={checkPathname(paths.descubrir) ? 'active' : ''}
+      >
+        Descubrir
+      </Link>
     </>
   )
 }

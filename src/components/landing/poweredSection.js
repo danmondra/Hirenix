@@ -1,6 +1,7 @@
 import styles from '@/styles/landingPage.module.css'
 import searchStyles from '@/styles/search.module.css'
 import offerStyles from '@/styles/offer.module.css'
+
 import { PoweredLogos } from '@/components/landing/poweredLogos'
 import { MainLink } from '@/components/landing/mainLink'
 

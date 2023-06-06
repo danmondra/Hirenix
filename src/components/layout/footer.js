@@ -15,6 +15,7 @@ export function Footer() {
           <NavigationLinks />
         </div>
         <div className='footerGroup'>
+          {/* TODO -- Make a object */}
           <h3>Productos</h3>
           <p>Análisis y mejora de CV</p>
           <p>Obtener compatibilidad con un puesto</p>

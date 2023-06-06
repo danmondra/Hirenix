@@ -4,13 +4,15 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import exploreStyles from '@/styles/explore.module.css'
+
 import { getToken } from '@/services/getToken'
-import { UserAccountIcon } from '../icons/icons'
 import { clientId, redirectUri, scope } from '@/consts'
 
+import { UserAccountIcon } from '@/components/icons/icons'
+
 export function Login({ tokenSaved }) {
-  const searchParams = useSearchParams()
   const [user, setUser] = useState({})
+  const searchParams = useSearchParams()
   const code = searchParams.get('code')
 
   useEffect(() => {
@@ -24,7 +26,7 @@ export function Login({ tokenSaved }) {
     if(code) {
       token()
     }
-  }, [])
+  }, [code, tokenSaved])
 
   useEffect(() => {
     if(!tokenSaved) return
@@ -41,26 +43,40 @@ export function Login({ tokenSaved }) {
     }
 
     getUser()
-  }, [])
+  }, [tokenSaved])
 
   return (
     <div className='loginContainer'>
-      {tokenSaved
-        ? <>
-          <Link href='/descubrir-puesto' className={`${exploreStyles.btnUser} ${exploreStyles.btnUserLanding}`}>
+      {
+        tokenSaved && user?.name
+          ? <Link
+              href='/descubrir-puesto'
+              className={`
+              ${exploreStyles.btnUser}
+              ${exploreStyles.btnUserLanding}
+            `}
+            >
             {user?.name}
             <UserAccountIcon size='medium' />
-          </Link>
-          </>
-        : <>
-          <a
-            className='login'
-            href={`https://www.infojobs.net/api/oauth/user-authorize/index.xhtml?scope=${scope}&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`}
-          >
-            Ingresar
-          </a>
-          <a href='https://www.infojobs.net/candidate/candidate-login/candidate-login.xhtml' className='register'>Registrarse</a>
-          </>}
+            </Link>
+          : <>
+
+            <a
+              className='login'
+              href={`https://www.infojobs.net/api/oauth/user-authorize/index.xhtml?scope=${scope}&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`}
+            >
+              Ingresar
+            </a>
+
+            <a
+              href='https://www.infojobs.net/candidate/candidate-login/candidate-login.xhtml'
+              className='register'
+            >
+              Registrarse
+            </a>
+
+            </>
+      }
     </div>
   )
 }

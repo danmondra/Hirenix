@@ -1,5 +1,5 @@
-import { LabsIcon, MagicSearchIcon, ManagementIcon, ScanIcon } from '@/components/icons/icons'
 import styles from '@/styles/landingPage.module.css'
+import { LabsIcon, MagicSearchIcon, ManagementIcon, ScanIcon } from '@/components/icons/icons'
 
 export function ProductsGrid() {
   return (

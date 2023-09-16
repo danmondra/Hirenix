@@ -4,7 +4,9 @@ import { CardOfferSelect } from '@/components/offer/card/cardOfferSelect'
 import { cookies } from 'next/headers'
 
 export async function CardListOffer({ filters = { maxResults: 10 } }) {
-  const { items: offerList } = await getInfojobsOffers(filters)
+  const { offers: offerList } = await getInfojobsOffers(filters)
+  console.log(offerList)
+
   const cookieStore = cookies()
   let userProfile
   if(cookieStore.has('userProfileGenerated')) {
@@ -14,7 +16,7 @@ export async function CardListOffer({ filters = { maxResults: 10 } }) {
 
   return (
     <>
-      {offerList.map((offer) => (
+      {offerList?.map((offer) => (
         <CardOffer offer={offer} user={userProfile} key={offer.id} />
       ))}
     </>

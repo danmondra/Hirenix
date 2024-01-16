@@ -299,6 +299,73 @@
       "executive": false,
       "salaryDescription": "12? - 12? Bruto/hora",
       "multiProvince": false
+    },
+    {
+      "id": "258ea8320229ffa67cf64681a2ef80",
+      "title": "Ingeniero de datos de Python",
+      "province": {
+        "id": 9,
+        "value": "Barcelona"
+      },
+      "city": "Vilafranca del Penedès",
+      "link": "https://www.infojobs.net/vilafranca-del-penedes/camareros-2-sala-zona-penedes/of-i258eae420249ffa67cf64681a2ef80",
+      "category": {
+        "id": 160,
+        "value": "Turismo y restauración"
+      },
+      "contractType": {
+        "id": 5,
+        "value": "Otros contratos"
+      },
+      "subcategory": {
+        "id": 3116,
+        "value": "Restauración"
+      },
+      "salaryMin": {
+        "id": 10,
+        "value": "12 ?"
+      },
+      "salaryMax": {
+        "id": 10,
+        "value": "12 ?"
+      },
+      "salaryPeriod": {
+        "id": 1,
+        "value": "Bruto/hora"
+      },
+      "experienceMin": {
+        "id": 6,
+        "value": "Al menos 2 años"
+      },
+      "workDay": {
+        "id": 1,
+        "value": "Completa"
+      },
+      "study": {
+        "id": 50,
+        "value": "Bachillerato"
+      },
+      "teleworking": {
+        "id": 1,
+        "value": "Presencial"
+      },
+      "published": "2023-05-09T14:04:02.000Z",
+      "updated": "2023-05-09T14:04:02.000Z",
+      "author": {
+        "id": "82752524536s0s61051133485087",
+        "privateId": 968194760,
+        "name": "Searchires",
+        "uri": "https://adecco.ofertas-trabajo.infojobs.net",
+        "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/800px-Facebook_icon.svg.png",
+        "corporateResponsive": false,
+        "showCorporativeHeader": false
+      },
+      "requirementMin": "-Experiencia como desarrallador/a o technical lead en Python.\r\n-",
+      "bold": false,
+      "applications": "0",
+      "executive": false,
+      "salaryDescription": "12? - 12? Bruto/hora",
+      "multiProvince": false
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { objectToParams } from '@/utils/transformURLParams'
+// import { objectToParams } from '@/utils/transformURLParams'
 import offersMock from '@/mocks/offerResponse.json'
 
 const URL = `${process.env.NEXT_PUBLIC_INFOJOBS_API}/9/offer`
@@ -8,7 +8,7 @@ const credentials = `${clientId}:${clientSecret}`
 const encodedCredentials = Buffer.from(credentials).toString('base64')
 
 export async function getInfojobsOffers(filters = { page: 1, maxResults: 20 }) {
-  const URLWithParams = `${URL}${objectToParams(filters)}`
+  // const URLWithParams = `${URL}${objectToParams(filters)}`
 
   try {
     /* const res = await fetch(URLWithParams, {
@@ -26,7 +26,7 @@ export async function getInfojobsOffers(filters = { page: 1, maxResults: 20 }) {
       }, 1000)
     })
 
-    return offers 
+    return offers
   } catch(e) {
     console.log(e)
   }

@@ -13,7 +13,7 @@ export default async function Offer({ params }) {
     userProfile = JSON.parse(decodeURIComponent(userProfileGenerated?.value))
   }
 
-  const offer = await getOfferById(params.offer)
+  const offer = await getOfferById(params.offer) // await getOfferById(params.offer)
 
   return (
     <div className={`containerExplore ${offerStyles.offer}`}>

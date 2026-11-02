@@ -9,7 +9,7 @@ import { getOfferById } from '@/services/getOffers'
 import Link from 'next/link'
 
 export default async function TechnicalTest({ params }) {
-  const { testId } = params
+  const { offerId } = params
 
   // TODO --- Check if there is a test
   const testsGenerated = []
@@ -21,12 +21,12 @@ export default async function TechnicalTest({ params }) {
           Prueba Técnica
           <ScienceIcon size='normal' />
         </h1>
-        <OfferName offerId={testId} />
+        <OfferName offerId={offerId} />
       </header>
       {
         testsGenerated?.length
           ? <OtherTests />
-          : <TechincalTestQuestions offerId={testId} type='technicalTest' />
+          : <TechincalTestQuestions offerId={offerId} type='technicalTest' />
       }
     </section>
   )

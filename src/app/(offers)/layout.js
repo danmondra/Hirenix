@@ -1,7 +1,7 @@
 import { cookies } from 'next/headers'
 import styles from '@/styles/explore.module.css'
 
-import { ExploreBG } from '@/components/layout/exploreBg'
+// import { ExploreBG } from '@/components/layout/exploreBg'
 import { Aside } from '@/components/layout/aside'
 import { NavigationLinks } from '@/components/layout/navigationLinks'
 import { Footer } from '@/components/layout/footer'
@@ -11,7 +11,7 @@ export default async function OffersLayout({ children }) {
 
   return (
     <>
-      <ExploreBG />
+      {/* <ExploreBG /> */}
       <div className={styles.page}>
         <Aside userToken={userToken} />
         <main className={`exploreMain ${styles.main}`}>

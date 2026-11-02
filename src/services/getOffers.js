@@ -1,5 +1,8 @@
 // import { objectToParams } from '@/utils/transformURLParams'
 import offersMock from '@/mocks/offerResponse.json'
+import { mapInfojobsOfferToDomain } from '@/mappers/offerMapper'
+import { mockOffer } from '@/mocks/mockOffer'
+import { objectToParams } from '@/utils/transformURLParams'
 
 const URL = `${process.env.NEXT_PUBLIC_INFOJOBS_API}/9/offer`
 const clientId = process.env.NEXT_PUBLIC_INFOJOBS_CLIENTID
@@ -8,10 +11,10 @@ const credentials = `${clientId}:${clientSecret}`
 const encodedCredentials = Buffer.from(credentials).toString('base64')
 
 export async function getInfojobsOffers(filters = { page: 1, maxResults: 20 }) {
-  // const URLWithParams = `${URL}${objectToParams(filters)}`
+  const URLWithParams = `${URL}${objectToParams(filters)}`
 
   try {
-    /* const res = await fetch(URLWithParams, {
+    const res = await fetch(URLWithParams, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Basic ${encodedCredentials}`
@@ -19,12 +22,15 @@ export async function getInfojobsOffers(filters = { page: 1, maxResults: 20 }) {
       cache: 'no-cache'
     })
     const offers = await res.json()
-      */
+
+    console.log({ offers })
+    /**
     const offers = await new Promise((resolve) => {
       setTimeout(() => {
         resolve(offersMock)
       }, 1000)
     })
+    */
 
     return offers
   } catch(e) {
@@ -33,12 +39,27 @@ export async function getInfojobsOffers(filters = { page: 1, maxResults: 20 }) {
 }
 
 export async function getOfferById(id) {
-  const res = await fetch(`${URL}/${id}`, {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Basic ${encodedCredentials}`
-    }
-  })
+  try {
+    const res = await fetch(`${URL}/${id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Basic ${encodedCredentials}`
+      }
+    })
 
-  return await res.json()
+    if (!res.ok) {
+      throw new Error(`Failed to fetch offer: ${res.status}`)
+    }
+
+    const infojobsOffer = await res.json()
+
+    return res.ok
+      ? mapInfojobsOfferToDomain(infojobsOffer)
+      : mockOffer
+  } catch (error) {
+    console.error('Error fetching offer by ID:', error)
+    // Return mock data as fallback
+    const { mockOffer } = await import('@/mocks/mockOffer')
+    return mockOffer
+  }
 }
